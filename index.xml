@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Matteo Courthoud</title>
-    <link>https://matteocourthoud.github.io/</link>
-      <atom:link href="https://matteocourthoud.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <description>Matteo Courthoud</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Theme edited by Matteo Courthoud© - Want to have a similar website? [Guide here](https://matteocourthoud.github.io/post/website/).</copyright><lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <title>Ignacio D. Lopez-Miguel</title>
+    <link>https://ignaciolopezmiguel.github.io/</link>
+      <atom:link href="https://ignaciolopezmiguel.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ignacio D. Lopez-Miguel</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Theme edited by Ignacio D. Lopez-Miguel© - Want to have a similar website? [Guide here](https://ignaciolopezmiguel.github.io/post/website/).</copyright><lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://matteocourthoud.github.io/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_512x512_fill_lanczos_center_3.png</url>
-      <title>Matteo Courthoud</title>
-      <link>https://matteocourthoud.github.io/</link>
+      <url>https://ignaciolopezmiguel.github.io/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_512x512_fill_lanczos_center_3.png</url>
+      <title>Ignacio D. Lopez-Miguel</title>
+      <link>https://ignaciolopezmiguel.github.io/</link>
     </image>
     
     <item>
       <title>Data Structures</title>
-      <link>https://matteocourthoud.github.io/course/data-science/01_data_structures/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/data-science/01_data_structures/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/data-science/01_data_structures/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/data-science/01_data_structures/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
 import pandas as pd
 &lt;/code&gt;&lt;/pre&gt;
@@ -402,9 +402,9 @@ Time of &amp;lt;class &#39;numpy.ndarray&#39;&amp;gt;: 0.010493993759155273
     
     <item>
       <title>Linear Regression</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/01_regression/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/01_regression/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/01_regression/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/01_regression/</guid>
       <description>&lt;p&gt;This chapter follows closely Chapter 3 of &lt;a href=&#34;https://hastie.su.domains/ISLR2/ISLRv2_website.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;An Introduction to Statistical Learning&lt;/a&gt; by James, Witten, Tibshirani, Friedman.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Remove warnings
 import warnings
@@ -2218,9 +2218,9 @@ def make_fig_3_15():
     
     <item>
       <title>Matrix Algebra</title>
-      <link>https://matteocourthoud.github.io/course/metrics/01_matrices/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/01_matrices/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/01_matrices/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/01_matrices/</guid>
       <description>&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
 &lt;h3 id=&#34;matrix-definition&#34;&gt;Matrix Definition&lt;/h3&gt;
 &lt;p&gt;A real $n \times m$ matrix $A$ is an array&lt;/p&gt;
@@ -2453,9 +2453,9 @@ $B$&lt;/li&gt;
     
     <item>
       <title>Data Exploration</title>
-      <link>https://matteocourthoud.github.io/course/data-science/02_data_exploration/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/data-science/02_data_exploration/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/data-science/02_data_exploration/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/data-science/02_data_exploration/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
 import pandas as pd
 &lt;/code&gt;&lt;/pre&gt;
@@ -4030,9 +4030,9 @@ Name: price, Length: 3453, dtype: int64
     
     <item>
       <title>Instrumental Variables</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/02_iv/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/02_iv/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/02_iv/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/02_iv/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Remove warnings
 import warnings
 warnings.filterwarnings(&#39;ignore&#39;)
@@ -4864,9 +4864,9 @@ print(beta_2SLS)
     
     <item>
       <title>Demand Estimation</title>
-      <link>https://matteocourthoud.github.io/course/empirical-io/02_demand_estimation/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/empirical-io/02_demand_estimation/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/empirical-io/02_demand_estimation/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/empirical-io/02_demand_estimation/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;h3 id=&#34;setting&#34;&gt;Setting&lt;/h3&gt;
 &lt;p&gt;Oligopoly Supply&lt;/p&gt;
@@ -5523,9 +5523,9 @@ Society&lt;/em&gt;, 841–90.&lt;/p&gt;
     
     <item>
       <title>Probability Theory</title>
-      <link>https://matteocourthoud.github.io/course/metrics/02_probability/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/02_probability/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/02_probability/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/02_probability/</guid>
       <description>&lt;h2 id=&#34;probability&#34;&gt;Probability&lt;/h2&gt;
 &lt;h3 id=&#34;probability-space&#34;&gt;Probability Space&lt;/h3&gt;
 &lt;p&gt;A &lt;strong&gt;probability space&lt;/strong&gt; is a triple $(\Omega, \mathcal A, P)$ where&lt;/p&gt;
@@ -5809,9 +5809,9 @@ $t_{n\geq 30} \sim N(0,1)$&lt;/p&gt;
     
     <item>
       <title>Data Types</title>
-      <link>https://matteocourthoud.github.io/course/data-science/03_data_types/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/data-science/03_data_types/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/data-science/03_data_types/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/data-science/03_data_types/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
 import pandas as pd
 &lt;/code&gt;&lt;/pre&gt;
@@ -6546,9 +6546,9 @@ df_listings.iloc[:3, :3]
     
     <item>
       <title>Non-Parametric Regression</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/03_nonparametric/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/03_nonparametric/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/03_nonparametric/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/03_nonparametric/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Setup
 %matplotlib inline
 from utils.lecture03 import *
@@ -7478,9 +7478,9 @@ logit_gam.gridsearch(X, y_binary);
     
     <item>
       <title>Asymptotic Theory</title>
-      <link>https://matteocourthoud.github.io/course/metrics/03_asymptotics/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/03_asymptotics/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/03_asymptotics/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/03_asymptotics/</guid>
       <description>&lt;h2 id=&#34;convergence&#34;&gt;Convergence&lt;/h2&gt;
 &lt;h3 id=&#34;sequences&#34;&gt;Sequences&lt;/h3&gt;
 &lt;p&gt;A sequence of nonrandom numbers $\lbrace a_n \rbrace$ &lt;strong&gt;converges&lt;/strong&gt; to
@@ -7835,9 +7835,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Data Wrangling</title>
-      <link>https://matteocourthoud.github.io/course/data-science/04_data_wrangling/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/data-science/04_data_wrangling/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/data-science/04_data_wrangling/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/data-science/04_data_wrangling/</guid>
       <description>&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 &lt;p&gt;For the scope of this tutorial we are going to use AirBnb Scraped data for the city of Bologna. The data is freely available at &lt;strong&gt;Inside AirBnb&lt;/strong&gt;: &lt;a href=&#34;http://insideairbnb.com/get-the-data.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://insideairbnb.com/get-the-data.html&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;A description of all variables in all datasets is avaliable &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit#gid=982310896&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -9790,9 +9790,9 @@ temp.head(15)
     
     <item>
       <title>Resampling Methods</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/04_crossvalidation/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/04_crossvalidation/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/04_crossvalidation/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/04_crossvalidation/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Remove warnings
 import warnings
 warnings.filterwarnings(&#39;ignore&#39;)
@@ -10251,9 +10251,9 @@ def make_figure_5_10():
     
     <item>
       <title>Inference</title>
-      <link>https://matteocourthoud.github.io/course/metrics/04_inference/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/04_inference/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/04_inference/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/04_inference/</guid>
       <description>&lt;h2 id=&#34;statistical-models&#34;&gt;Statistical Models&lt;/h2&gt;
 &lt;h3 id=&#34;definition&#34;&gt;Definition&lt;/h3&gt;
 &lt;p&gt;A &lt;strong&gt;statistical model&lt;/strong&gt; is a set of probability distributions
@@ -10538,9 +10538,9 @@ we get the equation exactly.&lt;/p&gt;
     
     <item>
       <title>Plotting</title>
-      <link>https://matteocourthoud.github.io/course/data-science/05_plotting/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/data-science/05_plotting/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/data-science/05_plotting/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/data-science/05_plotting/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
 import pandas as pd
 
@@ -10560,7 +10560,7 @@ from src.import_data import import_data
 &lt;li&gt;listing dataset: contains listing-level information&lt;/li&gt;
 &lt;li&gt;pricing dataset: contains pricing data, over time&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;We import and clean them with a script. If you want more details, have a look at the &lt;a href=&#34;https://matteocourthoud.github.io/course/data-science/01_data_exploration/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;data exploration&lt;/a&gt; and &lt;a href=&#34;https://matteocourthoud.github.io/course/data-science/03_data_wrangling&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;data wrangling&lt;/a&gt; sections.&lt;/p&gt;
+&lt;p&gt;We import and clean them with a script. If you want more details, have a look at the &lt;a href=&#34;https://ignaciolopezmiguel.github.io/course/data-science/01_data_exploration/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;data exploration&lt;/a&gt; and &lt;a href=&#34;https://ignaciolopezmiguel.github.io/course/data-science/03_data_wrangling&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;data wrangling&lt;/a&gt; sections.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_listings, df_prices, df = import_data()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
@@ -10726,9 +10726,9 @@ gdf.plot(ax=ax, c=df_listings[&#39;mean_price&#39;], cmap=&#39;viridis&#39;, alp
     
     <item>
       <title>Model Selection and Regularization</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/05_regularization/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/05_regularization/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/05_regularization/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/05_regularization/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Remove warnings
 import warnings
 warnings.filterwarnings(&#39;ignore&#39;)
@@ -11822,9 +11822,9 @@ def make_figure_6_12():
     
     <item>
       <title>OLS Algebra</title>
-      <link>https://matteocourthoud.github.io/course/metrics/05_ols_algebra/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/05_ols_algebra/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/05_ols_algebra/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/05_ols_algebra/</guid>
       <description>&lt;h2 id=&#34;the-gauss-markov-model&#34;&gt;The Gauss Markov Model&lt;/h2&gt;
 &lt;h3 id=&#34;definition&#34;&gt;Definition&lt;/h3&gt;
 &lt;p&gt;A statistical model for regression data is the &lt;strong&gt;Gauss Markov Model&lt;/strong&gt; if
@@ -12270,9 +12270,9 @@ std_β = sqrt.(diag(var_β))
     
     <item>
       <title>Machine Learning Pipeline</title>
-      <link>https://matteocourthoud.github.io/course/data-science/06_ml_pipeline/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/data-science/06_ml_pipeline/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/data-science/06_ml_pipeline/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/data-science/06_ml_pipeline/</guid>
       <description>&lt;p&gt;In this notebook, we are going to build a pipeline for a general prediction problem.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Standard Imports
 from src.utils import *
@@ -13140,9 +13140,9 @@ y_test_hat = grid_search.best_estimator_.predict(X_test)
     
     <item>
       <title>Convexity and Optimization</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/06_convexity/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/06_convexity/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/06_convexity/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/06_convexity/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Remove warnings
 import warnings
 warnings.filterwarnings(&#39;ignore&#39;)
@@ -13563,9 +13563,9 @@ plt.plot(range(len(better_steps[-1])), better_steps[-1]);
     
     <item>
       <title>Endogeneity</title>
-      <link>https://matteocourthoud.github.io/course/metrics/06_endogeneity/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/06_endogeneity/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/06_endogeneity/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/06_endogeneity/</guid>
       <description>&lt;h2 id=&#34;instrumental-variables&#34;&gt;Instrumental Variables&lt;/h2&gt;
 &lt;h3 id=&#34;endogeneity&#34;&gt;Endogeneity&lt;/h3&gt;
 &lt;p&gt;We say that there is &lt;strong&gt;endogeneity&lt;/strong&gt; in the linear regression model if
@@ -14170,9 +14170,9 @@ over time (that is, time-series data).&lt;/p&gt;
     
     <item>
       <title>OLS Inference</title>
-      <link>https://matteocourthoud.github.io/course/metrics/06_ols_inference/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/06_ols_inference/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/06_ols_inference/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/06_ols_inference/</guid>
       <description>&lt;h2 id=&#34;asymptotic-theory-of-the-ols-estimator&#34;&gt;Asymptotic Theory of the OLS Estimator&lt;/h2&gt;
 &lt;h3 id=&#34;ols-consistency&#34;&gt;OLS Consistency&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;: Assume that $(x_i, y_i) _ {i=1}^n$ i.i.d. ,
@@ -14780,9 +14780,9 @@ conf_int = [β_hat - 1.96*std_hc1, β_hat + 1.96*std_hc1];
     
     <item>
       <title>Web Scraping</title>
-      <link>https://matteocourthoud.github.io/course/data-science/07_web_scraping/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/data-science/07_web_scraping/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/data-science/07_web_scraping/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/data-science/07_web_scraping/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
 import re
 import time
@@ -16571,9 +16571,9 @@ quotes
     
     <item>
       <title>Tree-based Methods</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/07_trees/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/07_trees/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/07_trees/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/07_trees/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 from utils.lecture07 import *
 &lt;/code&gt;&lt;/pre&gt;
@@ -17874,9 +17874,9 @@ def make_figure_8_11():
     
     <item>
       <title>Endogeneity</title>
-      <link>https://matteocourthoud.github.io/course/metrics/07_endogeneity/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/07_endogeneity/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/07_endogeneity/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/07_endogeneity/</guid>
       <description>&lt;h2 id=&#34;instrumental-variables&#34;&gt;Instrumental Variables&lt;/h2&gt;
 &lt;h3 id=&#34;endogeneity&#34;&gt;Endogeneity&lt;/h3&gt;
 &lt;p&gt;We say that there is &lt;strong&gt;endogeneity&lt;/strong&gt; in the linear regression model if
@@ -18481,9 +18481,9 @@ over time (that is, time-series data).&lt;/p&gt;
     
     <item>
       <title>Single Agent Dynamics</title>
-      <link>https://matteocourthoud.github.io/course/empirical-io/07_dynamics_singleagent/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/empirical-io/07_dynamics_singleagent/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/empirical-io/07_dynamics_singleagent/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/empirical-io/07_dynamics_singleagent/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;h3 id=&#34;motivation&#34;&gt;Motivation&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;IO&lt;/strong&gt;: role of &lt;em&gt;market structure&lt;/em&gt; on &lt;em&gt;equilibrium outcomes&lt;/em&gt;.&lt;/p&gt;
@@ -20563,9 +20563,9 @@ Approaches to Estimation of Structural Models.” &lt;em&gt;Econometrica&lt;/em&
     
     <item>
       <title>Neural Networks</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/08_neuralnets/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/08_neuralnets/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/08_neuralnets/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/08_neuralnets/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Remove warnings
 import warnings
 warnings.filterwarnings(&#39;ignore&#39;)
@@ -21575,9 +21575,9 @@ train_NN_batch(loader, y_true, net, optimizer, loss_func, EPOCHS)
     
     <item>
       <title>Dynamic Games</title>
-      <link>https://matteocourthoud.github.io/course/empirical-io/08_dynamics_games/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/empirical-io/08_dynamics_games/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/empirical-io/08_dynamics_games/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/empirical-io/08_dynamics_games/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
 &lt;p&gt;Setting: agents making &lt;strong&gt;strategic decisions&lt;/strong&gt; (new) in &lt;strong&gt;dynamic
@@ -22991,9 +22991,9 @@ Economics.&lt;/em&gt;&lt;/p&gt;
     
     <item>
       <title>Non-Parametric Estimation</title>
-      <link>https://matteocourthoud.github.io/course/metrics/08_nonparametric/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/08_nonparametric/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/08_nonparametric/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/08_nonparametric/</guid>
       <description>&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;Non-parametric regression is a flexible estimation procedure for&lt;/p&gt;
 &lt;ol&gt;
@@ -23562,9 +23562,9 @@ are harder to implement in kernel regression.&lt;/p&gt;
     
     <item>
       <title>Post-Double Selection</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/09_postdoubleselection/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/09_postdoubleselection/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/09_postdoubleselection/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/09_postdoubleselection/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Remove warnings
 import warnings
 warnings.filterwarnings(&#39;ignore&#39;)
@@ -24551,9 +24551,9 @@ Boosting : 1.0327
     
     <item>
       <title>Variable Selection</title>
-      <link>https://matteocourthoud.github.io/course/metrics/09_selection/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/metrics/09_selection/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/metrics/09_selection/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/metrics/09_selection/</guid>
       <description>&lt;h2 id=&#34;lasso&#34;&gt;Lasso&lt;/h2&gt;
 &lt;h3 id=&#34;issue&#34;&gt;Issue&lt;/h3&gt;
 &lt;p&gt;Lasso (Least Absolute Shrinkage and Selection Operator) is a popular
@@ -24994,9 +24994,9 @@ semiparametric efficiency bound.&lt;/p&gt;
     
     <item>
       <title>Unsupervised Learning</title>
-      <link>https://matteocourthoud.github.io/course/ml-econ/10_unsupervised/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/ml-econ/10_unsupervised/</link>
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/ml-econ/10_unsupervised/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/ml-econ/10_unsupervised/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Setup
 from utils.lecture10 import *
 %matplotlib inline
@@ -25879,9 +25879,9 @@ kmeans_manual(X, K)
     
     <item>
       <title>Coding: Logit Demand</title>
-      <link>https://matteocourthoud.github.io/course/empirical-io/11_logit_demand/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/empirical-io/11_logit_demand/</link>
       <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/empirical-io/11_logit_demand/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/empirical-io/11_logit_demand/</guid>
       <description>&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
 &lt;p&gt;In this session, I am going to cover demand estimation.&lt;/p&gt;
 &lt;ul&gt;
@@ -26352,9 +26352,9 @@ significant.&lt;/p&gt;
     
     <item>
       <title>Coding: BLP (1995)</title>
-      <link>https://matteocourthoud.github.io/course/empirical-io/12_blp_1995/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/empirical-io/12_blp_1995/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/empirical-io/12_blp_1995/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/empirical-io/12_blp_1995/</guid>
       <description>&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
 &lt;p&gt;In this session, I am going to cover demand estimation.&lt;/p&gt;
 &lt;ul&gt;
@@ -26735,9 +26735,9 @@ Society&lt;/em&gt;, 841–90.&lt;/p&gt;
     
     <item>
       <title>Coding: Rust (1987)</title>
-      <link>https://matteocourthoud.github.io/course/empirical-io/17_rust_1987/</link>
+      <link>https://ignaciolopezmiguel.github.io/course/empirical-io/17_rust_1987/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/course/empirical-io/17_rust_1987/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/course/empirical-io/17_rust_1987/</guid>
       <description>&lt;h3 id=&#34;setting&#34;&gt;Setting&lt;/h3&gt;
 &lt;p&gt;From Rust (&lt;a href=&#34;#ref-rust1988maximum&#34;&gt;1988&lt;/a&gt;)&lt;/p&gt;
 &lt;ul&gt;
@@ -27308,16 +27308,16 @@ Processes.” &lt;em&gt;SIAM Journal on Control and Optimization&lt;/em&gt; 26 (
     
     <item>
       <title>Bayesian AB Testing</title>
-      <link>https://matteocourthoud.github.io/post/bayes_reg/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/bayes_reg/</link>
       <pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/bayes_reg/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/bayes_reg/</guid>
       <description>&lt;p&gt;&lt;em&gt;An introduction to the Bayesian approach to randomized experiments.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;AB testing&lt;/strong&gt; and experimentation is now the established gold standard in the industry to estimate causal effects. Randomly assigning the treatment (new product, feature, UI, &amp;hellip;) to a subset of the population (users, patients, customers, &amp;hellip;) we ensure that, on average, the difference in outcomes (revenue, visits, clicks, &amp;hellip;) can be attributed to the treatment. Many companies, especially in tech, before implementing any major change test them to back up their decisions with numbers. Established companies like &lt;a href=&#34;https://partner.booking.com/en-gb/click-magazine/industry-perspectives/role-experimentation-bookingcom&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Booking.com&lt;/a&gt; report constantly running thousands of AB tests at the same time. And newer growing companies like &lt;a href=&#34;https://blog.duolingo.com/improving-duolingo-one-experiment-at-a-time/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Duolingo&lt;/a&gt; attribute a large chunk of their success to their culture of experimentation at scale.&lt;/p&gt;
 &lt;p&gt;With so many experiments, one question comes natural: in one specific experiment, can you leverage information from previous tests? In this post, I will try to answer this question by introducing the &lt;strong&gt;Bayesian approach to AB testing&lt;/strong&gt;. The Bayesian framework is particularly well suited for this type of task because it naturally allows for the updating of existing knowledge (the prior) using new data. However, the method is particularly sensitive to functional form assumptions and apparently innocuous model choices can translate in sensible differences in the estimates, especially when the data is very skewed.&lt;/p&gt;
 &lt;h2 id=&#34;search-and-infinite-scrolling&#34;&gt;Search and Infinite Scrolling&lt;/h2&gt;
 &lt;p&gt;For the rest of the article, we are going to use a toy example, loosely inspired by &lt;a href=&#34;https://www.aeaweb.org/articles?id=10.1257/pandp.20191003&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Azavedo et al. (2019)&lt;/a&gt;: a &lt;strong&gt;search engine&lt;/strong&gt; that wants to increase its &lt;strong&gt;ad revenue&lt;/strong&gt;, without sacrificing search quality. We are a company with an established experimentation culture and we continuously test new ideas on how to rank results, how to select the most relevant ads for consumers, and the user interface (UI) of the results page. Suppose that, in this specific case, we came up with a new brilliant idea: &lt;a href=&#34;https://blog.google/products/search/continuous-scrolling-mobile/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;infinite scrolling&lt;/a&gt;! Instead of having a discrete sequence of pages, we allow users to keep scrolling down if they want to see more results.&lt;/p&gt;
 &lt;img src=&#34;fig/phones.jpg&#34; width=&#34;300px&#34;/&gt;
-&lt;p&gt;To understand whether infinite scrolling works, we ran an &lt;strong&gt;AB test&lt;/strong&gt;: we randomize users into a treatment and a control group. We implement infinite scrolling only for users in the treatment group. I import the data generating process &lt;code&gt;dgp_infinite_scroll()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. With respect to previous articles, I generated a new DGP parent class that handles randomization and data generation, while its children classes contain the specific use-cases. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.  To include not only code but also data and tables, I use &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment.&lt;/p&gt;
+&lt;p&gt;To understand whether infinite scrolling works, we ran an &lt;strong&gt;AB test&lt;/strong&gt;: we randomize users into a treatment and a control group. We implement infinite scrolling only for users in the treatment group. I import the data generating process &lt;code&gt;dgp_infinite_scroll()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. With respect to previous articles, I generated a new DGP parent class that handles randomization and data generation, while its children classes contain the specific use-cases. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.  To include not only code but also data and tables, I use &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 
@@ -27795,15 +27795,15 @@ ax.set_ylabel(&#39;Posterior&#39;);
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/delta.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/delta.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/delta.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/delta.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Experiments on Returns on Investment</title>
-      <link>https://matteocourthoud.github.io/post/delta/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/delta/</link>
       <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/delta/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/delta/</guid>
       <description>&lt;p&gt;&lt;em&gt;An introduction to the delta method for inference on ratio metrics.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;When we run an experiment, we are often not only interested in the effect of a treatment (new product, new feature, new interface, &amp;hellip;) on revenue, but in it&amp;rsquo;s &lt;strong&gt;cost-effectiveness&lt;/strong&gt;. In other words, is the investment worth the cost? Common examples include investments in computing resources, returns on advertisement, but also click-through rates and other ratio metrics.&lt;/p&gt;
 &lt;p&gt;When we investigate causal effects, the gold standard is randomized control trials, a.k.a. &lt;strong&gt;AB tests&lt;/strong&gt;. Randomly assigning the treatment to a subset of the population (users, patients, customers, &amp;hellip;) we ensure that, on average, the difference in outcomes can be attributed to the treatment. However, when the object of interest is cost-effectiveness, AB tests present some additional problems since we are not just interested in one treatment effect, but in the &lt;strong&gt;ratio of two treatment effects&lt;/strong&gt;, the outcome of the investment over its cost.&lt;/p&gt;
@@ -27811,7 +27811,7 @@ ax.set_ylabel(&#39;Posterior&#39;);
 &lt;h2 id=&#34;investing-in-cloud-computing&#34;&gt;Investing in Cloud Computing&lt;/h2&gt;
 &lt;p&gt;To better illustrate the concepts, we are going to use a toy example throughout the article: suppose we were an &lt;strong&gt;online marketplace&lt;/strong&gt; and we wanted to &lt;strong&gt;invest in cloud computing&lt;/strong&gt;: we want to increase the computing power behind our internal search engine, by switching to a higher tier server. The idea is that the faster search will improve the user experience, potentially leading to higher sales. Therefore, the question is: is the investment worth the cost? The object of interest is the &lt;strong&gt;return on investment (ROI)&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Differently from usual AB tests or randomized experiments, we are not interested in a single causal effect, but in the &lt;strong&gt;ratio&lt;/strong&gt; of two metrics: the effect on revenue and the effect on cost. We will still use a &lt;strong&gt;randomized control trial&lt;/strong&gt; or &lt;strong&gt;AB test&lt;/strong&gt; to estimate the ROI: we randomly assign groups of users to either the treatment or the control group. The treated users will benefit from the faster cloud machines, while the control users will use the old slower machines. Randomization ensures that we can estimate the impact of the new machines on either cost or revenue by comparing users in the treatment and control group: the difference in their average is an unbiased estimator of the average treatment effect. However, things are more complicated for their ratio.&lt;/p&gt;
-&lt;p&gt;I import the data generating process &lt;code&gt;dgp_cloud()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. With respect to previous articles, I generated a new DGP parent class that handles randomization and data generation, while its children classes contain the specific use-cases. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.  To include not only code but also data and tables, I use &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment.&lt;/p&gt;
+&lt;p&gt;I import the data generating process &lt;code&gt;dgp_cloud()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. With respect to previous articles, I generated a new DGP parent class that handles randomization and data generation, while its children classes contain the specific use-cases. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.  To include not only code but also data and tables, I use &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 
@@ -28104,22 +28104,22 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/delta.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/delta.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/delta.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/delta.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Mean vs Median Causal Effect</title>
-      <link>https://matteocourthoud.github.io/post/quantile_reg/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/quantile_reg/</link>
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/quantile_reg/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/quantile_reg/</guid>
       <description>&lt;p&gt;&lt;em&gt;An introduction to quantile regression.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In A/B tests, a.k.a. &lt;a href=&#34;https://en.wikipedia.org/wiki/Randomized_controlled_trial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;randomized controlled trials&lt;/a&gt;, we usually estimate the &lt;strong&gt;average treatment effect (ATE)&lt;/strong&gt;: effect of a treatment (a drug, ad, product, &amp;hellip;) on an outcome of interest (a disease, firm revenue, customer satisfaction, &amp;hellip;), where the &amp;ldquo;average&amp;rdquo; is taken over the test subjects (patients, users, customers, &amp;hellip;). The ATE is a very useful quantity since it tells us the effect that we can expect if we were to treat a new subject with the same treatment.&lt;/p&gt;
 &lt;p&gt;However, sometimes we might be interested in quantities different from the average, such as the &lt;a href=&#34;https://en.wikipedia.org/wiki/Median&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;median&lt;/strong&gt;&lt;/a&gt;. The median is an alternative measure of &lt;em&gt;central tendency&lt;/em&gt; that is more robust to outliers and is often more informative with skewed distributions. More generally, we might want to estimate the effect for different &lt;a href=&#34;https://en.wikipedia.org/wiki/Quantile&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quantiles&lt;/a&gt; of the outcome distribution. A &lt;strong&gt;common use-case&lt;/strong&gt; is studying the impact of a UI change on the loading time of a website: a slightly heavier website might translate in an imperceptible change for most users, but a big change for a few users with very slow connections. Another common use-case is studying the impact of a product change on a product that is bought by few people: do existing customers buy it more or are we attracting new customers?&lt;/p&gt;
 &lt;p&gt;These questions are hard to answer with linear regression that estimates the &lt;em&gt;average treatment effect&lt;/em&gt;. A more suitable tool is &lt;strong&gt;quantile regression&lt;/strong&gt; that can instead estimate the &lt;em&gt;median treatment effect&lt;/em&gt;. In this article we are going to cover a brief introduction to quantile regression and the estimation of quantile treatment effects.&lt;/p&gt;
 &lt;h2 id=&#34;loyalty-cards-and-spending&#34;&gt;Loyalty Cards and Spending&lt;/h2&gt;
 &lt;p&gt;Suppose we were an &lt;strong&gt;online store&lt;/strong&gt; and we wanted to increase sales. We decide to offer our customers a &lt;strong&gt;loyalty card&lt;/strong&gt; that grants them discounts as they increase their spend in the store. We would like to assess if the loyalty card is effective in increasing sales so we run an &lt;strong&gt;A/B test&lt;/strong&gt;: we offer the loyalty card only to a subset of our customers, at random.&lt;/p&gt;
-&lt;p&gt;I import the data generating process &lt;code&gt;dgp_loyalty()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.  To include not only code but also data and tables, I use &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment.&lt;/p&gt;
+&lt;p&gt;I import the data generating process &lt;code&gt;dgp_loyalty()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.  To include not only code but also data and tables, I use &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 
@@ -28395,15 +28395,15 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/quantile_reg.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/quantile_reg.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/quantile_reg.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/quantile_reg.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>A/B Tests, Privacy and Online Regression</title>
-      <link>https://matteocourthoud.github.io/post/online_reg/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/online_reg/</link>
       <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/online_reg/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/online_reg/</guid>
       <description>&lt;p&gt;&lt;em&gt;How to run experiments without storing individual data&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;AB tests, a.k.a. randomized controlled trials, are widely recognized as the gold standard technique to compute the causal effect of a treatment (a drug, ad, product, &amp;hellip;) on an outcome of interest (a disease, firm revenue, customer satisfaction, &amp;hellip;). We randomly split a set of subjects (patients, users, customers, &amp;hellip;) into a treatment and a control group and give the treatment to the treatment group. This procedure ensures that ex-ante, the only expected difference between the two groups is caused by the treatment.&lt;/p&gt;
 &lt;p&gt;One potential &lt;strong&gt;privacy concern&lt;/strong&gt; is that one needs to store data about many users for the whole duration of the experiment in order to estimate the effect of the treatment. This is not a problem if we can run the experiment instantaneusly, but can become an issue when the experiment duration is long. In this post, we are going to explore one solution to this problem: &lt;strong&gt;online regression&lt;/strong&gt;. We will see how to estimate (conditional) average treatment effects and how to do inference, using both asymptotic approximations and bootstrapping.&lt;/p&gt;
@@ -28411,7 +28411,7 @@ $$&lt;/p&gt;
 &lt;h2 id=&#34;credit-cards-and-donations&#34;&gt;Credit Cards and Donations&lt;/h2&gt;
 &lt;p&gt;Suppose, for example, that we were a fin-tech company. We have designed a new user interface (UI) for our mobile application and we would like to understand whether it slows down our transaction. In order to estimate the causal effect of the new UI on transaction speed, we plan to run an A/B test or randomized controlled trial.&lt;/p&gt;
 &lt;p&gt;We have one major problem: we should not store user-level information for privacy reasons.&lt;/p&gt;
-&lt;p&gt;First, let&amp;rsquo;s have a look at the data. I import the data generating process &lt;code&gt;dgp_credit()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;. I include code snippets from &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment. For our purpose, Deepnote is very handy because it allows me not only to include code but also output, like data and tables.&lt;/p&gt;
+&lt;p&gt;First, let&amp;rsquo;s have a look at the data. I import the data generating process &lt;code&gt;dgp_credit()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;. I include code snippets from &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment. For our purpose, Deepnote is very handy because it allows me not only to include code but also output, like data and tables.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -28582,7 +28582,7 @@ print(beta)
 &lt;pre&gt;&lt;code&gt;[ 6.07404291e+00  1.39385101e+00 -3.33599131e-03]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We got exactly the same coefficient! Nice!&lt;/p&gt;
-&lt;p&gt;How did we get there? We can plot the evolution of out estimate $\hat{\beta}$ as we accumulate data. The dynamic plotting function is a bit more cumbersome, but you can find it in &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/figures.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.figures&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;How did we get there? We can plot the evolution of out estimate $\hat{\beta}$ as we accumulate data. The dynamic plotting function is a bit more cumbersome, but you can find it in &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/figures.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.figures&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from src.figures import online_regression
 
 online_regression(df, &amp;quot;fig/online_reg1.gif&amp;quot;)
@@ -28711,22 +28711,22 @@ for n in range(10, N):
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/online_reg.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/online_reg.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/online_reg.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/online_reg.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Outliers, Leverage, and Influential Observations</title>
-      <link>https://matteocourthoud.github.io/post/outliers/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/outliers/</link>
       <pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/outliers/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/outliers/</guid>
       <description>&lt;p&gt;&lt;em&gt;What makes an observation &amp;ldquo;unusual&amp;rdquo;?&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In data science, one common task is outlier detection. This is a broad term that is often misused or misunderstood. More broadly, we are often interested in understanding any observation is &lt;strong&gt;&amp;ldquo;unusual&amp;rdquo;&lt;/strong&gt;. First of all, what does it mean to be unusual? In this article we are going to inspect three different ways in which an observation can be unusual: it can be unusual characteristics, it might not fit the model or it might be particularly influential in fitting the model. We will see that in linear regression the latter characteristics is a byproduct of the first two.&lt;/p&gt;
 &lt;p&gt;Importantly, being unusual is &lt;strong&gt;not necessarily bad&lt;/strong&gt;. Observations that have different characteristics from all others usually carry more information. We also expect some observations not to fit the model well, otherwise the model is likely biased (overfitting). However, &amp;ldquo;unusual&amp;rdquo; observations are also more likely to be generated by a different process. Extreme cases include measurement error or fraud, but differences can be more nuanced. Domain knowledge is always kind and dropping observations only for for statistical reasons is never wise.&lt;/p&gt;
 &lt;p&gt;That said, let&amp;rsquo;s have a look at some different ways in which observations can be &amp;ldquo;unusual&amp;rdquo;.&lt;/p&gt;
 &lt;h1 id=&#34;example&#34;&gt;Example&lt;/h1&gt;
 &lt;p&gt;Suppose we are an &lt;strong&gt;peer-to-peer online platform&lt;/strong&gt; and we are interested in understanding if there is anything suspicious going on with our business. We have information about how much time our customers spend on the platform and the total value of their transactions.&lt;/p&gt;
-&lt;p&gt;First, let&amp;rsquo;s have a look at the data. I import the data generating process &lt;code&gt;dgp_p2p()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;. I include code snippets from &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment. For our purpose, Deepnote is very handy because it allows me not only to include code but also output, like data and tables.&lt;/p&gt;
+&lt;p&gt;First, let&amp;rsquo;s have a look at the data. I import the data generating process &lt;code&gt;dgp_p2p()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;. I include code snippets from &lt;a href=&#34;https://deepnote.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deepnote&lt;/a&gt;, a Jupyter-like web-based collaborative notebook environment. For our purpose, Deepnote is very handy because it allows me not only to include code but also output, like data and tables.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -28913,15 +28913,15 @@ Regression&lt;/a&gt; (1980), &lt;em&gt;Technometrics&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;[2] P. W. Koh, P. Liang, &lt;a href=&#34;http://proceedings.mlr.press/v70/koh17a&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Understanding Black-box Predictions via Influence Functions&lt;/a&gt; (2017), &lt;em&gt;ICML Proceedings&lt;/em&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/outliers.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/outliers.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/outliers.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/outliers.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>The Bayesian Bootstrap</title>
-      <link>https://matteocourthoud.github.io/post/bayes_boot/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/bayes_boot/</link>
       <pubDate>Wed, 17 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/bayes_boot/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/bayes_boot/</guid>
       <description>&lt;p&gt;&lt;em&gt;A short guide to a simple and powerful alternative to the bootstrap&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In causal inference we do not want just to compute treatment effect, we also want to do &lt;strong&gt;inference&lt;/strong&gt; (duh!). In some cases, it&amp;rsquo;s very easy to compute the asymptotic difference of an estimator, thanks to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Central_limit_theorem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;central limit theorem&lt;/strong&gt;&lt;/a&gt;. This is the case of computing the average treatment effect in AB tests or randomized controlled trials, for example. However, in other settings, inference is more &lt;strong&gt;complicated&lt;/strong&gt;. The most frequent setting is the computation of quantities that are not sums or averages, such as the median treatment effect, for example. In these cases, we cannot rely on the central limit theorem. What can we do then?&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;bootstrap&lt;/strong&gt; is the answer! It is a very powerful procedure to compute the distribution of an estimator, without needing any knowledge of the data generating process. It is also very &lt;strong&gt;intuitive and simple&lt;/strong&gt; to implement: just re-sample your data with replacement a lot of times and compute your estimator on the re-computed sample.&lt;/p&gt;
@@ -29266,15 +29266,15 @@ compare_boot(df, classic_boot, bayes_boot, estimate_beta, &#39;beta&#39;)
 &lt;p&gt;[4] J. Shao, D. Tu, &lt;a href=&#34;https://link.springer.com/book/10.1007/978-1-4612-0795-5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jacknife and Bootstrap&lt;/a&gt; (1995), &lt;em&gt;Springer&lt;/em&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/bayes_boot.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/bayes_boot.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/bayes_boot.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/bayes_boot.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Understanding Synthetic Control Methods</title>
-      <link>https://matteocourthoud.github.io/post/synth/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/synth/</link>
       <pubDate>Wed, 27 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/synth/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/synth/</guid>
       <description>&lt;p&gt;&lt;em&gt;A detailed introduction to one of the most popular causal inference techniques in the industry&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;It is now widely accepted that the gold standard technique to compute the &lt;strong&gt;causal effect&lt;/strong&gt; of a treatment (a drug, ad, product, &amp;hellip;) on an outcome of interest (a disease, firm revenue, customer satisfaction, &amp;hellip;) is &lt;strong&gt;AB testing&lt;/strong&gt;, a.k.a. randomized experiments. We randomly split a set of subjects (patients, users, customers, &amp;hellip;) into a treatment and a control group and give the treatment to the treatment group. This procedure ensures that, ex-ante, the only expected difference between the two groups is caused by the treatment.&lt;/p&gt;
 &lt;p&gt;One of the key assumptions in AB testing is that there is &lt;strong&gt;no contamination&lt;/strong&gt; between treatment and control group. Giving a drug to one patient in the treatment group does not affect the health of patients in the control group. This might not be the case for example if we are twying to cure a contageous disease and the two groups are not isolated. In the industry, frequent violations of the contamination assumption are &lt;strong&gt;network effects&lt;/strong&gt; - my utility of using a social network increases as the number of friends on the network increases - and &lt;strong&gt;general equilibrium effects&lt;/strong&gt; - if I improve one product, it might decrease the sales of another similar product.&lt;/p&gt;
@@ -29285,7 +29285,7 @@ compare_boot(df, classic_boot, bayes_boot, estimate_beta, &#39;beta&#39;)
 &lt;p&gt;As you can imagine, there are many &lt;strong&gt;limitations&lt;/strong&gt; to running an AB/test for this type of feature. First of all, it&amp;rsquo;s complicated to randomize individual rides. Second, it&amp;rsquo;s a very expensive intervention. Third, and statistically most important, you cannot run this intervention at the ride level. The problem is that there are &lt;strong&gt;spillover&lt;/strong&gt; effects from treated to control units: if indeed self-driving cars are more efficient, it means that they can serve more customers in the same amount of time, reducing the customers available to normal drivers (the control group). This spillover &lt;strong&gt;contaminates&lt;/strong&gt; the experiment and prevents a causal interpretation of the results.&lt;/p&gt;
 &lt;p&gt;For all these reasons, we select only one city. Given the synthetic vibe of the article we cannot but select&amp;hellip; (&lt;em&gt;drum roll&lt;/em&gt;)&amp;hellip; Miami!&lt;/p&gt;
 &lt;img src=&#34;fig/miami_skyline_text.jpg&#34; width=&#34;700px&#34;/&gt;
-&lt;p&gt;I generate a simulated dataset in which we observe a panel of U.S. cities over time. The revenue data is made up, while the socio-economic variables are taken from the &lt;a href=&#34;https://stats.oecd.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OECD database&lt;/a&gt;. I import the data generating process &lt;code&gt;dgp_selfdriving()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I generate a simulated dataset in which we observe a panel of U.S. cities over time. The revenue data is made up, while the socio-economic variables are taken from the &lt;a href=&#34;https://stats.oecd.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OECD database&lt;/a&gt;. I import the data generating process &lt;code&gt;dgp_selfdriving()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -29754,15 +29754,15 @@ ax.add_artist(AnnotationBbox(OffsetImage(plt.imread(&#39;fig/miami.png&#39;), zo
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/synth.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/synth.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/synth.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/synth.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Experiments, Peeking, and Optimal Stopping</title>
-      <link>https://matteocourthoud.github.io/post/optimal_stopping/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/optimal_stopping/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/optimal_stopping/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/optimal_stopping/</guid>
       <description>&lt;p&gt;In the decade preceding the Second World War, there was a massive increase in industrial production of war materials, so there was a need to ensure that products, especially munitions, were reliable. The &lt;strong&gt;testing&lt;/strong&gt; of war materials is not only &lt;strong&gt;expensive&lt;/strong&gt; but also &lt;strong&gt;destructive&lt;/strong&gt; since, for example, bullets need to be fired in order to be tested.&lt;/p&gt;
 &lt;p&gt;Therefore, the U.S. government was presented with the following &lt;strong&gt;dilemma&lt;/strong&gt;: how many bullets should one fire out of a batch before declaring the batch reliable? Clearly, if we were to fire all the bullets, we would know the exact amount of functioning bullets in a crate. However, there would be no bullets left to use.&lt;/p&gt;
 &lt;p&gt;Because of the growing relevance of these statistical problems, in 1939, a group of prominent statisticians and economists joined forces at Columbia University&amp;rsquo;s &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Statistical_Research_Group_of_World_War_II&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Statistical Research Group (SGR)&lt;/strong&gt;&lt;/a&gt;. The group included, among others, &lt;a href=&#34;https://en.wikipedia.org/wiki/W._Allen_Wallis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;W. Allen Wallis&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Jacob_Wolfowitz&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jacob Wolfowitz&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Abraham_Wald&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Abraham Wald&lt;/a&gt;. According to Wallis himself the SGR group was &amp;ldquo;&lt;em&gt;composed of what surely must be the most extraordinary group of statisticians ever organized, taking into account both number and quality&lt;/em&gt;&amp;quot;[&lt;a href=&#34;#References&#34;&gt;2&lt;/a&gt;].&lt;/p&gt;
@@ -29840,7 +29840,7 @@ $$&lt;/p&gt;
 z = \frac{\bar X_n - \mu_0}{\frac{\sigma}{\sqrt{n}}} = \frac{\bar X_n - 0}{\frac{1}{\sqrt{n}}} = \bar X_n * \sqrt{n}
 $$&lt;/p&gt;
 &lt;p&gt;where $\bar X_n$ is the &lt;a href=&#34;https://en.wikipedia.org/wiki/Sample_mean_and_covariance&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sample mean&lt;/a&gt; from a sample $X_1, X_2, &amp;hellip;, X_n$, of size $n$, $\sigma$ is the standard deviation of the population, and $\mu_0$ is the population mean, under the null hypothesis. The term in the denominator, $\frac{\sigma}{\sqrt{n}}$, is the variance of the sample mean. Under the null hypothesis of zero mean, the test statistic is distributed as a standard normal distribution with zero mean and unit variance, $N(0,1)$.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s code the test in Python. I import some code from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;utils&lt;/code&gt;&lt;/a&gt; to make the plots prettier.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s code the test in Python. I import some code from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;utils&lt;/code&gt;&lt;/a&gt; to make the plots prettier.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -29878,7 +29878,7 @@ print(f&amp;quot;Minimum sample size: {n}&amp;quot;)
 &lt;pre&gt;&lt;code&gt;Minimum sample size: 784.8879734349086
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We need at least 785 observations.&lt;/p&gt;
-&lt;p&gt;We can get a better &lt;strong&gt;intuition&lt;/strong&gt; by graphically plotting the two distributions with the critical value. I wrote a function &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/figures.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;plot_test&lt;/code&gt;&lt;/a&gt; to draw a standard hypothesis testing setting.&lt;/p&gt;
+&lt;p&gt;We can get a better &lt;strong&gt;intuition&lt;/strong&gt; by graphically plotting the two distributions with the critical value. I wrote a function &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/figures.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;plot_test&lt;/code&gt;&lt;/a&gt; to draw a standard hypothesis testing setting.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from src.figures import plot_test
 
 plot_test(mu0=0, mu1=0.1, alpha=0.05, n=n)
@@ -30216,15 +30216,15 @@ seminal statistical ideas of the past third of a century&lt;/em&gt;&amp;rdquo; (
 &lt;p&gt;[3] W. A. Wallis, &lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.1080/01621459.1980.10477469&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Statistical Research Group, 1942–1945&lt;/a&gt; (1980), &lt;em&gt;Journal of the American Statistical Association&lt;/em&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/optimal_stopping.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/optimal_stopping.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/optimal_stopping.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/optimal_stopping.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Understanding AIPW</title>
-      <link>https://matteocourthoud.github.io/post/aipw/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/aipw/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/aipw/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/aipw/</guid>
       <description>&lt;p&gt;&lt;em&gt;An introduction to doubly-robust estimation of conditional average treatment effects (CATE)&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;When estimating causal effects, the gold standard is &lt;strong&gt;randomized controlled trials or AB tests&lt;/strong&gt;. By randomly exposing units to a treatment we make sure that individuals in both groups are comparable, on average, and any difference we observe can be attributed to the treatment effect alone.&lt;/p&gt;
 &lt;p&gt;However, often the treatment and control groups are &lt;strong&gt;not perfectly comparable&lt;/strong&gt;. This could be due to the fact that randomization was not perfect or available. Not always we can randomize a treatment, for ethical or practical reasons. And even when we can, sometimes we do not have enough individuals or units so that differences between groups are seizable. This happens often, for example, when randomization is not done at the individual level, but at a higher level of aggregation, for example zipcodes, counties or even states.&lt;/p&gt;
@@ -30258,7 +30258,7 @@ X3 --&amp;gt; Y
 class D,Y included;
 class X1,X2,X3 excluded;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We generate the simulated data using the data generating process &lt;code&gt;dgp_darkmode()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We generate the simulated data using the data generating process &lt;code&gt;dgp_darkmode()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -30679,15 +30679,15 @@ def simulate_estimators(X_e, X_mu, D, y):
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/aipw.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/aipw.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/aipw.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/aipw.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Weighting, Matching, or Regression?</title>
-      <link>https://matteocourthoud.github.io/post/ipw/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/ipw/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/ipw/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/ipw/</guid>
       <description>&lt;p&gt;&lt;em&gt;Understanding and comparing different methods for conditional causal inference analysis&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;AB tests or randomized controlled trials are the &lt;strong&gt;gold standard&lt;/strong&gt; in causal inference. By randomly exposing units to a treatment we make sure that individuals in both groups are comparable, on average, and any difference we observe can be attributed to the treatment effect alone.&lt;/p&gt;
 &lt;p&gt;However, often the treatment and control groups are &lt;strong&gt;not perfectly comparable&lt;/strong&gt;. This could be due to the fact that randomization was not perfect or available. Not always we can randomize a treatment, for ethical or practical reasons. And even when we can, sometimes we do not have enough individuals or units so that differences between groups are seizable. This happens often, for example, when randomization is not done at the individual level, but at a higher level of aggregation, for example zipcodes, counties or even states.&lt;/p&gt;
@@ -30717,7 +30717,7 @@ X3 --&amp;gt; Y
 class D,Y included;
 class X1,X2,X3 excluded;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We generate the simulated data using the data generating process &lt;code&gt;dgp_darkmode()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We generate the simulated data using the data generating process &lt;code&gt;dgp_darkmode()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -31278,15 +31278,15 @@ df_ipwmatched = psm.match(data=df, treatment_col=&amp;quot;dark_mode&amp;quot;, 
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/ipw.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/ipw.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/ipw.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/ipw.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Understanding Meta Learners</title>
-      <link>https://matteocourthoud.github.io/post/meta/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/meta/</link>
       <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/meta/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/meta/</guid>
       <description>&lt;p&gt;&lt;em&gt;How to use machine learning to estimate heterogeneous treatment effects&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In many settings, we are not just interested in understanding a causal effect, but also whether this effect is &lt;strong&gt;different for different users&lt;/strong&gt;. We might be interested in understanding if a drug has side effects that are different for people of different age. Or we might be interested in understanding if an ad campaign is particularly effective in certain geographical areas.&lt;/p&gt;
 &lt;p&gt;This knowledge is crucial because it allows us to &lt;strong&gt;target&lt;/strong&gt; the treatment. If a drug has severe side effects for kids, we might want to restrict its distribution only to adults. Or if an ad campaign is effective only in English-speaking countries it is not worth showing it elsewhere.&lt;/p&gt;
@@ -31295,7 +31295,7 @@ df_ipwmatched = psm.match(data=df, treatment_col=&amp;quot;dark_mode&amp;quot;, 
 &lt;p&gt;Suppose we were a company interested in understanding how much a new &lt;strong&gt;premium feature&lt;/strong&gt; increases revenue. In particular, we know that users of different &lt;strong&gt;age&lt;/strong&gt; have different spending attitudes and we suspect that the impact of the premium feature could also be different depending on the age of the user.&lt;/p&gt;
 &lt;p&gt;This information might be very important, for example for &lt;strong&gt;advertisement targeting&lt;/strong&gt; or &lt;strong&gt;discount design&lt;/strong&gt;. If we discover that the premium feature increases revenue for a particular set of users, we might want to target advertisement towards that group, or offer them personalized discounts.&lt;/p&gt;
 &lt;p&gt;To understand the effect of the premium feature on revenue, the run an &lt;a href=&#34;https://en.wikipedia.org/wiki/A/B_testing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;AB test&lt;/strong&gt;&lt;/a&gt; in which we randomly give access to the premium feature to 10% of the users. The feature is &lt;strong&gt;expensive&lt;/strong&gt; and we cannot afford to give it for free to more users. Hopefully a 10% treatment probability is enough.&lt;/p&gt;
-&lt;p&gt;We generate the simulated data using the data generating process &lt;code&gt;dgp_premium()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We generate the simulated data using the data generating process &lt;code&gt;dgp_premium()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -31642,22 +31642,22 @@ def X_learner(df, model, y, D, X):
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/meta.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/meta.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/meta.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/meta.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Understanding CUPED</title>
-      <link>https://matteocourthoud.github.io/post/cuped/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/cuped/</link>
       <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/cuped/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/cuped/</guid>
       <description>&lt;p&gt;&lt;em&gt;An in depth guide to the state-of-the art variance reduction technique in A/B tests&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;During my PhD, I spent a lot of time learning and applying causal inference methods to experimental and observational data. However, I was completely clueless when I first heard of &lt;strong&gt;CUPED&lt;/strong&gt; (Controlled-Experiment using Pre-Experiment Data), a technique to increase the power of randomized controlled trials in A/B tests.&lt;/p&gt;
 &lt;p&gt;What really amazed me was the popularity of the algorithm in the industry. CUPED was first introduced by Microsoft researchers &lt;a href=&#34;https://dl.acm.org/doi/abs/10.1145/2433396.2433413&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Deng, Xu, Kohavi, Walker (2013)&lt;/a&gt; and has been widely used in companies such as &lt;a href=&#34;https://www.kdd.org/kdd2016/papers/files/adp0945-xieA.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netflix&lt;/a&gt;, &lt;a href=&#34;https://booking.ai/995d186fff1d&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Booking&lt;/a&gt;, &lt;a href=&#34;https://research.facebook.com/blog/2020/10/increasing-the-sensitivity-of-a-b-tests-by-utilizing-the-variance-estimates-of-experimental-units/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Meta&lt;/a&gt;, &lt;a href=&#34;https://arxiv.org/abs/2112.13299&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Airbnb&lt;/a&gt;, &lt;a href=&#34;https://www.tripadvisor.com/engineering/reducing-a-b-test-measurement-variance-by-30/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TripAdvisor&lt;/a&gt;, &lt;a href=&#34;https://doordash.engineering/2020/10/07/improving-experiment-capacity-by-4x/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DoorDash&lt;/a&gt;, &lt;a href=&#34;https://craft.faire.com/how-to-speed-up-your-a-b-test-outlier-capping-and-cuped-8c9df21c76b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Faire&lt;/a&gt;, and many others. While digging deeper into it, I noticed a similarity with some causal inference methods I was familiar with, such as &lt;a href=&#34;https://diff.healthpolicydatascience.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Difference-in-Differences&lt;/a&gt;. I was curious and decided to dig deeper.&lt;/p&gt;
 &lt;p&gt;In this post, I will present CUPED and try to compare it against other causal inference methods.&lt;/p&gt;
 &lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s assume we are a firm that is testing an &lt;strong&gt;ad campaign&lt;/strong&gt; and we are interested in understanding whether it increases revenue or not. We randomly split a set of users into a treatment and control group and we show the ad campaign to the treatment group. Differently from the standard A/B test setting, assume we observe users also before the test.&lt;/p&gt;
-&lt;p&gt;We can now generate the simulated data, using the data generating process &lt;code&gt;dgp_cuped()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We can now generate the simulated data, using the data generating process &lt;code&gt;dgp_cuped()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt;. I also import some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -32247,15 +32247,15 @@ plt.title(&#39;Simulated Distributions&#39;);
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/cuped.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/cuped.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Comparing ATE Estimators</title>
-      <link>https://matteocourthoud.github.io/post/compare/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/compare/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/compare/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/compare/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -32605,9 +32605,9 @@ plt.title(&#39;Simulated Distributions&#39;);
     
     <item>
       <title>How to Compare Two or More Distributions</title>
-      <link>https://matteocourthoud.github.io/post/distr/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/distr/</link>
       <pubDate>Wed, 22 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/distr/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/distr/</guid>
       <description>&lt;p&gt;&lt;em&gt;A complete guide to comparing distributions, from visualization to statistical tests&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Comparing the empirical distribution of a variable across different groups is a common problem in data science. In particular, in causal inference the problem often arises when we have to &lt;strong&gt;assess the quality of randomization&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;When we want to assess the causal effect of a policy (or UX feature, ad campaign, drug, &amp;hellip;), the golden standard in causal inference are &lt;a href=&#34;https://en.wikipedia.org/wiki/Randomized_controlled_trial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;randomized control trials&lt;/strong&gt;&lt;/a&gt;, also known as &lt;a href=&#34;https://de.wikipedia.org/wiki/A/B-Test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;A/B tests&lt;/strong&gt;&lt;/a&gt;. In practice, we select a sample for the study and we randomly split it into a &lt;strong&gt;control&lt;/strong&gt; and a &lt;strong&gt;treatment&lt;/strong&gt; group, and we compare the outcomes between the two groups. Randomization ensures that only difference between the two groups is the treatment, on average, so that we can attribute outcome differences to the treatment effect.&lt;/p&gt;
@@ -32615,7 +32615,7 @@ plt.title(&#39;Simulated Distributions&#39;);
 &lt;p&gt;In this blog post, we are going to see different ways to compare two (or more) distributions and assess the magnitude and significance of their difference. We are going to consider two different approaches, &lt;strong&gt;visual&lt;/strong&gt; and &lt;strong&gt;statistical&lt;/strong&gt;. The two approaches generally trade-off &lt;strong&gt;intuition&lt;/strong&gt; with &lt;strong&gt;rigor&lt;/strong&gt;: from plots we can quickly assess and explore differences, but it&amp;rsquo;s hard to tell whether these differences are systematic or due to noise.&lt;/p&gt;
 &lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s assume we need to perform an &lt;strong&gt;experiment&lt;/strong&gt; on a group of individuals and we have randomized them into a &lt;strong&gt;treatment and control&lt;/strong&gt; group. We would like them to be &lt;strong&gt;as comparable as possible&lt;/strong&gt;, in order to attribute any difference between the two groups to the treatment effect alone. We also have divided the treatment group in different &lt;em&gt;arms&lt;/em&gt; for testing different treatments (e.g. slight variations of the same drug).&lt;/p&gt;
-&lt;p&gt;For this example, I have simulated a dataset of 1000 individuals, for whom we observe a set of characteristics. I import the data generating process &lt;code&gt;dgp_rnd_assignment()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For this example, I have simulated a dataset of 1000 individuals, for whom we observe a set of characteristics. I import the data generating process &lt;code&gt;dgp_rnd_assignment()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -32928,7 +32928,7 @@ plt.title(&#39;Permutation Test&#39;);
 &lt;p&gt;&lt;img src=&#34;img/distr_55_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As we can see, the sample statistic is quite extreme with respect to the values in the permuted samples, but not excessively.&lt;/p&gt;
 &lt;h3 id=&#34;chi-squared-test&#34;&gt;Chi-Squared Test&lt;/h3&gt;
-&lt;p&gt;The &lt;a href=&#34;https://matteocourthoud.github.io/post/chisquared/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chi-squared test&lt;/a&gt; is a very powerful test that is mostly used to test differences in frequencies.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/chisquared/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chi-squared test&lt;/a&gt; is a very powerful test that is mostly used to test differences in frequencies.&lt;/p&gt;
 &lt;p&gt;One of the &lt;strong&gt;least known applications&lt;/strong&gt; of the chi-squared test, is testing the similarity between two distributions. The &lt;strong&gt;idea&lt;/strong&gt; is to bin the observations of the two groups. If the two distributions were the same, we would expect the same frequency of observations in each bin. Importantly, we need enough observations in each bin, in order for the test to be valid.&lt;/p&gt;
 &lt;p&gt;I generate bins corresponding to deciles of the distribution of &lt;code&gt;income&lt;/code&gt; in the &lt;em&gt;control&lt;/em&gt; group and then I compute the expected number of observations in each bin in the &lt;em&gt;treatment&lt;/em&gt; group, if the two distributions were the same.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Init dataframe
@@ -33225,15 +33225,15 @@ print(f&amp;quot;F Test: statistic={stat:.4f}, p-value={p_value:.4f}&amp;quot;)
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/distr.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/distr.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/distr.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/distr.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Understanding Contamination Bias</title>
-      <link>https://matteocourthoud.github.io/post/cbias/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/cbias/</link>
       <pubDate>Wed, 15 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/cbias/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/cbias/</guid>
       <description>&lt;p&gt;&lt;em&gt;Problems and solutions of linear regression with multiple treatments&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In many causal inference settings, we might be interested in the effect of not just one treatment, but &lt;strong&gt;many mutually exclusive treatments&lt;/strong&gt;. For example, we might want to test alternative UX designs, or drugs, or policies. Depending on the context, there might be many reasons why we want to test different treatments at the same time, but generally it can help &lt;em&gt;reducing the sample size&lt;/em&gt;, as we need just a single control group. A simple way to recover the different treatment effects is a linear regression of the outcome of interest on the different treatment indicators.&lt;/p&gt;
 &lt;p&gt;However, in causal inference, we often &lt;strong&gt;condition the analysis&lt;/strong&gt; on other observable variables (often called control variables), either to increase power or, especially in quasi-experimental settings, to identify a causal parameter instead of a simple correlation. There are &lt;a href=&#34;https://towardsdatascience.com/b63dc69e3d8c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;cases in which adding control variables can backfire&lt;/a&gt;, but otherwise, we usually think that the regression framework is still able to recover the average treatment effect.&lt;/p&gt;
@@ -33243,7 +33243,7 @@ print(f&amp;quot;F Test: statistic={stat:.4f}, p-value={p_value:.4f}&amp;quot;)
 &lt;p&gt;Suppose we are an online store and we are not satisfied with our current &lt;em&gt;checkout page&lt;/em&gt;. In particular, we would like to change our &lt;strong&gt;checkout button&lt;/strong&gt; to increase the probability of a purchase. Our UX designer comes up with two alternative checkout buttons, which are displayed below.&lt;/p&gt;
 &lt;img src=&#34;fig/buttons.png&#34; width=&#34;800px&#34;/&gt;
 &lt;p&gt;In order to understand which button to use, we run an &lt;a href=&#34;https://en.wikipedia.org/wiki/A/B_testing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;A/B test&lt;/strong&gt;&lt;/a&gt;, or randomized control trial. In particular, when people arrive at the checkout page, we show them one of the three options, at random. Then, for each user, we record the revenue generated which is our outcome of interest.&lt;/p&gt;
-&lt;p&gt;I generate a synthetic dataset using &lt;code&gt;dgp_buttons()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; as data generating process. I also import plotting functions and standard libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I generate a synthetic dataset using &lt;code&gt;dgp_buttons()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; as data generating process. I also import plotting functions and standard libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -33535,15 +33535,15 @@ new_results = simulate(dgp, new_estimator)
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/cbias.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/cbias.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/cbias.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/cbias.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Understanding Combinations and Permutations</title>
-      <link>https://matteocourthoud.github.io/post/combperm/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/combperm/</link>
       <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/combperm/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/combperm/</guid>
       <description>&lt;p&gt;How many times did you face questions starting with &amp;ldquo;&lt;em&gt;Suppose you have an urn with three red balls and five blue balls, &amp;hellip;&lt;/em&gt;&amp;rdquo;? The answer for me is, not often since high-school, but recently they popped up again in &lt;strong&gt;data science interviews&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Despite countless classes in statistics, I still take a deep breath and hope I won&amp;rsquo;t embarrass myself too much. My main problem is that I get crazy confused with binary labels, especially if the label itself is not too intuitive.&lt;/p&gt;
 &lt;p&gt;Some non-intuitive (for me) binary labels include:&lt;/p&gt;
@@ -33817,15 +33817,15 @@ the class, consists only of girls?&lt;/p&gt;
 &lt;p&gt;Permutation and combination questions are a classic in data science questions (unfortunately).&lt;/p&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/combperm.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/combperm.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/combperm.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/combperm.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Double Debiased Machine Learning (part 2)</title>
-      <link>https://matteocourthoud.github.io/post/pds/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/pds/</link>
       <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/pds/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/pds/</guid>
       <description>&lt;p&gt;In the &lt;a href=&#34;https://towardsdatascience.com/eb767a59975b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;previous part of this blog post&lt;/a&gt;, we have seen how pre-testing can distort inference, i.e., how selecting control variables depending on their statistical significance results in wrong confidence intervals for the variable of interest. This bias is generally called &lt;strong&gt;regularization bias&lt;/strong&gt; and also emerges in machine learning algorithms.&lt;/p&gt;
 &lt;p&gt;In blog post, we are going to explore a solution to the simple selection example, &lt;strong&gt;post-double selection&lt;/strong&gt;, and a more general approach when we have many control variables and we do not want to assume linearity, &lt;strong&gt;double-debiased machine learning&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;recap&#34;&gt;Recap&lt;/h2&gt;
@@ -33849,7 +33849,7 @@ class Z excluded;
 
 linkStyle 0 stroke:#00ff00,stroke-width:4px;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I import the data generating process &lt;code&gt;dgp_tbd()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I import the data generating process &lt;code&gt;dgp_tbd()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -34169,15 +34169,15 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/pds.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/pds.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/pds.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/pds.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Double Debiased Machine Learning (part 1)</title>
-      <link>https://matteocourthoud.github.io/post/pretest/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/pretest/</link>
       <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/pretest/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/pretest/</guid>
       <description>&lt;p&gt;&lt;em&gt;Causal inference, machine learning and regularization bias&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In causal inference, we often estimate causal effects by conditioning the analysis on other variables. We usually refer to these variables as &lt;strong&gt;control variables&lt;/strong&gt; or &lt;strong&gt;confounders&lt;/strong&gt;. In randomized control trials or AB tests, conditioning can increase the power of the analysis, by reducing imbalances that have emerged despite randomization. However, conditioning is even more important in observational studies, where, absent randomization, it might be &lt;a href=&#34;https://towardsdatascience.com/b63dc69e3d8c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;essential to recover causal effects&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;When we have many control variables, we might want to &lt;strong&gt;select the most relevant ones&lt;/strong&gt;, ppossibly capturing nonlinearities and interactions. Machine learning algorithms are perfect for this task. However, in these cases, we are introducing a bias that is called &lt;strong&gt;regularization or pre-test, or feature selection bias&lt;/strong&gt;. In this and the next blog post, I try to explain the source of the bias and a very poweful solution called &lt;strong&gt;double debiased machine learning&lt;/strong&gt;, which has been probably one of the most relevant advancement at the intersection of machine learning and causal inference of the last decade.&lt;/p&gt;
@@ -34203,7 +34203,7 @@ class Z excluded;
 
 linkStyle 0 stroke:#00ff00,stroke-width:4px;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I import the data generating process &lt;code&gt;dgp_tbd()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I import the data generating process &lt;code&gt;dgp_tbd()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -34429,15 +34429,15 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/pretest.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/pretest.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/pretest.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/pretest.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Understanding The Chi-Squared Test</title>
-      <link>https://matteocourthoud.github.io/post/chisquared/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/chisquared/</link>
       <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/chisquared/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/chisquared/</guid>
       <description>&lt;p&gt;If you search the Wikipedia definition of Chi-Squared test, you get the following definition:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Pearson&amp;rsquo;s chi-squared test $\chi^2$ is a statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance.&lt;/p&gt;
@@ -34938,22 +34938,22 @@ chi2_stat
 &lt;p&gt;The key statistic is Pearson&amp;rsquo;s chi-square statistic and the key distribution is the chi-squared distribution. We have seen how to compute the statistic, why it has a chi-squared distribution, and how to use this information to perform a statistical hypothesis test.&lt;/p&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/chisquared.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/chisquared.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/chisquared.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/notebooks/chisquared.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Comparing Distributions, From Zero to Hero</title>
-      <link>https://matteocourthoud.github.io/post/distr_compare/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/distr_compare/</link>
       <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/distr_compare/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/distr_compare/</guid>
       <description>&lt;p&gt;The problem of comparing distributions often arises in causal inference when we have to &lt;strong&gt;assess the quality of randomization&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;When we want to assess the causal effect of a policy (or, feature, campaign, drug, &amp;hellip;), the golden standard in causal inference are &lt;a href=&#34;https://en.wikipedia.org/wiki/Randomized_controlled_trial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;randomized control trials&lt;/strong&gt;&lt;/a&gt;, also known in the industry as &lt;a href=&#34;https://de.wikipedia.org/wiki/A/B-Test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;A/B tests&lt;/strong&gt;&lt;/a&gt;. In practice, we select a sample for the study and we randomly split it into a &lt;strong&gt;control&lt;/strong&gt; and a &lt;strong&gt;treatment&lt;/strong&gt; group, to compare the outcomes between the two groups. The idea is that, under a set of assumption, randomization assures that only difference between the two groups is the treatment, on average. Therefore, we can attribute the differences in outcomes to the treatment effect alone.&lt;/p&gt;
 &lt;p&gt;The problem is that, despite randomization, the two groups are never identical. However, sometimes, they are not even &amp;ldquo;similar&amp;rdquo;. For example, we might have more females in one group, or older people, etc.. (we usually call these characteristics, &lt;em&gt;covariates&lt;/em&gt; or &lt;em&gt;control variables&lt;/em&gt;). When it happens, we cannot be certain anymore that the differences in the outcome is only due to the treatment and cannot be attributed to the &lt;strong&gt;inbalanced covariates&lt;/strong&gt; instead. Therefore, it is always important, after randomization, to check whether all observed variables are balance across groups and whether there are no systematic differences. Another option, to be certain that certain covariates are balanced, is &lt;a href=&#34;https://en.wikipedia.org/wiki/Stratified_sampling&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;stratified sampling&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In this blog post, we are going to see different ways to compare two (or more) distributions and assess the magnitude and significance of their difference. We are going to consider two different approaches, &lt;strong&gt;graphical&lt;/strong&gt; and &lt;strong&gt;numerical&lt;/strong&gt;. The two approaches generally trade-off &lt;strong&gt;intuition&lt;/strong&gt; with &lt;strong&gt;rigour&lt;/strong&gt;: from plots we can assess subtle differences but it&amp;rsquo;s hard to assess whether these differences are systematic or due to noise.&lt;/p&gt;
 &lt;h2 id=&#34;the-data&#34;&gt;The Data&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s assume we need to perform an experiment on a group of individuals and we have randomized them into a treatment and control group. We would like them to be &lt;strong&gt;as comparable as possible&lt;/strong&gt;, in order to attribute any difference between the two groups to the treatment effect alone. We also have divided the treatment group in different &lt;em&gt;arms&lt;/em&gt; for testing different treatments.&lt;/p&gt;
-&lt;p&gt;For this example, I have simulated a dataset of 1000 individuals, for whom we observe a set of characteristics. I import the data generating process &lt;code&gt;dgp_rnd_assignment()&lt;/code&gt; from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For this example, I have simulated a dataset of 1000 individuals, for whom we observe a set of characteristics. I import the data generating process &lt;code&gt;dgp_rnd_assignment()&lt;/code&gt; from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -35190,7 +35190,7 @@ create_table_one(df, &#39;treatment&#39;, [&#39;gender&#39;, &#39;age&#39;, &#39
 &lt;p&gt;In the first two columns, we can see the average of the different variables across the treatment and control groups, with standard errors in parenthesis. In the &lt;strong&gt;last column&lt;/strong&gt;, we have the p-values of the t-test for the null hypothesis of zero difference in means.&lt;/p&gt;
 &lt;p&gt;From the table, we observe that we cannot reject the null hypothesis of zero difference in mean for any variable, at the 95% confidence level.&lt;/p&gt;
 &lt;h3 id=&#34;chi-squared-test&#34;&gt;Chi-Squared Test&lt;/h3&gt;
-&lt;p&gt;The &lt;a href=&#34;https://matteocourthoud.github.io/post/chisquared/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chi-squared test&lt;/a&gt; is a very powerful test that can be used in many different settings. If you want to find out more about it, I have written a very comprehensive &lt;a href=&#34;https://matteocourthoud.github.io/post/chisquared/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blog post here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/chisquared/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chi-squared test&lt;/a&gt; is a very powerful test that can be used in many different settings. If you want to find out more about it, I have written a very comprehensive &lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/chisquared/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blog post here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;One of the &lt;strong&gt;least known applications&lt;/strong&gt; of the chi-squared test, is testing the similarity between two distributions. The &lt;strong&gt;idea&lt;/strong&gt; is to bin the observations of the two groups. If the two distributions were the same, we would expect the same frequency of observations in each bin. Importantly, we need enough observations in each bin, in order for the test to be valid. I generate bins corresponding to deciles of the distribution of &lt;code&gt;income&lt;/code&gt; in the control group.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_bins = pd.DataFrame()
 _, bins = pd.qcut(income_c, q=10, retbins=True)
@@ -35423,9 +35423,9 @@ plt.title(&#39;Permutation Test&#39;);
     
     <item>
       <title>Omitted Variable Bias And What Can We Do About It</title>
-      <link>https://matteocourthoud.github.io/post/ovb/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/ovb/</link>
       <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/ovb/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/ovb/</guid>
       <description>&lt;p&gt;In causal inference, &lt;strong&gt;bias&lt;/strong&gt; is extremely problematic because it makes inference not valid. Bias generally means that an estimator will not deliver the estimate of the true effect, on average.&lt;/p&gt;
 &lt;p&gt;This is why, in general, we prefer estimators that are &lt;strong&gt;unbiased&lt;/strong&gt;, at the cost of a higher variance, i.e. more noise. Does it mean that every biased estimator is useless? Actually no. Sometimes, with domain knowledge, we can still draw causal conclusions even with a biased estimator.&lt;/p&gt;
 &lt;p&gt;In this post, we are going to review a specific but frequent source of bias, &lt;strong&gt;omitted variable bias (OVB)&lt;/strong&gt;. We are going to explore the causes of the bias and leverage these insights to make causal statements, despite the bias.&lt;/p&gt;
@@ -35519,7 +35519,7 @@ class D,Y included;
 class X1,X2 excluded;
 class Z unobserved;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let&amp;rsquo;s load and inspect the &lt;strong&gt;data&lt;/strong&gt;. I import the data generating process from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s load and inspect the &lt;strong&gt;data&lt;/strong&gt;. I import the data generating process from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/dgp.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.dgp&lt;/code&gt;&lt;/a&gt; and some plotting functions and libraries from &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/utils.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;src.utils&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%matplotlib inline
 %config InlineBackend.figure_format = &#39;retina&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -35724,15 +35724,15 @@ plt.ylabel(&amp;quot;Partial $R^2$ of ability with wage&amp;quot;);
 &lt;/ul&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;You can find the original Jupyter Notebook here:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/ovb.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/Blog-Posts/blob/main/ovb.ipynb&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/ovb.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/ovb.ipynb&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Goodbye Scatterplot, Welcome Binned Scatterplot</title>
-      <link>https://matteocourthoud.github.io/post/binscatter/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/binscatter/</link>
       <pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/binscatter/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/binscatter/</guid>
       <description>&lt;p&gt;When we want to visualize the relationship between two continuous variables, the go-to plot is the &lt;strong&gt;scatterplot&lt;/strong&gt;. It&amp;rsquo;s a very intuitive visualization tool that allows us to directly look at the data. However, when we have a lot of data and/or when the data is skewed, scatterplots can be too noisy to be informative.&lt;/p&gt;
 &lt;p&gt;In this blog post, I am going to review a very powerful alternative to the scatterplot to visualize correlations between two variables: the &lt;strong&gt;binned scatterplot&lt;/strong&gt;. Binned scatterplots are not only a great visualization tool, but they can also be used to do inference on the conditional distribution of the dependent variable.&lt;/p&gt;
 &lt;h2 id=&#34;the-scatterplot&#34;&gt;The Scatterplot&lt;/h2&gt;
@@ -36081,9 +36081,9 @@ plt.title(&amp;quot;Sales by firm&#39;s age&amp;quot;);
     
     <item>
       <title>The FWL Theorem, Or How To Make All Regressions Intuitive</title>
-      <link>https://matteocourthoud.github.io/post/fwl/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/fwl/</link>
       <pubDate>Mon, 16 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/fwl/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/fwl/</guid>
       <description>&lt;p&gt;&lt;em&gt;An introduction to the Frisch-Waugh-Lowell theorem and how to use it to gain intuition in linear regressions&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The Frisch-Waugh-Lowell theorem is a &lt;strong&gt;simple&lt;/strong&gt; but yet &lt;strong&gt;powerful&lt;/strong&gt; theorem that allows us to reduce multivariate regressions to &lt;strong&gt;univariate&lt;/strong&gt; ones. This is extremely useful when we are interested in the relationship between two variables, but we still need to control for other factors, as it is often the case in &lt;strong&gt;causal inference&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;In this blog post, I am going to introduce the Frisch-Waugh-Lowell theorem and illustrate some interesting applications.&lt;/p&gt;
@@ -36337,7 +36337,7 @@ plt.title(f&amp;quot;Coupons usage, income and residuals&amp;quot;);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;img/fwl_24_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;residuals&lt;/strong&gt; are the vertical dotted lines between the data and the linear fit, i.e. the part of the variation in &lt;code&gt;coupons&lt;/code&gt; unexplained by &lt;code&gt;income&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;By &lt;strong&gt;partialling-out&lt;/strong&gt;, we are removing the linear fit from the data and keeping only the residuals. We can visualize this procedure with a gif. I import the code from the &lt;code&gt;src.figures&lt;/code&gt; file that you can find &lt;a href=&#34;https://github.com/matteocourthoud/Blog-Posts/blob/main/src/figures.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;By &lt;strong&gt;partialling-out&lt;/strong&gt;, we are removing the linear fit from the data and keeping only the residuals. We can visualize this procedure with a gif. I import the code from the &lt;code&gt;src.figures&lt;/code&gt; file that you can find &lt;a href=&#34;https://github.com/ignaciolopezmiguel/Blog-Posts/blob/main/src/figures.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from src.figures import gif_projection
 
 gif_projection(x=&#39;income&#39;, y=&#39;coupons&#39;, df=df, gifname=&amp;quot;gifs/fwl.gif&amp;quot;)
@@ -36451,9 +36451,9 @@ plt.title(f&amp;quot;Residual sales scaled and residual coupons scaled&amp;quot;
     
     <item>
       <title>DAGs and Control Variables</title>
-      <link>https://matteocourthoud.github.io/post/controls/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/controls/</link>
       <pubDate>Mon, 25 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/controls/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/controls/</guid>
       <description>&lt;p&gt;When analyzing causal relationships, it is very hard to understand which variables to &lt;strong&gt;condition the analysis on&lt;/strong&gt;, i.e. how to &amp;ldquo;split&amp;rdquo; the data so that we are &lt;strong&gt;comparing apples to apples&lt;/strong&gt;. For example, if you want to understand the effect of having a tablet in class on studenta&#39; performance, it makes sense to compare schools where students have similar socio-economic backgrounds. Otherwise, the risk is that only wealthier students can afford a tablet and, without controlling for it, we might attribute the effect to tablets instead of the socio-economic background.&lt;/p&gt;
 &lt;p&gt;When the treatment of interest comes from a proper &lt;strong&gt;randomized experiment&lt;/strong&gt;, we do not need to worry about conditioning on other variables. If tablets are distributed randomly across schools, and we have enough schools in the experiment, we do not have to worry about the socio-economic background of students. The only advantage of conditioning the analysis on some so-called &amp;ldquo;control variable&amp;rdquo; could be an increase in power. However, this is a different story.&lt;/p&gt;
 &lt;p&gt;In this post, we are going to have a brief introduction to Directed Acyclic Graphs and how they can be useful to select variables to condition a causal analysis on. Not only DAGs provide visual intuition on which variables we need to &lt;em&gt;include&lt;/em&gt; in the analysis, but also on which variables we should &lt;em&gt;not include&lt;/em&gt;, and why.&lt;/p&gt;
@@ -36919,19 +36919,19 @@ class U unobserved;
     
     <item>
       <title>How To Make A Personal Website with Hugo</title>
-      <link>https://matteocourthoud.github.io/post/website/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/website/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/website/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/website/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;During the second year of my PhD, I decided that I wanted to have a personal website. After (too many) hours of research, I decided to build it using &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo&lt;/a&gt;, and I picked the &lt;a href=&#34;https://wowchemy.com/docs/getting-started/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Wowchemy&lt;/strong&gt;&lt;/a&gt; theme, also known as &lt;a href=&#34;https://themes.gohugo.io/academic/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic&lt;/a&gt;. In this tutorial, I am going to share my guide to building a website on &lt;a href=&#34;https://pages.github.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github Pages&lt;/a&gt; so that you don’t have to go through all the pain I went through 😁.&lt;/p&gt;
-&lt;p&gt;Before we start, I have to warn you. If you don’t care about &lt;strong&gt;personalization&lt;/strong&gt; or if you have very &lt;strong&gt;little time&lt;/strong&gt; to spend on building a website, I strongly recommend &lt;a href=&#34;https://sites.google.com/new&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Sites&lt;/a&gt;, which is, in my opinion, the fastest and easiest way to build an academic website. However, if you enjoy customizing your website, or if you like &lt;a href=&#34;https://github.com/matteocourthoud/custom-wowchemy-theme&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;my template&lt;/a&gt;, then this guide might be useful.&lt;/p&gt;
+&lt;p&gt;Before we start, I have to warn you. If you don’t care about &lt;strong&gt;personalization&lt;/strong&gt; or if you have very &lt;strong&gt;little time&lt;/strong&gt; to spend on building a website, I strongly recommend &lt;a href=&#34;https://sites.google.com/new&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Sites&lt;/a&gt;, which is, in my opinion, the fastest and easiest way to build an academic website. However, if you enjoy customizing your website, or if you like &lt;a href=&#34;https://github.com/ignaciolopezmiguel/custom-wowchemy-theme&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;my template&lt;/a&gt;, then this guide might be useful.&lt;/p&gt;
 &lt;p&gt;Also, note that Hugo offers &lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;many other website templates&lt;/a&gt;. I suggest checking them out. Some interesting &lt;strong&gt;alternatives&lt;/strong&gt; are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://themes.gohugo.io/themes/hugo-resume/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Resume&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://themes.gohugo.io/themes/somrat/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Somrat&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://themes.gohugo.io/themes/hugo-uilite/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UILite (paid)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;However, in this guide, I will concentrate on the Hugo Academic theme, since it’s the one I used for &lt;a href=&#34;https://matteocourthoud.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;my website&lt;/a&gt; and I believe it’s the best one for building academic profile pages. But the first part of this guide is general and it works for any Hugo theme.&lt;/p&gt;
+&lt;p&gt;However, in this guide, I will concentrate on the Hugo Academic theme, since it’s the one I used for &lt;a href=&#34;https://ignaciolopezmiguel.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;my website&lt;/a&gt; and I believe it’s the best one for building academic profile pages. But the first part of this guide is general and it works for any Hugo theme.&lt;/p&gt;
 &lt;h2 id=&#34;create-website&#34;&gt;Create Website&lt;/h2&gt;
 &lt;h3 id=&#34;0-prerequisites&#34;&gt;0. Prerequisites&lt;/h3&gt;
 &lt;p&gt;Before we start, I will take for granted the following:&lt;/p&gt;
@@ -36945,7 +36945,7 @@ class U unobserved;
 &lt;img src=&#34;img/new_repo.png&#34; alt=&#34;new_repo&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;Name the repository &lt;code&gt;username.github.io&lt;/code&gt; where &lt;code&gt;username&lt;/code&gt; is your Github username.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;img/name_repo.png&#34; alt=&#34;name_repo&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In my case, my github username is &lt;code&gt;matteocourthoud&lt;/code&gt;, therefore the repository is &lt;code&gt;matteocourthoud.github.io&lt;/code&gt; and my personal website is &lt;a href=&#34;https://matteocourthoud.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://matteocourthoud.github.io&lt;/a&gt;. Use the default settings when creating the repository.&lt;/p&gt;
+&lt;p&gt;In my case, my github username is &lt;code&gt;ignaciolopezmiguel&lt;/code&gt;, therefore the repository is &lt;code&gt;ignaciolopezmiguel.github.io&lt;/code&gt; and my personal website is &lt;a href=&#34;https://ignaciolopezmiguel.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://ignaciolopezmiguel.github.io&lt;/a&gt;. Use the default settings when creating the repository.&lt;/p&gt;
 &lt;h3 id=&#34;2-install-blogdown-and-hugo&#34;&gt;2. Install Blogdown and Hugo&lt;/h3&gt;
 &lt;p&gt;Now you need to install Blogdown, which is the program what will allow you to build and deploy your website, and Hugo, which is the template generator.&lt;/p&gt;
 &lt;p&gt;Switch to RStudio and type the following commands&lt;/p&gt;
@@ -37097,7 +37097,7 @@ mono_font = &amp;quot;Roboto Mono&amp;quot;
 &lt;li&gt;In &lt;code&gt;layouts\partials&lt;/code&gt; to edit the HTML files&lt;/li&gt;
 &lt;li&gt;In &lt;code&gt;assets\scss&lt;/code&gt; to edit the SCSS code&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;If you want to copy my exact theme, I have published my custom theme here: &lt;a href=&#34;https://github.com/matteocourthoud/custom-wowchemy-settings&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/matteocourthoud/custom-wowchemy-settings&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you want to copy my exact theme, I have published my custom theme here: &lt;a href=&#34;https://github.com/ignaciolopezmiguel/custom-wowchemy-settings&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/ignaciolopezmiguel/custom-wowchemy-settings&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You have to do the following:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;go inside the &lt;code&gt;theme&lt;/code&gt; folder&lt;/li&gt;
@@ -37192,9 +37192,9 @@ mono_font = &amp;quot;Roboto Mono&amp;quot;
     
     <item>
       <title>Causal Trees</title>
-      <link>https://matteocourthoud.github.io/post/causal_trees/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/causal_trees/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/causal_trees/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/causal_trees/</guid>
       <description>&lt;p&gt;In this tutorial, we are going to see how to estimate heterogeneous treatment effects using regression trees.&lt;/p&gt;
 &lt;p&gt;For this tutorial, I assume you are familiar with the following concepts:&lt;/p&gt;
 &lt;ul&gt;
@@ -37836,9 +37836,9 @@ intrp.plot(feature_names=X, fontsize=10)
     
     <item>
       <title>Difference in Differences</title>
-      <link>https://matteocourthoud.github.io/post/diff_in_diffs/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/diff_in_diffs/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/diff_in_diffs/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/diff_in_diffs/</guid>
       <description>&lt;p&gt;In this tutorial, we are going to see how to estimate the causal effect of a treatment on an outcome when treatment assignment is not random, but we observe both treated and untreated units before and after treatment. Under certain structural assumptions, especially parallel outcome trends in the absence of treatment, we can recover the average treatment effect.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Requisites&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For this tutorial, I assume you are familiar with the following concepts:&lt;/p&gt;
@@ -38265,9 +38265,9 @@ plt.title(&#39;Revenue over time&#39;);
     
     <item>
       <title>Instrumental Variables</title>
-      <link>https://matteocourthoud.github.io/post/iv/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/iv/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/iv/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/iv/</guid>
       <description>&lt;p&gt;In this tutorial, we are going to see how to estimate causal effects when the treatment is not randomly assigned, but we have access to a third variable that is as good as randomly assigned and is correlated (only) with the treatment. These variables are called instrumental variables and are a powerful tool for causal inference, especially in observational studies.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Requisites&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For this tutorial, I assume you are familiar with the following concepts:&lt;/p&gt;
@@ -38964,9 +38964,9 @@ df.head()
     
     <item>
       <title>Permutation Tests for Dummies</title>
-      <link>https://matteocourthoud.github.io/post/permutation_test/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/permutation_test/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/permutation_test/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/permutation_test/</guid>
       <description>&lt;p&gt;If you search &amp;ldquo;permutation test&amp;rdquo; on Wikipedia, you get the following definition:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A permutation test (also called re-randomization test) is an exact statistical hypothesis test making use of the proof by contradiction in which the distribution of the test statistic under the null hypothesis is obtained by calculating all possible values of the test statistic under possible rearrangements of the observed data.&lt;/p&gt;
@@ -39315,17 +39315,17 @@ Elapsed time with replacement: 0.00125885009765625
     
     <item>
       <title>Policy Learning</title>
-      <link>https://matteocourthoud.github.io/post/policy_learning/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/policy_learning/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/policy_learning/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/policy_learning/</guid>
       <description>&lt;p&gt;In this tutorial, we are going to see how to design the most welfare-improving policy in presence of treatment effect heterogeneity and treatment costs or budget constraints.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Requisites&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For this tutorial, I assume you are familiar with the following concepts:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Rubin&amp;rsquo;s potential outcome framework&lt;/li&gt;
 &lt;li&gt;Propensity weighting or uplifting&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://matteocourthoud.github.io/post/aipw/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AIPW or Double Robust Estimators&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://matteocourthoud.github.io/post/causal_trees/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Causal Trees&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/aipw/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AIPW or Double Robust Estimators&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/causal_trees/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Causal Trees&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Academic Replication&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;We are going to replicate the paper by &lt;a href=&#34;https://www.aeaweb.org/articles?id=10.1257/jep.32.4.201&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hanna and Olken (2018)&lt;/a&gt; in which the authors study the optimal allocation of a cash transfer to households in Peru. We slightly twist the original paper by actually assigning the transfer and assuming 100% consumption.&lt;/p&gt;
@@ -39792,9 +39792,9 @@ policy.plot(feature_names=X_short)
     
     <item>
       <title>Propensity Score Matching</title>
-      <link>https://matteocourthoud.github.io/post/propensity_score/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/propensity_score/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/propensity_score/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/propensity_score/</guid>
       <description>&lt;p&gt;In this tutorial, we are going to see how to estimate causal effects when the treatment is not &lt;em&gt;unconditionally&lt;/em&gt; randomly assigned, but we need to condition on observable features in order to assume treatment exogeneity. This might happen either when an experiment is stratified or in observational studies.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Requisites&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For this tutorial, I assume you are familiar with the following concepts:&lt;/p&gt;
@@ -40337,9 +40337,9 @@ df_nsw[&#39;pscore&#39;] = pi.predict_proba(df_nsw[X])[:,1]
     
     <item>
       <title>Regression Discontinuity</title>
-      <link>https://matteocourthoud.github.io/post/regression_discontinuity/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/regression_discontinuity/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/regression_discontinuity/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/regression_discontinuity/</guid>
       <description>&lt;p&gt;In this tutorial, we are going to see how to estimate causal effects when treatment assignment is not random, but determined by a &lt;em&gt;forcing variable&lt;/em&gt; such as a test or a requirement. In this case, we can get a local estimate of the treatment effect by comparing units just above and just below the threshold by assuming that there is no sorting/gaming around it.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Requisites&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;For this tutorial, I assume you are familiar with the following concepts:&lt;/p&gt;
@@ -40347,7 +40347,7 @@ df_nsw[&#39;pscore&#39;] = pi.predict_proba(df_nsw[X])[:,1]
 &lt;li&gt;Rubin&amp;rsquo;s potential outcome framework&lt;/li&gt;
 &lt;li&gt;Ordinary least squares regression&lt;/li&gt;
 &lt;li&gt;Non-parametric regression&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://matteocourthoud.github.io/post/iv/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Instrumental variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/iv/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Instrumental variables&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Academic Application&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;As an academic application, we are going to replicate &lt;a href=&#34;https://academic.oup.com/qje/article/119/3/807/1938834&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Do voters affect or elect policies? Evidence from the US House&lt;/a&gt; (2004) by Lee, Moretti, Butler. The authors study whether electoral strength has an effect on policies. To identify the effect, they the advantage that is given by incumbency status, and the quasi-exogeneity given by close elections.&lt;/p&gt;
@@ -40605,9 +40605,9 @@ plt.axvline(x=0.5, ls=&amp;quot;:&amp;quot;, color=&#39;C2&#39;);
     
     <item>
       <title>Free Courses in Economics</title>
-      <link>https://matteocourthoud.github.io/post/courses/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/courses/</link>
       <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/courses/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/courses/</guid>
       <description>&lt;p&gt;In this page, I collect lectures and materials for graduate courses in Economics and Social Sciences.&lt;/p&gt;
 &lt;p&gt;I will only link to lectures and materials that are freely available. I will not link to courses hosted on MOOC websites or that require university credentials to access.&lt;/p&gt;
 &lt;p&gt;A special mention goes to the following:&lt;/p&gt;
@@ -40785,11 +40785,11 @@ plt.axvline(x=0.5, ls=&amp;quot;:&amp;quot;, color=&#39;C2&#39;);
     
     <item>
       <title>Economics Conferences</title>
-      <link>https://matteocourthoud.github.io/post/conferences/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/conferences/</link>
       <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/conferences/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/conferences/</guid>
       <description>&lt;p&gt;In this page, I collect information about conferences in Economics and Finance.&lt;/p&gt;
-&lt;p&gt;If you know about public conferences or meetings that are missing from this list, please either &lt;a href=&#34;mailto:matteo.courthoud@econ.uzh.ch&#34;&gt;contact me&lt;/a&gt; or &lt;a href=&#34;https://github.com/matteocourthoud/website/blob/master/content/post/conferences/index.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;edit the table on Github&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;If you know about public conferences or meetings that are missing from this list, please either &lt;a href=&#34;mailto:matteo.courthoud@econ.uzh.ch&#34;&gt;contact me&lt;/a&gt; or &lt;a href=&#34;https://github.com/ignaciolopezmiguel/website/blob/master/content/post/conferences/index.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;edit the table on Github&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;Note that conferences are ordered by deadline and not by conference date.&lt;/p&gt;
 &lt;h2 id=&#34;january&#34;&gt;January&lt;/h2&gt;
 &lt;table&gt;
@@ -40839,7 +40839,7 @@ plt.axvline(x=0.5, ls=&amp;quot;:&amp;quot;, color=&#39;C2&#39;);
 &lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://cepr.org/6754/cfp-mainconference&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CEPR/JIE Conference on Applied IO&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;CEPR&lt;/td&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;IO&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://matteocourthoud.github.io/post/conferences/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;February 10&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/conferences/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;February 10&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;Junior&lt;/td&gt;
 &lt;td&gt;08/06/21&lt;/td&gt;
 &lt;/tr&gt;
@@ -41026,10 +41026,10 @@ plt.axvline(x=0.5, ls=&amp;quot;:&amp;quot;, color=&#39;C2&#39;);
 &lt;td&gt;07/01/22&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://matteocourthoud.github.io/post/conferences/files/swissIOday2021_CallForPapers.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Swiss IO Day&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/conferences/files/swissIOday2021_CallForPapers.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Swiss IO Day&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;University of Bern&lt;/td&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;IO&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://matteocourthoud.github.io/post/conferences/files/swissIOday2021_CallForPapers.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;April 16&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/conferences/files/swissIOday2021_CallForPapers.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;April 16&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;All&lt;/td&gt;
 &lt;td&gt;11/06/21&lt;/td&gt;
 &lt;/tr&gt;
@@ -41447,9 +41447,9 @@ plt.axvline(x=0.5, ls=&amp;quot;:&amp;quot;, color=&#39;C2&#39;);
     
     <item>
       <title>How to Work on a Remote Machine via SSH</title>
-      <link>https://matteocourthoud.github.io/post/ssh/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/ssh/</link>
       <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/ssh/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/ssh/</guid>
       <description>&lt;p&gt;Welcome to my tutorial on how to set up a remote machine and deploy your code there. I will first analyze SSH and then look at two specific applications: coding in Python and Julia.&lt;/p&gt;
 &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 &lt;p&gt;In order to start working on a remote server you need&lt;/p&gt;
@@ -41567,7 +41567,7 @@ sudo systemctl start ssh
 &lt;p&gt;Now you are ready to deploy your Julia code on your remote server!&lt;/p&gt;
 &lt;h2 id=&#34;jupyter-notebooks&#34;&gt;Jupyter Notebooks&lt;/h2&gt;
 &lt;p&gt;If you want to have a &lt;a href=&#34;https://jupyter.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jupyter Notebook&lt;/a&gt; running remotely, the steps are the following. The main advantage of a Jupyter Notebook is that it allows you to mix text and code in a single file, similarly to &lt;a href=&#34;https://rmarkdown.rstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RMarkdown&lt;/a&gt;, with the advantage of not being contrained to use a R (or Python) kernel. For example, I often use Jupyter Notebook with Julia or Matlab Kernels. Moreover, you can also make nice slides out of it!&lt;/p&gt;
-&lt;p&gt;First, connect to the remote machine. Look at &lt;a href=&#34;https://matteocourthoud.github.io/post/remote/#setup&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;section 1&lt;/a&gt; to set up your SSH connection.&lt;/p&gt;
+&lt;p&gt;First, connect to the remote machine. Look at &lt;a href=&#34;https://ignaciolopezmiguel.github.io/post/remote/#setup&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;section 1&lt;/a&gt; to set up your SSH connection.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;ssh username@ip
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Start a Jupyter Notebook in the remote machine.&lt;/p&gt;
@@ -41610,9 +41610,9 @@ sudo systemctl start ssh
     
     <item>
       <title>Curriculum Vitae</title>
-      <link>https://matteocourthoud.github.io/cv/</link>
+      <link>https://ignaciolopezmiguel.github.io/cv/</link>
       <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/cv/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/cv/</guid>
       <description>&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -41631,22 +41631,22 @@ sudo systemctl start ssh
 &lt;p&gt;&lt;strong&gt;Primary interests&lt;/strong&gt;: Industrial Organization, Econometrics, Causal Inference &lt;br&gt;
 &lt;strong&gt;Secondary interests&lt;/strong&gt;: Competition Policy, Machine Learning, Market Design, Behavioral Economics&lt;/p&gt;
 &lt;h2 id=&#34;working-papers&#34;&gt;Working Papers&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://matteocourthoud.github.io/project/foreclosure/&#34;&gt;Foreclosure Complementarities: Exclusionary Bundling and Predatory Pricing&lt;/a&gt; (&lt;em&gt;with G. Crawford&lt;/em&gt;) &lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/project/foreclosure/&#34;&gt;Foreclosure Complementarities: Exclusionary Bundling and Predatory Pricing&lt;/a&gt; (&lt;em&gt;with G. Crawford&lt;/em&gt;) &lt;br&gt;
 We use a computational model of industry dynamics to study exclusionary bundling and predatory pricing. We show that the two foreclosure practices are complementary and we investigate policies.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://matteocourthoud.github.io/project/alg_platform/&#34;&gt;Algorithmic Collusion Detection&lt;/a&gt; &lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/project/alg_platform/&#34;&gt;Algorithmic Collusion Detection&lt;/a&gt; &lt;br&gt;
 I show that pricing algorithms can learn reward-punishment schemes without observing rival’s actions and I propose a model-free test for algorithmic collusion based on observational data.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://matteocourthoud.github.io/project/alg_detection/&#34;&gt;Algorithmic Collusion in Online Marketplaces&lt;/a&gt; &lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/project/alg_detection/&#34;&gt;Algorithmic Collusion in Online Marketplaces&lt;/a&gt; &lt;br&gt;
 I show that profit maximizing online marketplaces, by algorithmically controlling consumers&#39; attention, have the incentives and ability to influence algorithmic pricing collusion.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://matteocourthoud.github.io/project/approximations/&#34;&gt;Approximation Methods for Large Dynamic Stochastic Games&lt;/a&gt; &lt;br&gt;
+&lt;p&gt;&lt;a href=&#34;https://ignaciolopezmiguel.github.io/project/approximations/&#34;&gt;Approximation Methods for Large Dynamic Stochastic Games&lt;/a&gt; &lt;br&gt;
 I compare existing approximation methods to compute Markow Perfect Equilibrium in dynamic stochastic games with large state spaces and propose a new one: games with random order.&lt;/p&gt;
 &lt;h2 id=&#34;teaching&#34;&gt;Teaching&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Instructor &lt;a href=&#34;https://matteocourthoud.github.io/course/empirical-io/&#34;&gt;Empirical Industrial Organization&lt;/a&gt; (PhD)
+&lt;li&gt;Instructor &lt;a href=&#34;https://ignaciolopezmiguel.github.io/course/empirical-io/&#34;&gt;Empirical Industrial Organization&lt;/a&gt; (PhD)
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;University of Zurich&lt;/em&gt;, fall 2021&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;T.A. for &lt;a href=&#34;https://matteocourthoud.github.io/course/ml-econ/&#34;&gt;Machine Learning for Economic Analysis&lt;/a&gt; (MSc)
+&lt;li&gt;T.A. for &lt;a href=&#34;https://ignaciolopezmiguel.github.io/course/ml-econ/&#34;&gt;Machine Learning for Economic Analysis&lt;/a&gt; (MSc)
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;University of Zurich&lt;/em&gt;, fall 2020-21&lt;/li&gt;
 &lt;/ul&gt;
@@ -41656,7 +41656,7 @@ I compare existing approximation methods to compute Markow Perfect Equilibrium i
 &lt;li&gt;&lt;em&gt;University of Zurich&lt;/em&gt;, winter 2019&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;T.A. &lt;a href=&#34;https://matteocourthoud.github.io/course/metrics/&#34;&gt;Econometrics for Research Students&lt;/a&gt; (PhD)
+&lt;li&gt;T.A. &lt;a href=&#34;https://ignaciolopezmiguel.github.io/course/metrics/&#34;&gt;Econometrics for Research Students&lt;/a&gt; (PhD)
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;University of Zurich&lt;/em&gt;, fall 2018-19&lt;/li&gt;
 &lt;/ul&gt;
@@ -41761,33 +41761,33 @@ I compare existing approximation methods to compute Markow Perfect Equilibrium i
 &lt;/ul&gt;
 &lt;h2 id=&#34;contact&#34;&gt;Contact&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;email&lt;/strong&gt; matteocourthoud &lt;code&gt;at&lt;/code&gt; uzh &lt;code&gt;dot&lt;/code&gt; ch&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;email&lt;/strong&gt; ignaciolopezmiguel &lt;code&gt;at&lt;/code&gt; uzh &lt;code&gt;dot&lt;/code&gt; ch&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;website&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;personal &lt;a href=&#34;https://matteocourthoud.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;matteocourthoud.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;personal &lt;a href=&#34;https://ignaciolopezmiguel.github.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ignaciolopezmiguel.github.io&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;official &lt;a href=&#34;https://www.econ.uzh.ch/en/people/graduatestudents/courthoud.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;econ.uzh.ch/people/graduatestudents/courthoud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;twitter&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/MatteoCourthoud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@matteocourthoud&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;github&lt;/strong&gt; &lt;a href=&#34;https://github.com/matteocourthoud&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;matteocourthoud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;twitter&lt;/strong&gt; &lt;a href=&#34;https://twitter.com/ignaciolopezmiguel/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@ignaciolopezmiguel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;github&lt;/strong&gt; &lt;a href=&#34;https://github.com/ignaciolopezmiguel&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ignaciolopezmiguel&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
       <title>Algorithmic Collusion on Online Marketplaces</title>
-      <link>https://matteocourthoud.github.io/project/alg_platform/</link>
+      <link>https://ignaciolopezmiguel.github.io/project/alg_platform/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/project/alg_platform/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/project/alg_platform/</guid>
       <description>&lt;p&gt;The use of algorithms to set prices is particularly popular in online marketplaces, where sellers need to take quick decisions in complex dynamic environments. In this article, I investigate the role of online marketplaces in facilitating or preventing collusion among sellers that use pricing algorithms. In particular, I investigate a platform that has the ability to give prominence to certain products and automates this decision through a reinforcement learning algorithm, that maximizes the platform&amp;rsquo;s profits. Depending on whether the business model of the platform is more aligned with consumer welfare or with sellers&#39; profits (e.g., if it collects quantity or profit fees), the platform either prevents or facilitates collusion among algorithmic sellers. If the platform is also active as a seller, the so-called dual role, it is able to both induce sellers to set high prices and appropriate most of the profits. Importantly, self-preferencing only happens during the learning phase and not in equilibrium. I investigate a potential solution: separating the sales and marketplace divisions. The policy is effective but does not fully restore the competitive outcome when the fee is distortive, as in the case of a revenue fee.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>My Color Palette</title>
-      <link>https://matteocourthoud.github.io/post/palette/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/palette/</link>
       <pubDate>Sun, 24 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/palette/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/palette/</guid>
       <description>&lt;p&gt;Ok, this is a fun post. I am choosing… &lt;strong&gt;my color palette&lt;/strong&gt;!&lt;/p&gt;
 &lt;p&gt;I have decided to unify all the color palettes I have on my website, slides, graphs, etc… into a unique universal color palette.&lt;/p&gt;
 &lt;h2 id=&#34;main-color&#34;&gt;Main Color&lt;/h2&gt;
@@ -41814,18 +41814,18 @@ I compare existing approximation methods to compute Markow Perfect Equilibrium i
     
     <item>
       <title>Foreclosure Complementarities</title>
-      <link>https://matteocourthoud.github.io/project/foreclosure/</link>
+      <link>https://ignaciolopezmiguel.github.io/project/foreclosure/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/project/foreclosure/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/project/foreclosure/</guid>
       <description>&lt;p&gt;In recent merger cases across complementary markets, antitrust authorities have expressed foreclosure concerns. In particular, the presence of scale economies in one market might propagate to the complementary market, ultimately leading to the monopolization of both. In this paper, we investigate the interplay between two foreclosure practices: exclusionary bundling and predatory pricing in the setting of complementary markets with economies of scale. We show that the two practices are complementary when markets display economies of scale, exclusionary bundling is more likely and, when bundling is allowed, predatory pricing is more likely. We show that this outcome is due to exit-inducing behavior of dominant firms: shutting down predatory incentives restores competition in both markets. We investigate different policies: banning mergers between market leaders, allowing product bundling only when more than one firm is integrated and able to offer the bundle, and lastly knowledge sharing across firms in order to limit the economies of scale. All policies are effective, each for a different reason.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>PhD Frequently Asked Questions</title>
-      <link>https://matteocourthoud.github.io/post/phd_faq/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/phd_faq/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/phd_faq/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/phd_faq/</guid>
       <description>&lt;p&gt;In this page, I collect anquestions that I frequently asked myself during my PhD, possibly with answers.&lt;/p&gt;
 &lt;p&gt;Personally, the article for PhD students that helped me the most is &lt;a href=&#34;https://medium.com/@paul.niehaus/doing-research-18cb310529e0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;“Doing research”&lt;/a&gt; by Paul Niehaus. But beware, it might not work for everyone.&lt;/p&gt;
 &lt;h2 id=&#34;starting-the-phd&#34;&gt;Starting the PhD&lt;/h2&gt;
@@ -41942,9 +41942,9 @@ I compare existing approximation methods to compute Markow Perfect Equilibrium i
     
     <item>
       <title>Algorithmic Collusion Detection</title>
-      <link>https://matteocourthoud.github.io/project/alg_detection/</link>
+      <link>https://ignaciolopezmiguel.github.io/project/alg_detection/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/project/alg_detection/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/project/alg_detection/</guid>
       <description>&lt;p&gt;Reinforcement learning algorithms are gradually replacing humans in many decision-making processes, such as pricing in high-frequency markets. Recent studies on algorithmic pricing have shown that algorithms can learn sophisticated grim-trigger strategies with the intent of keeping supra-competitive prices. This paper focuses on algorithmic collusion detection. One frequent suggestion is to look at the inputs of the strategies, for example at whether the algorithms condition their prices on previous competitors&#39; prices. The first part of the paper shows that this approach might not be sufficient to detect collusion since the algorithms can learn reward-punishment schemes that are fully independent of the rival’s actions. The mechanism that ensures the stability of supra-competitive prices is self-punishment.&lt;/p&gt;
 &lt;p&gt;The second part of the paper explores a novel test for algorithmic collusion detection. The test builds on the intuition that as algorithms are able to learn to collude, they might be able to learn to exploit collusive strategies. In fact, since they are not designed to learn sub-game perfect equilibrium strategies, there is the possibility that their strategies could be exploited. When one algorithm is unilaterally retrained, keeping the collusive strategies of its competitor fixed, it learns more profitable strategies. Usually, these strategies are more competitive, but not always. Since this change in strategies happens only when algorithms are colluding, retraining can be used as a test to detect algorithmic collusion.&lt;/p&gt;
 &lt;p&gt;To make the test implementable, the last part of the paper studies whether one could get the same insights on collusive behavior using only observational data, from a single algorithm. The result is a unilateral empirical test for algorithmic collusion that does not require any assumptions neither on the algorithms themselves nor on the underlying environment. The key insight is that algorithms, during their learning phase, produce natural experiments that allow an observer to estimate their behavior in counterfactual scenarios. The simulations show that, at least in a controlled experimental setting, the test is extremely successful in detecting algorithmic collusion.&lt;/p&gt;
@@ -41953,9 +41953,9 @@ I compare existing approximation methods to compute Markow Perfect Equilibrium i
     
     <item>
       <title>Coding Resources for Social Sciences</title>
-      <link>https://matteocourthoud.github.io/post/coding/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/coding/</link>
       <pubDate>Tue, 24 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/coding/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/coding/</guid>
       <description>&lt;p&gt;In this page, I collect useful resources for coding for researchers in social sciences. A mention goes to &lt;a href=&#34;https://maxkasy.github.io/home/computationlinks/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Maximilian Kasy&lt;/a&gt; that inspired me to build this page.&lt;/p&gt;
 &lt;p&gt;A quick legend:&lt;/p&gt;
 &lt;ul&gt;
@@ -42043,9 +42043,9 @@ I compare existing approximation methods to compute Markow Perfect Equilibrium i
     
     <item>
       <title>How to access WRDS in Python</title>
-      <link>https://matteocourthoud.github.io/post/wrds/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/wrds/</link>
       <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/wrds/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/wrds/</guid>
       <description>&lt;p&gt;In this page, I explain how to work with the WRDS database using Python.&lt;/p&gt;
 &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 &lt;p&gt;The first thing we need to do, is to set up a connection to the &lt;a href=&#34;https://wrds-www.wharton.upenn.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WRDS database&lt;/a&gt;. I am assuming you have credentials to log in. Check the &lt;a href=&#34;https://wrds-www.wharton.upenn.edu/login/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;log in page&lt;/a&gt; to make sure.&lt;/p&gt;
@@ -42119,20 +42119,20 @@ Done
     
     <item>
       <title>Approximation Methods for Large Dynamic Stochastic Games</title>
-      <link>https://matteocourthoud.github.io/project/approximations/</link>
+      <link>https://ignaciolopezmiguel.github.io/project/approximations/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/project/approximations/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/project/approximations/</guid>
       <description>&lt;p&gt;Dynamic stochastic games notoriously suffer from a curse of dimensionality that makes computing the Markov Perfect Equilibrium of large games infeasible. This article compares the existing approximation methods and alternative equilibrium concepts that have been proposed in the literature to overcome this problem. No method clearly dominates the others but some are dominated in all dimensions. In general, alternative equilibrium concepts outperform sampling-based approximation methods. I propose a new game structure, games with random order, in which players move sequentially and the order of play is unknown. The Markov Perfect equilibrium of this game consistently outperforms all existing approximation methods in terms of approximation accuracy while still being extremely efficient in terms of computational time.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Summer Schools in Economics</title>
-      <link>https://matteocourthoud.github.io/post/summer_schools/</link>
+      <link>https://ignaciolopezmiguel.github.io/post/summer_schools/</link>
       <pubDate>Tue, 10 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/post/summer_schools/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/post/summer_schools/</guid>
       <description>&lt;p&gt;In this page, I collect information about summer schools in Economics.&lt;/p&gt;
-&lt;p&gt;If you know about summer schools that are missing from this list, please either &lt;a href=&#34;mailto:matteo.courthoud@econ.uzh.ch&#34;&gt;contact me&lt;/a&gt; or &lt;a href=&#34;https://github.com/matteocourthoud/website/blob/master/content/post/summerschools/index.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;edit the table on Github&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;If you know about summer schools that are missing from this list, please either &lt;a href=&#34;mailto:matteo.courthoud@econ.uzh.ch&#34;&gt;contact me&lt;/a&gt; or &lt;a href=&#34;https://github.com/ignaciolopezmiguel/website/blob/master/content/post/summerschools/index.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;edit the table on Github&lt;/a&gt;!&lt;/p&gt;
 &lt;h2 id=&#34;2020&#34;&gt;2020&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -42302,18 +42302,18 @@ Done
     
     <item>
       <title>Ownership and Product Similarity</title>
-      <link>https://matteocourthoud.github.io/project/ownership/</link>
+      <link>https://ignaciolopezmiguel.github.io/project/ownership/</link>
       <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/project/ownership/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/project/ownership/</guid>
       <description>&lt;p&gt;I generate a time-varying measure of S&amp;amp;P500 firm similarity using a zero-shot clustering model. The model takes as input BERT embeddings of product descriptions and is trained on market definitions from the EU commission. The objective is to estimate the causal effect of common ownership on product similarity.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Slides</title>
-      <link>https://matteocourthoud.github.io/slides/example/</link>
+      <link>https://ignaciolopezmiguel.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/slides/example/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -42440,9 +42440,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Privacy Policy</title>
-      <link>https://matteocourthoud.github.io/privacy/</link>
+      <link>https://ignaciolopezmiguel.github.io/privacy/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>https://matteocourthoud.github.io/privacy/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/privacy/</guid>
       <description>&lt;p&gt;&lt;strong&gt;My website does not host third-party cookies&lt;/strong&gt; and hosts three first-party cookies just to generally understand the audience of the website. The cookies are from Google Analytics.&lt;/p&gt;
 &lt;p&gt;You do not know what cookies are? You would like to learn more details? More information below.&lt;/p&gt;
 &lt;h2 id=&#34;cookies-intro&#34;&gt;Cookies Intro&lt;/h2&gt;
@@ -42569,18 +42569,18 @@ Cookie: yummy_cookie=choco; tasty_cookie=strawberry
     
     <item>
       <title>Terms</title>
-      <link>https://matteocourthoud.github.io/terms/</link>
+      <link>https://ignaciolopezmiguel.github.io/terms/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>https://matteocourthoud.github.io/terms/</guid>
+      <guid>https://ignaciolopezmiguel.github.io/terms/</guid>
       <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://matteocourthoud.github.io/admin/config.yml</link>
+      <link>https://ignaciolopezmiguel.github.io/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://matteocourthoud.github.io/admin/config.yml</guid>
+      <guid>https://ignaciolopezmiguel.github.io/admin/config.yml</guid>
       <description></description>
     </item>
     
