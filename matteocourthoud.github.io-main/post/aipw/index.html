@@ -1,0 +1,1766 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="An introduction to doubly-robust estimation of conditional average treatment effects (CATE)
+When estimating causal effects, the gold standard is randomized controlled trials or AB tests. By randomly exposing units to a treatment we make sure that individuals in both groups are comparable, on average, and any difference we observe can be attributed to the treatment effect alone." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://matteocourthoud.github.io/post/aipw/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#003f5c" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.5c4def4f00a521426f4eb098155f3342.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144780600-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-144780600-1', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://matteocourthoud.github.io/post/aipw/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Matteo Courthoud" />
+  <meta property="og:url" content="https://matteocourthoud.github.io/post/aipw/" />
+  <meta property="og:title" content="Understanding AIPW | Matteo Courthoud" />
+  <meta property="og:description" content="An introduction to doubly-robust estimation of conditional average treatment effects (CATE)
+When estimating causal effects, the gold standard is randomized controlled trials or AB tests. By randomly exposing units to a treatment we make sure that individuals in both groups are comparable, on average, and any difference we observe can be attributed to the treatment effect alone." /><meta property="og:image" content="https://matteocourthoud.github.io/post/aipw/featured.png" />
+    <meta property="twitter:image" content="https://matteocourthoud.github.io/post/aipw/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-07-18T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-07-18T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matteocourthoud.github.io/post/aipw/"
+  },
+  "headline": "Understanding AIPW",
+  
+  "image": [
+    "https://matteocourthoud.github.io/post/aipw/featured.png"
+  ],
+  
+  "datePublished": "2022-07-18T00:00:00Z",
+  "dateModified": "2022-07-18T00:00:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Matteo Courthoud",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://matteocourthoud.github.io/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "An introduction to doubly-robust estimation of conditional average treatment effects (CATE)\nWhen estimating causal effects, the gold standard is randomized controlled trials or AB tests. By randomly exposing units to a treatment we make sure that individuals in both groups are comparable, on average, and any difference we observe can be attributed to the treatment effect alone."
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#003f5c",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#003f5c"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>Understanding AIPW | Matteo Courthoud</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="bc7e85f56e381bf28f3ee62ab0bf1da0" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.6edaf3b475ce43de30d98828aea698be.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/course/ml-econ/"><span>Machine Learning for Economics</span></a>
+            
+              <a class="dropdown-item" href="/course/data-science/"><span>Data Science with Python</span></a>
+            
+              <a class="dropdown-item" href="/course/empirical-io/"><span>PhD Industrial Organization</span></a>
+            
+              <a class="dropdown-item" href="/course/metrics/"><span>PhD Econometrics</span></a>
+            
+              <a class="dropdown-item" href="https://pp4rs.github.io/"><span>Programming Practices for Research</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <div class="container-fluid docs">
+  <div class="row">
+
+    <div class="col-xl-2 col-lg-2 d-none d-xl-block d-lg-block empty">
+    </div>
+
+    <div class="col-2 col-xl-2 col-lg-2 d-none d-lg-block docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#conditional-analysis">Conditional Analysis</a>
+      <ul>
+        <li><a href="#ipw-and-meta-learners">IPW and Meta-Learners</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-aipw-estimator">The AIPW Estimator</a>
+      <ul>
+        <li><a href="#decomposition">Decomposition</a></li>
+        <li><a href="#double-robustness">Double Robustness</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+      </ul>
+    </li>
+    <li><a href="#back-to-the-data">Back to the Data</a>
+      <ul>
+        <li><a href="#propensity-scores">Propensity Scores</a></li>
+        <li><a href="#response-function">Response Function</a></li>
+        <li><a href="#estimating-aipw">Estimating AIPW</a></li>
+        <li><a href="#assessment">Assessment</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#references">References</a></li>
+        <li><a href="#related-articles">Related Articles</a></li>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <main class="col-xl-8 col-lg-8 docs-content" role="main">
+        <article class="article">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="article-container pt-3">
+  <h1>Understanding AIPW</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 18, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    17 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 1363px; max-height: 695px;">
+  <div style="position: relative">
+    <img src="/post/aipw/featured.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+        <div class="article-container">
+          <div class="article-style" align="justify">
+            <p><em>An introduction to doubly-robust estimation of conditional average treatment effects (CATE)</em></p>
+<p>When estimating causal effects, the gold standard is <strong>randomized controlled trials or AB tests</strong>. By randomly exposing units to a treatment we make sure that individuals in both groups are comparable, on average, and any difference we observe can be attributed to the treatment effect alone.</p>
+<p>However, often the treatment and control groups are <strong>not perfectly comparable</strong>. This could be due to the fact that randomization was not perfect or available. Not always we can randomize a treatment, for ethical or practical reasons. And even when we can, sometimes we do not have enough individuals or units so that differences between groups are seizable. This happens often, for example, when randomization is not done at the individual level, but at a higher level of aggregation, for example zipcodes, counties or even states.</p>
+<p>In a <a href="https://towardsdatascience.com/99bf5cffa0d9" target="_blank" rel="noopener">previous post</a>, I have introduced and compared a series of methods that compute <strong>conditional average treatment effects (CATE)</strong> from observational or experimental data. Some of these methods require the researcher to specify and estimate the distribution of the outcome of interest, given the treatment and the observable characteristics (e.g. <a href="https://towardsdatascience.com/8a9c1e340832" target="_blank" rel="noopener">meta learners</a>). Other methods require the researcher to specify and estimate the probability of being treated, given the observable characteristics (e.g. <a href="https://towardsdatascience.com/99bf5cffa0d9" target="_blank" rel="noopener">IPW</a>).</p>
+<p>In this post, we are going to see a procedure that <strong>combines</strong> both methods and is <strong>robust</strong> to misspecification of either method&rsquo;s model: the Augmented Inverse Probability Weighted estimator (AIPW).</p>
+<img src="fig/fusion.gif" width="400px"/>
+<p><strong>TLDR;</strong> AIPW greatly improves both IPW and meta-learners, and you should always use it!</p>
+<h2 id="example">Example</h2>
+<p>Assume we had blog on statistics and causal inference 😇. To improve user experience, we are considering <strong>releasing a dark mode</strong>, and we would like to understand whether this new feature increases the time users spend on our blog.</p>
+<p>This example is borrowed from my last post on the estimation of conditional average treatment effects (CATE). You can find the <a href="https://towardsdatascience.com/99bf5cffa0d9" target="_blank" rel="noopener">original post here</a>. If you remember the setting, you can skip this introduction.</p>
+<img src="fig/modes.png" width="600px"/>
+<p>We are not a sophisticated company, therefore we do not run an AB test but we simply release the dark mode and we observe whether users select it or not and the time they spend on the blog. We know that there might be <strong>selection</strong>:  users that prefer the dark mode could have different reading preferences and this might complicate our causal analysis.</p>
+<p>We can represent the data generating process with the following <a href="https://towardsdatascience.com/b63dc69e3d8c" target="_blank" rel="noopener"><strong>Directed Acyclic Graph (DAG)</strong></a>.</p>
+<pre><code class="language-mermaid">flowchart TB
+classDef included fill:#DCDCDC,stroke:#000000,stroke-width:2px;
+classDef excluded fill:#ffffff,stroke:#000000,stroke-width:2px;
+classDef unobserved fill:#ffffff,stroke:#000000,stroke-width:2px,stroke-dasharray: 5 5;
+
+X1((gender))
+X2((age))
+X3((hours))
+D((dark mode))
+Y((read time))
+
+D --&gt; Y
+X1 --&gt; Y
+X1 --&gt; D
+X2 --&gt; D
+X3 --&gt; Y
+
+class D,Y included;
+class X1,X2,X3 excluded;
+</code></pre>
+<p>We generate the simulated data using the data generating process <code>dgp_darkmode()</code> from <a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py" target="_blank" rel="noopener"><code>src.dgp</code></a>. I also import some plotting functions and libraries from <a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py" target="_blank" rel="noopener"><code>src.utils</code></a>.</p>
+<pre><code class="language-python">%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+</code></pre>
+<pre><code class="language-python">from src.utils import *
+from src.dgp import dgp_darkmode
+</code></pre>
+<pre><code class="language-python">dgp = dgp_darkmode()
+df = dgp.generate_data()
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>read_time</th>
+      <th>dark_mode</th>
+      <th>male</th>
+      <th>age</th>
+      <th>hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>14.4</td>
+      <td>False</td>
+      <td>0</td>
+      <td>43.0</td>
+      <td>65.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.4</td>
+      <td>False</td>
+      <td>1</td>
+      <td>55.0</td>
+      <td>125.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>20.9</td>
+      <td>True</td>
+      <td>0</td>
+      <td>23.0</td>
+      <td>642.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>20.0</td>
+      <td>False</td>
+      <td>0</td>
+      <td>41.0</td>
+      <td>129.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>21.5</td>
+      <td>True</td>
+      <td>0</td>
+      <td>29.0</td>
+      <td>190.2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>We have informations on 300 users for whom we observe whether they select the <code>dark_mode</code> (the treatment), their weekly <code>read_time</code> (the outcome of interest) and some characteristics like <code>gender</code>, <code>age</code> and total <code>hours</code> previously spend on the blog.</p>
+<p>We would like to estimate the effect of the new <code>dark_mode</code> on users' <code>read_time</code>. As a first approach, we might naively compute the effect as a difference in means, assuming that the treatment and control sample are comparable. We can estimate the difference in means by regressing <code>read_time</code> on <code>dark_mode</code>.</p>
+<pre><code class="language-python">smf.ols(&quot;read_time ~ dark_mode&quot;, data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+          <td></td>             <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>         <td>   19.1748</td> <td>    0.402</td> <td>   47.661</td> <td> 0.000</td> <td>   18.383</td> <td>   19.967</td>
+</tr>
+<tr>
+  <th>dark_mode[T.True]</th> <td>   -0.4446</td> <td>    0.571</td> <td>   -0.779</td> <td> 0.437</td> <td>   -1.568</td> <td>    0.679</td>
+</tr>
+</table>
+<p>Individuals that select the <code>dark_mode</code> spend on average 0.44 hours less on the blog, per week. Should we conclude that <code>dark_mode</code> is a <strong>bad idea</strong>? Is this a causal effect?</p>
+<p>The problem is that we did <strong>not</strong> run an <a href="https://de.wikipedia.org/wiki/A/B-Test" target="_blank" rel="noopener"><strong>AB test</strong></a> or randomized control trial, therefore users that selected the <code>dark_mode</code> might not be directly <strong>comparable</strong> with users that didn&rsquo;t. Can we verify this concern? Partially. We can only check characteristics that we observe, <code>gender</code>, <code>age</code> and total <code>hours</code> in our setting. We cannot check if users differ along other dimensions that we don&rsquo;t observe.</p>
+<p>Let&rsquo;s use the <code>create_table_one</code> function from Uber&rsquo;s <a href="https://causalml.readthedocs.io/" target="_blank" rel="noopener"><code>causalml</code></a> package to produce a <strong>covariate balance table</strong>, containing the average value of our observable characteristics, across treatment and control groups. As the name suggests, this should always be the first table you present in causal inference analysis.</p>
+<p>We did not randomize the <code>dark_mode</code> so that users that selected it might not be directly <strong>comparable</strong> with users that didn&rsquo;t. Can we verify this concern? Partially. We can only check characteristics that we observe, <code>gender</code>, <code>age</code> and total <code>hours</code> in our setting. We cannot check if users differ along other dimensions that we don&rsquo;t observe.</p>
+<p>Let&rsquo;s use the <code>create_table_one</code> function from Uber&rsquo;s <a href="https://causalml.readthedocs.io/" target="_blank" rel="noopener"><code>causalml</code></a> package to produce a <strong>covariate balance table</strong>, containing the average value of our observable characteristics, across treatment and control groups. As the name suggests, this should always be the first table you present in causal inference analysis.</p>
+<pre><code class="language-python">from causalml.match import create_table_one
+
+X = ['male', 'age', 'hours']
+table1 = create_table_one(df, 'dark_mode', X)
+table1
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Control</th>
+      <th>Treatment</th>
+      <th>SMD</th>
+    </tr>
+    <tr>
+      <th>Variable</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>n</th>
+      <td>151</td>
+      <td>149</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>age</th>
+      <td>46.01 (9.79)</td>
+      <td>39.09 (11.53)</td>
+      <td>-0.6469</td>
+    </tr>
+    <tr>
+      <th>hours</th>
+      <td>337.78 (464.00)</td>
+      <td>328.57 (442.12)</td>
+      <td>-0.0203</td>
+    </tr>
+    <tr>
+      <th>male</th>
+      <td>0.34 (0.47)</td>
+      <td>0.66 (0.48)</td>
+      <td>0.6732</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>There seems to be <strong>some difference</strong> between treatment (<code>dark_mode</code>) and control group. In particular, users that select the <code>dark_mode</code> are older, have spent less hours on the blog and they are more likely to be males.</p>
+<p>What can we do? If we assume that all differences between treatment and control group are <strong>observable</strong>, we can solve the problem by performing <strong>conditional analysis</strong>.</p>
+<h2 id="conditional-analysis">Conditional Analysis</h2>
+<p>We assume that for a set of subjects $i = 1, &hellip;, n$ we observed a set of variables $(D_i, Y_i, X_i)$ that includes</p>
+<ul>
+<li>a treatment assignment $D_i \in \lbrace 0, 1 \rbrace$ (<code>dark_mode</code>)</li>
+<li>a response $Y_i \in \mathbb R$ (<code>read_time</code>)</li>
+<li>a feature vector $X_i \in \mathbb R^n$ (<code>gender</code>, <code>age</code> and <code>hours</code>)</li>
+</ul>
+<p>We are interested in <strong>estimating the conditional average treatment effect (CATE)</strong>.</p>
+<p>$$
+\tau(x) = \mathbb E \Big[ Y_i^{(1)} - Y_i^{(0)} \ \Big| \ X_i = x \Big]
+$$</p>
+<p>Where $Y_i^{(d)}$ indicates the potential outcome of individual $i$ under treatment status $d$. We also make the following assumptions.</p>
+<p><strong>Assumption 1 : unconfoundedness</strong> (or ignorability, or selection on observables)</p>
+<p>$$
+\big \lbrace Y_i^{(1)} , Y_i^{(0)} \big \rbrace \ \perp \ D_i \ | \ X_i
+$$</p>
+<p>i.e. conditional on observable characteristics $X$, the treatment assignment $D$ is as good as random. What we are effectively assuming is that there is no other characteristics that we do not observe that could impact both whether a user selects the <code>dark_mode</code> and their <code>read_time</code>. This is a <strong>strong assumption</strong> that is more likely to be satisfied the more individual characteristics we observe.</p>
+<p><strong>Assumption 2: overlap</strong> (or common support)</p>
+<p>$$
+\exists \eta &gt; 0 \ : \ \eta \leq \mathbb E \left[ D_i = 1 \ \big | \ X_i = x \right] \leq 1-\eta
+$$</p>
+<p>i.e. no observation is deterministically assigned to the treatment or control group. This is a more technical assumption that basically means that for any level of <code>gender</code>, <code>age</code> or <code>hours</code>, there could exist an individual that select the <code>dark_mode</code> and one that doesn&rsquo;t. Differently from the unconfoundedness assumption, the overal assumption is <strong>testable</strong>.</p>
+<p><strong>Assumption 3: stable unit treatment value (SUTVA)</strong></p>
+<p>$$
+Y^{(d)} \perp D
+$$</p>
+<p>i.e. the potential outcome does not depend on the treatment status. In our case, we are ruling out the fact that another user selecting <code>dark_mode</code> might affect my effect of <code>dark_mode</code> on <code>read_time</code>. The most common setting where SUTVA is violated is in presence of <strong>network effects</strong>: if a friend of mine uses a social network increases my utility from using it.</p>
+<h3 id="ipw-and-meta-learners">IPW and Meta-Learners</h3>
+<p>Two alternative ways to perform conditional analysis are</p>
+<ol>
+<li><a href="https://towardsdatascience.com/99bf5cffa0d9" target="_blank" rel="noopener"><strong>IPW</strong></a>: balance observations by their conditional treatment assignment probability and then estimate the treatment effect as a weighted difference in means</li>
+<li><a href="https://towardsdatascience.com/8a9c1e340832" target="_blank" rel="noopener"><strong>Meta Learners</strong></a>: predict the potential outcomes from observable characteristics and estimate treatment effects as the difference between observed and counterfactual outcomes</li>
+</ol>
+<p>These two alternative procedures exploit the fact that we observe individual characteristics $X$ in different ways:</p>
+<ol>
+<li>IPW exploits $X$ to predict the treatment assignment $D$ and estimate the <strong>propensity scores</strong> $e(X) = \mathbb{E} [D | X]$</li>
+<li>Meta Learners exploit $X$ to predict the counterfactual outcomes $Y^{(d)}$ and estimate the <strong>response function</strong> $\mu(X)^{(d)} = \mathbb{E} [Y | D, X]$</li>
+</ol>
+<p>Can we <strong>combine</strong> the two procedures and get the best of both worlds?</p>
+<p>Yes, with the <strong>AIPW or double-robust estimator</strong>.</p>
+<h2 id="the-aipw-estimator">The AIPW Estimator</h2>
+<p>The <strong>Augmented Inverse Propensity Weighted</strong> estimator is given by</p>
+<p>$$
+\hat \tau_{AIPW} = \frac{1}{n} \sum_{i=1}^{n} \left( \hat \mu^{(1)}(X_i) - \hat \mu^{(0)}(X_i) + \frac{D_i }{\hat e(X_i)} \left( Y_i - \hat \mu^{(1)}(X_i) \right) - \frac{(1-D_i) }{1-\hat e(X_i)} \left( Y_i - \hat \mu^{(0)}(X_i) \right) \right)
+$$</p>
+<p>where $\mu^{(d)}(x)$ is the <strong>response function</strong>, i.e. the expected value of the outcome, conditional on observable characteristics $x$ and treatment status $d$, and $e(X)$ is the <strong>propensity score</strong>.</p>
+<p>$$
+\mu^{(d)}(x) = \mathbb E \left[ Y_i \ \big | \ X_i = x, D_i = d \right] \qquad ; \qquad e(x) = \mathbb E \left[ D_i = 1 \ \big | \ X_i = x \right]
+$$</p>
+<p>The formula of the AIPW estimator seems very cryptic at first, so let&rsquo;s dig deeper and try to understand it.</p>
+<h3 id="decomposition">Decomposition</h3>
+<p>The best way to understand the AIPW formula is to <strong>decompose</strong> it into two parts.</p>
+<p>The <strong>first way</strong> is to decompose the AIPW estimator into a <a href="https://towardsdatascience.com/8a9c1e340832" target="_blank" rel="noopener"><strong>S-learner estimator</strong></a> and an adjustment factor.</p>
+<p>$$
+\hat \tau_{AIPW} = \hat \tau_{S-learn} + \widehat{\text{adj}}_{S-learn}
+$$</p>
+<p>where</p>
+<p>$$
+\begin{aligned}
+\hat \tau_{S-learn} =&amp; \frac{1}{n} \sum_{i=1}^{n} \left( \hat \mu^{(1)}(X_i) - \hat \mu^{(0)}(X_i) \right) \newline
+\widehat {adj} _ {S-learn} =&amp; \frac{1}{n} \sum_{i=1}^{n} \left(\frac{D_i }{\hat e(X_i)} \left( Y_i - \hat \mu^{(1)}(X_i) \right) - \frac{(1-D_i) }{1-\hat e(X_i)} \left( Y_i - \hat \mu^{(0)}(X_i) \right) \right)
+\end{aligned}
+$$</p>
+<p>The adjustment is essentially an IPW estimator performed on the <strong>residuals</strong> of the S-learner.</p>
+<p>The <strong>second way</strong> to decompose the AIPW estimator into the <strong>IPW estimator</strong> and an adjustment factor.</p>
+<p>$$
+\hat \tau_{AIPW} = \hat \tau_{IPW} + \widehat{\text{adj}}_{IPW}
+$$</p>
+<p>where</p>
+<p>$$
+\begin{aligned}
+\hat \tau_{IPW} &amp;= \frac{1}{n} \sum _ {i=1}^{n} \left( \frac{D_i Y_i}{\hat e(X_i)} - \frac{(1-D_i) Y_i}{1-\hat e(X_i)} \right) \newline
+\widehat {adj} _ {IPW} &amp;= \frac{1}{n} \sum_{i=1}^{n} \left( \frac{\hat e(X_i) - D_i}{\hat e(X_i)} \hat \mu^{(1)}(X_i) - \frac{(1-\hat e(X_i)) - (1-D_i)}{1-\hat e(X_i)} \hat \mu^{(0)}(X_i) \right)
+\end{aligned}
+$$</p>
+<p>The adjustment is essentially an S-learner estimator weighted by the residual treatment probabilities.</p>
+<h3 id="double-robustness">Double Robustness</h3>
+<p>Why is the AIPW estimator so <strong>compelling</strong>? The reason is that it just needs one of the two predictions, $\hat \mu$ or $\hat e$, to be right in order to be <strong>unbiased</strong> (i.e. correct on average). Let&rsquo;s check it.</p>
+<p>If $\hat \mu$ is correctly specified, i.e. $\mathbb E \left[ \hat \mu^{(d)}(x) \right] = \mathbb E \left[ Y_i \ \big | \ X_i = x, D_i = d \right]$, then $\hat \tau_{AIPW}$ is unbiased, <strong>even if</strong> $\hat e$ is misspecified.</p>
+<p>$$
+\begin{aligned}
+\hat \tau_{AIPW} &amp;\overset{p}{\to} \mathbb E \Big[ \hat \tau_{S-learn} + \widehat{\text{adj}}_{S-learn} \Big] = \newline
+&amp;= \mathbb E \left[ \hat \mu^{(1)}(X_i) - \hat \mu^{(0)}(X_i) + \frac{D_i \left( Y_i - \hat \mu^{(1)}(X_i) \right)}{\hat e(X_i)} - \frac{(1-D_i) \left( Y_i - \hat \mu^{(0)}(X_i) \right)}{1-\hat e(X_i)} \right] = \newline
+&amp;= \mathbb E \left[ \hat \mu^{(1)}(X_i) - \hat \mu^{(0)}(X_i) \right] = \newline
+&amp;= \mathbb E \left[ Y^{(1)} - Y^{(0)} \right] = \newline
+&amp;= \tau
+\end{aligned}
+$$</p>
+<p>The <strong>intuition</strong> is that, if $\hat \mu$ is correctly specified, $\hat \tau_{S-learn}$ is <strong>unbiased</strong> and the adjustment factor <strong>vanishes</strong>, since the residuals $\left( Y_i - \hat \mu^{(t)}(X_i) \right)$ converge to zero.</p>
+<p>On the other hand, if $\hat e$ is correctly specified, i.e. $\mathbb E \left[\hat e(x) \right] = \mathbb E \left[ D_i = 1 \ \big | \ X_i = x \right]$, then $\hat \tau_{AIPW}$ is unbiased, <strong>even if</strong> $\hat \mu$ is misspecified.</p>
+<p>$$
+\begin{aligned}
+\hat \tau_{AIPW} &amp; \overset{p}{\to} \mathbb E \Big[ \hat \tau_{IPW} + \widehat{\text{adj}}_{IPW} \Big] = \newline
+&amp;= \mathbb E \left[ \frac{D_i Y_i}{\hat e(X_i)} - \frac{(1-D_i) Y_i }{1-\hat e(X_i)} + \frac{\hat e(X_i) - D_i}{\hat e(X_i)} \hat \mu^{(1)}(X_i) - \frac{(1-\hat e(X_i)) - (1-D_i)}{1-\hat e(X_i)} \hat \mu^{(0)}(X_i) \right] = \newline
+&amp;= \mathbb E \left[ \frac{D_i Y_i}{\hat e(X_i)} - \frac{(1-D_i) Y_i }{1-\hat e(X_i)}\right] = \newline
+&amp;= \mathbb E \left[ Y^{(1)} - Y^{(0)} \right] = \newline
+&amp;= \tau
+\end{aligned}
+$$</p>
+<p>The <strong>intuition</strong> is that, if $\hat e$ is correctly specified, $\hat \tau_{IPW}$ is <strong>unbiased</strong> and the adjustment factor <strong>vanishes</strong>, since the residuals $\left( D_i - \hat e (X_i) \right)$ converge to zero.</p>
+<h3 id="best-practices">Best Practices</h3>
+<p><strong>1. Check Covariate Balance</strong></p>
+<p>Both IPW and AIPW were built for settings in which the treatment $D$ is not unconditionally randomly assigned, but might depend on some observables $X$. This information can be checked in two ways:</p>
+<ol>
+<li>Produce a balance table, summarizing the covariates across treatment arms. If unconditional randomization does not hold, we expect to see significant differences across some observables</li>
+<li>Plot the estimated propensity scores. If unconditional randomization holds, we expect the propensity scores to be constant</li>
+</ol>
+<p><strong>2. Check the Overlap Assumption</strong></p>
+<p>Another assumption that we can check is the <strong>overlap</strong> assumption, i.e. $\exists \eta \ : \ \eta \leq \mathbb E \left[ D_i = 1 \ \big | \ X_i = x \right] \leq 1-\eta$. To check this assumption we can simply check the bounds of the predicted propensity scores. If the overlap assumption is violated, we end up dividing some term of the estimator by zero.</p>
+<p><strong>3. Use Cross-Fitting</strong></p>
+<p>Whenever we build a prediction, it is best practice to exclude observation $i$ when estimating $\hat \mu^{(d)} (X_i)$ or $\hat e (X_i)$. This procedure is generally known as <a href="https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29" target="_blank" rel="noopener"><strong>cross-fitting</strong></a> in the machine learning literature. While there are many possible ways to perform cross-fitting, the simplest one is the following:</p>
+<ol>
+<li>Split the sample in two at random</li>
+<li>Use sample 1 to estimate $\hat \mu^{(d)} (X_i)$ and $\hat e (X_i)$</li>
+<li>Use sample 2 to estimate $\hat{\tau}_{AIPW, 1}$</li>
+<li>Repeat (2) and (3) swapping samples to estimate $\hat{\tau}_{AIPW, 2}$</li>
+<li>Compute $\hat{\tau}_{AIPW}$ as the average of the two estimates</li>
+</ol>
+<p>Steps (2) and (3) ensure that the estimator is <strong>not overfitting</strong>. Steps (4) and (5) ensure that the estimator is <strong>efficient</strong>, using all the data for all steps and not just half. <a href="https://arxiv.org/abs/2004.14497" target="_blank" rel="noopener">Kennedy (2022)</a> shows that this procedure produces much more precise estimates than existing methods and provide formal results on error bounds. In particular, their main result is the following:</p>
+<blockquote>
+<p>&ldquo;<em>The bound on the DR-Learner error given in Theorem 2 shows that it can only deviate from the oracle error by at most a (smoothed) product of errors in the propensity score and regression estimators, thus allowing faster rates for estimating the CATE even when the nui- sance estimates converge at slower rates. Importantly the result is agnostic about the methods used, and requires no special tuning or undersmoothing.</em>&rdquo;</p>
+</blockquote>
+<h2 id="back-to-the-data">Back to the Data</h2>
+<p>Let&rsquo;s now build and explore the AIPW estimator in our dataset on blog reading time and dark mode.</p>
+<h3 id="propensity-scores">Propensity Scores</h3>
+<p>First, let&rsquo;s estimate the <strong>propensity scores</strong> $e(X)$.</p>
+<pre><code class="language-python">def estimate_e(df, X, D, model_e):
+    e = model_e.fit(df[X], df[D]).predict_proba(df[X])[:,1]
+    return e
+</code></pre>
+<p>We estimate them by <a href="https://en.wikipedia.org/wiki/Logistic_regression" target="_blank" rel="noopener">logistic regression</a> using the <code>LogisticRegression</code> methods from the <code>sklearn</code> package.</p>
+<pre><code class="language-python">from sklearn.linear_model import LogisticRegression
+
+df['e'] = estimate_e(df, X, &quot;dark_mode&quot;, LogisticRegression())
+</code></pre>
+<p>Let&rsquo;s check if the <strong>bounded support</strong> assumption is satisfied, by plotting the estimated propensity scores, across treatment and control groups.</p>
+<pre><code class="language-python">sns.histplot(data=df, x='e', hue='dark_mode', bins=30, stat='density', common_norm=False).\
+    set(ylabel=&quot;&quot;, title=&quot;Distribution of Propensity Scores&quot;);
+</code></pre>
+<p><img src="img/aipw_38_0.png" alt="png"></p>
+<p>The distribution of propensity scores is different between two groups, but it&rsquo;s generally overlapping.</p>
+<p>We can now use the propensity scores to build the IPW estimator.</p>
+<pre><code class="language-python">w = 1 / (e * df[&quot;dark_mode&quot;] + (1-e) * (1-df[&quot;dark_mode&quot;]))
+smf.wls(&quot;read_time ~ dark_mode&quot;, weights=w, data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+          <td></td>             <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>         <td>   18.6099</td> <td>    0.412</td> <td>   45.159</td> <td> 0.000</td> <td>   17.799</td> <td>   19.421</td>
+</tr>
+<tr>
+  <th>dark_mode[T.True]</th> <td>    1.0620</td> <td>    0.582</td> <td>    1.826</td> <td> 0.069</td> <td>   -0.083</td> <td>    2.207</td>
+</tr>
+</table>
+<p>Note that the computed standard errors are not exact, since we are ignoring the extra uncertainty that comes from the estimation of the propensity scores $e(X)$.</p>
+<h3 id="response-function">Response Function</h3>
+<p>Let&rsquo;s now estimate the second building block of the AIPW estimator: the <strong>response function</strong> $\mu(X)$.</p>
+<pre><code class="language-python">def estimate_mu(df, X, D, y, model_mu):
+    mu = model_mu.fit(df[X + [D]], df[y])
+    mu0 = mu.predict(df[X + [D]].assign(dark_mode=0))
+    mu1 = mu.predict(df[X + [D]].assign(dark_mode=1))
+    return mu0, mu1
+</code></pre>
+<p>Let&rsquo;s start by estimating $\mu(X)$ with linear regression.</p>
+<pre><code class="language-python">from sklearn.linear_model import LinearRegression
+
+mu0, mu1 = estimate_mu(df, X, &quot;dark_mode&quot;, &quot;read_time&quot;, LinearRegression())
+print(np.mean(mu1-mu0))
+</code></pre>
+<pre><code>1.3858099131476969
+</code></pre>
+<p>We have computed the meta learner estimate of the average treatment effect as the difference in means between the two estimated response functions, $\mu^{(1)}(X)$ and $\mu^{(0)}(X)$.</p>
+<p><strong>Note</strong> that we can use any estimator to get the response function, I used linear regression for simplicity.</p>
+<h3 id="estimating-aipw">Estimating AIPW</h3>
+<p>We now have <strong>all the building blocks</strong> to compute the AIPW estimator!</p>
+<pre><code class="language-python">aipw = mu1 - mu0 + df[&quot;dark_mode&quot;] / e * (df[&quot;read_time&quot;] - mu1) - (1-df[&quot;dark_mode&quot;]) / (1-e) * (df[&quot;read_time&quot;] - mu0)
+print(np.mean(aipw))
+</code></pre>
+<pre><code>1.3153774511905783
+</code></pre>
+<p>We can also compute it directly using the <code>LinearDRLearner</code> function from Microsoft&rsquo;s <a href="https://econml.azurewebsites.net/index.html" target="_blank" rel="noopener"><code>EconML</code></a> library.</p>
+<pre><code class="language-python">from econml.drlearner import LinearDRLearner
+
+model = LinearDRLearner(model_propensity=LogisticRegression(), 
+                        model_regression=LinearRegression(),
+                        random_state=1)
+model.fit(Y=df[&quot;read_time&quot;], T=df[&quot;dark_mode&quot;], X=df[X]);
+</code></pre>
+<p>The model directly gives us the average treatment effect.</p>
+<pre><code class="language-python">model.ate_inference(X=df[X].values, T0=0, T1=1).summary().tables[0]
+</code></pre>
+<table class="simpletable">
+<caption>Uncertainty of Mean Point Estimate</caption>
+<tr>
+  <th>mean_point</th> <th>stderr_mean</th> <th>zstat</th> <th>pvalue</th> <th>ci_mean_lower</th> <th>ci_mean_upper</th>
+</tr>
+<tr>
+     <td>1.417</td>      <td>0.541</td>    <td>2.621</td>  <td>0.009</td>     <td>0.358</td>         <td>2.477</td>    
+</tr>
+</table>
+<p>The estimate is statistically different from zero and the confidence interval includes the true value of 2.</p>
+<p><strong>Note</strong> that we got a different estimate because the <code>LinearDRLearner</code> function also performed <strong>cross-fitting</strong> in the background, which we did not before.</p>
+<h3 id="assessment">Assessment</h3>
+<p>Let&rsquo;s now assess the main property of the AIPW estimator: its <strong>double robustness</strong>. To do so, we compare it with its two parents: the IPW estimator and the S-learner.</p>
+<pre><code class="language-python">def compare_estimators(X_e, X_mu, D, y, seed):
+    df = dgp_darkmode().generate_data(seed=seed)
+    e = estimate_e(df, X_e, D, LogisticRegression())
+    mu0, mu1 = estimate_mu(df, X_mu, D, y, LinearRegression())
+    slearn = mu1 - mu0
+    ipw = (df[D] / e - (1-df[D]) / (1-e)) * df[y]
+    aipw = slearn + df[D] / e * (df[y] - mu1) - (1-df[D]) / (1-e) * (df[y] - mu0)
+    return np.mean((slearn, ipw, aipw), axis=1)
+</code></pre>
+<p>We use the <a href="https://joblib.readthedocs.io/en/latest/" target="_blank" rel="noopener"><code>joblib</code></a> library to run the simulations in parallel and speed up the process.</p>
+<pre><code class="language-python">from joblib import Parallel, delayed
+
+def simulate_estimators(X_e, X_mu, D, y):
+    r = Parallel(n_jobs=8)(delayed(compare_estimators)(X_e, X_mu, D, y, i) for i in range(100))
+    df_tau = pd.DataFrame(r, columns=['S-learn', 'IPW', 'AIPW'])
+    plot = sns.boxplot(data=pd.melt(df_tau), x='variable', y='value', linewidth=2);
+    plot.set(title=&quot;Distribution of $\hat τ$ and its components&quot;, xlabel='', ylabel='')
+    plot.axhline(2, c='r', ls=':');
+</code></pre>
+<p>First, let&rsquo;s assume that we use <strong>all variables</strong> for both models, $\mu(X)$ and $e(X)$. In this case, both models are <strong>well specified</strong> and we expect all estimators to perform well.</p>
+<p>We plot the distribution of the three estimators across 100 simulations.</p>
+<pre><code class="language-python">simulate_estimators(X_e=X, X_mu=X, D=&quot;dark_mode&quot;, y=&quot;read_time&quot;)
+</code></pre>
+<p><img src="img/aipw_62_0.png" alt="png"></p>
+<p>Indeed, all estimator are <strong>unbiased</strong> and deliver very similar estimates.</p>
+<p>What happens if we <strong>misspecify</strong> one of the two models? Let&rsquo;s start by (correctly) assuming that <code>gender</code> and <code>age</code> influence the probability of selecting <code>dark_mode</code> and (wrongly) assuming that only previous <code>hours</code> influence the weekly <code>read_time</code>. In this case, the propensity score $e(X)$ is well specified, while the response function $\mu(X)$ is misspecified.</p>
+<pre><code class="language-python">simulate_estimators(X_e=['male', 'age'], X_mu=['hours'], D=&quot;dark_mode&quot;, y=&quot;read_time&quot;)
+</code></pre>
+<p><img src="img/aipw_64_0.png" alt="png"></p>
+<p>As expected, the S-learner is biased since we have misspecified $\mu(X)$, while IPW isn&rsquo;t. AIPW picks the <strong>best of both worlds</strong> and is unbiased.</p>
+<p>Let&rsquo;s now explore the alternative <strong>misspecification</strong>. We (wrongly) assume that only <code>age</code> influences the probability of selecting <code>dark_mode</code> and (correctly) assume that both <code>gender</code> and previous <code>hours</code> influence the weekly <code>read_time</code>. In this case, the propensity score $e(X)$ is misspecified, while the response function $\mu(X)$ is correctly specified.</p>
+<pre><code class="language-python">simulate_estimators(['age'], ['male', 'hours'], D=&quot;dark_mode&quot;, y=&quot;read_time&quot;)
+</code></pre>
+<p><img src="img/aipw_66_0.png" alt="png"></p>
+<p>In this case, the S-learner is unbiased, while IPW isn&rsquo;t, since we have misspecified $e(X)$. Again, AIPW picks the <strong>best of both worlds</strong> and is unbiased.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this article we have seen a method to estimate conditional average treatment effects (CATE), that is <strong>robust to model misspecification</strong>: the Augmented Inverse Propensity Weighted (AIPW) estimator. The AIPW estimator takes the best out of two existing estimators: the <a href="">IPW estimator</a> and the <a href="">S-learner</a>. It requires the estimation of both the propensity score function $\mathbb{E} [ D | X ]$ and the response function $\mathbb{E} [ Y | D, X ]$ and it is <strong>unbiased</strong> even if one of the two functions is misspecified.</p>
+<p>This estimator is now a standard and it is included all the most important causal inference packages such as Microsoft&rsquo;s <a href="https://econml.azurewebsites.net/" target="_blank" rel="noopener">EconML</a>, Uber&rsquo;s <a href="https://causalml.readthedocs.io/" target="_blank" rel="noopener">causalml</a> and Stanford researchers' R package <a href="https://grf-labs.github.io/grf/" target="_blank" rel="noopener">grf</a>.</p>
+<h3 id="references">References</h3>
+<p>[1] J. Robins, A. Rotzniski, J. P. Zhao, <a href="https://www.tandfonline.com/doi/abs/10.1080/01621459.1994.10476818" target="_blank" rel="noopener">Estimation of regression coefficients when some regressors are not always observed</a> (1994), <em>Journal of the American Statistical Associations</em>.</p>
+<p>[2] A. Glyn, K. Quinn, <a href="https://www.cambridge.org/core/journals/political-analysis/article/abs/an-introduction-to-the-augmented-inverse-propensity-weighted-estimator/4B1B8301E46F4432C4DCC91FE20780DB" target="_blank" rel="noopener">An Introduction to the Augmented Inverse Propensity Weighted Estimator</a> (2010), <em>Political Analysis</em>.</p>
+<p>[3] E. Kennedy, <a href="https://arxiv.org/abs/2004.14497" target="_blank" rel="noopener">Towards optimal doubly robust estimation of heterogeneous causal effects</a> (2022), <em>working paper</em>.</p>
+<h3 id="related-articles">Related Articles</h3>
+<ul>
+<li><a href="https://towardsdatascience.com/b63dc69e3d8c" target="_blank" rel="noopener">DAGs and Control Variables</a></li>
+<li><a href="https://towardsdatascience.com/99bf5cffa0d9" target="_blank" rel="noopener">Matching, Weighting, or Regression?</a></li>
+<li><a href="https://towardsdatascience.com/8a9c1e340832" target="_blank" rel="noopener">Understanding Meta Learners</a></li>
+</ul>
+<h3 id="code">Code</h3>
+<p>You can find the original Jupyter Notebook here:</p>
+<p><a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/aipw.ipynb" target="_blank" rel="noopener">https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/aipw.ipynb</a></p>
+
+          </div>
+          
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://matteocourthoud.github.io/post/aipw/&amp;text=Understanding%20AIPW" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://matteocourthoud.github.io/post/aipw/&amp;t=Understanding%20AIPW" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Understanding%20AIPW&amp;body=https://matteocourthoud.github.io/post/aipw/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://matteocourthoud.github.io/post/aipw/&amp;title=Understanding%20AIPW" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Understanding%20AIPW%20https://matteocourthoud.github.io/post/aipw/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://t.me/share/url?url=https://matteocourthoud.github.io/post/aipw/&amp;text=%7btext%7d" target="_blank" rel="noopener" class="share-btn-telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://matteocourthoud.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/avatar_hu365eedc833ccd5578a90de7c849ec45e_385094_270x270_fill_q75_lanczos_center.jpg" alt=""></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://matteocourthoud.github.io/"></a></h5>
+      
+      <p class="card-text">My research fields are empirical Industrial Organization and Competition Policy. My research interests include the relationship between competition and innovation, big data, artificial intelligence, platform markets, peer to peer services.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://medium.com/@matteo.courthoud" target="_blank" rel="noopener">
+        <i class="fab fa-medium"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/matteo-courthoud-7335198a/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/MatteoCourthoud/" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/matteocourthoud" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://open.spotify.com/user/1180947523" target="_blank" rel="noopener">
+        <i class="fab fa-spotify"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+        </div>
+        </article>
+    </main>
+  </div>
+</div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/julia.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.cf8ca859a9b74f8b1cd804621b13e5f1.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

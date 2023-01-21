@@ -1,0 +1,1551 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In this tutorial, we are going to see how to estimate causal effects when treatment assignment is not random, but determined by a forcing variable such as a test or a requirement." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://matteocourthoud.github.io/post/regression_discontinuity/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#003f5c" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.5c4def4f00a521426f4eb098155f3342.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144780600-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-144780600-1', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://matteocourthoud.github.io/post/regression_discontinuity/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Matteo Courthoud" />
+  <meta property="og:url" content="https://matteocourthoud.github.io/post/regression_discontinuity/" />
+  <meta property="og:title" content="Regression Discontinuity | Matteo Courthoud" />
+  <meta property="og:description" content="In this tutorial, we are going to see how to estimate causal effects when treatment assignment is not random, but determined by a forcing variable such as a test or a requirement." /><meta property="og:image" content="https://matteocourthoud.github.io/post/regression_discontinuity/featured.png" />
+    <meta property="twitter:image" content="https://matteocourthoud.github.io/post/regression_discontinuity/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-04-15T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-04-15T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matteocourthoud.github.io/post/regression_discontinuity/"
+  },
+  "headline": "Regression Discontinuity",
+  
+  "image": [
+    "https://matteocourthoud.github.io/post/regression_discontinuity/featured.png"
+  ],
+  
+  "datePublished": "2022-04-15T00:00:00Z",
+  "dateModified": "2022-04-15T00:00:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Matteo Courthoud",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://matteocourthoud.github.io/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "In this tutorial, we are going to see how to estimate causal effects when treatment assignment is not random, but determined by a forcing variable such as a test or a requirement."
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#003f5c",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#003f5c"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>Regression Discontinuity | Matteo Courthoud</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="f64bf2b2655c6c47ee0de6f4b449652a" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.6edaf3b475ce43de30d98828aea698be.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/course/ml-econ/"><span>Machine Learning for Economics</span></a>
+            
+              <a class="dropdown-item" href="/course/data-science/"><span>Data Science with Python</span></a>
+            
+              <a class="dropdown-item" href="/course/empirical-io/"><span>PhD Industrial Organization</span></a>
+            
+              <a class="dropdown-item" href="/course/metrics/"><span>PhD Econometrics</span></a>
+            
+              <a class="dropdown-item" href="https://pp4rs.github.io/"><span>Programming Practices for Research</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <div class="container-fluid docs">
+  <div class="row">
+
+    <div class="col-xl-2 col-lg-2 d-none d-xl-block d-lg-block empty">
+    </div>
+
+    <div class="col-2 col-xl-2 col-lg-2 d-none d-lg-block docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#setting">Setting</a></li>
+    <li><a href="#regression-discontinuity">Regression Discontinuity</a>
+      <ul>
+        <li><a href="#data-challenge">Data Challenge</a></li>
+        <li><a href="#mccrary-test">McCrary Test</a></li>
+        <li><a href="#regression-kink-design">Regression Kink Design</a></li>
+      </ul>
+    </li>
+    <li><a href="#academic-application">Academic Application</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <main class="col-xl-8 col-lg-8 docs-content" role="main">
+        <article class="article">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="article-container pt-3">
+  <h1>Regression Discontinuity</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Apr 15, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 1223px; max-height: 817px;">
+  <div style="position: relative">
+    <img src="/post/regression_discontinuity/featured.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+        <div class="article-container">
+          <div class="article-style" align="justify">
+            <p>In this tutorial, we are going to see how to estimate causal effects when treatment assignment is not random, but determined by a <em>forcing variable</em> such as a test or a requirement. In this case, we can get a local estimate of the treatment effect by comparing units just above and just below the threshold by assuming that there is no sorting/gaming around it.</p>
+<p><strong>Requisites</strong></p>
+<p>For this tutorial, I assume you are familiar with the following concepts:</p>
+<ul>
+<li>Rubin&rsquo;s potential outcome framework</li>
+<li>Ordinary least squares regression</li>
+<li>Non-parametric regression</li>
+<li><a href="https://matteocourthoud.github.io/post/iv/" target="_blank" rel="noopener">Instrumental variables</a></li>
+</ul>
+<p><strong>Academic Application</strong></p>
+<p>As an academic application, we are going to replicate <a href="https://academic.oup.com/qje/article/119/3/807/1938834" target="_blank" rel="noopener">Do voters affect or elect policies? Evidence from the US House</a> (2004) by Lee, Moretti, Butler. The authors study whether electoral strength has an effect on policies. To identify the effect, they the advantage that is given by incumbency status, and the quasi-exogeneity given by close elections.</p>
+<p><strong>Business Case</strong></p>
+<p>TBD</p>
+<h2 id="setting">Setting</h2>
+<p>We assume that for a set of i.i.d. subjects $i = 1, &hellip;, n$ we observed a tuple $(X_i, D_i, Y_i, Z_i)$ comprised of</p>
+<ul>
+<li>a feature vector $X_i \in \mathbb R^n$</li>
+<li>a treatment assignment $D_i \in \lbrace 0, 1 \rbrace$</li>
+<li>a response $Y_i \in \mathbb R$
+<ul>
+<li>outcome of interest that depends on both $X_i$ and $D_i$</li>
+</ul>
+</li>
+<li>a <strong>forcing variable</strong> $Z_i \in \mathbb R$
+<ul>
+<li>variable that determines treatment assignment $D_i$</li>
+</ul>
+</li>
+</ul>
+<p>We normalize the forcing variable $Z_i$ such that $Z_i=0$ corresponds to the cutoff for treatment assignment. We will distinguish two cases for the effect of $Z_i$ on $D_i$:</p>
+<ol>
+<li>
+<p><strong>Sharp RD</strong>: $D_i = (Z_i \geq 0)$</p>
+<ul>
+<li>treatment is exactly determined by the cutoff</li>
+</ul>
+</li>
+<li>
+<p><strong>Fuzzy RD</strong>: $\lim_{z \to 0_{-}} \mathbb E[D_i | Z_i=z] \neq \lim_{z \to 0_{+}} \mathbb E[D_i | Z_i=z]$</p>
+<ul>
+<li>treatment probability changes at the cutoff</li>
+</ul>
+</li>
+</ol>
+<p><strong>Assumption 1 : CE smoothness</strong></p>
+<p><strong>Assumption 2: no sorting</strong></p>
+<h2 id="regression-discontinuity">Regression Discontinuity</h2>
+<p>The key behind regression discontinuity is what is called a <strong>forcing</strong> variable that determines treatment assignment. Common examples include test scores for university enrollment (you need a certain test score to get access university) or income for some policy eligibility (you need to be below a certain income threshold to be eligible for a subsidy).</p>
+<p>Clearly, in this setting, treatment is not exogenous. However, the <strong>idea</strong> behind regression discontinuity is that units <em>sufficiently</em> close to the discontinuity $Z_i=0$ are <em>sufficiently</em> similar so that we can attribute differences in the outcome $Y_i$ to the treatment $T_i$.</p>
+<p>What does <em>sufficiently</em> exactly mean?</p>
+<p>In practice, we are assuming a certain degree of <strong>smoothness</strong> of the conditional expectation function $\mathbb E[D_i | Z_i=z]$. If this assumption holds, we can estimate the <strong>local average treatment effect</strong></p>
+<p>$$
+\tau^{LATE} = \lim_{z \to 0_{+}} \mathbb E[Y_i | Z_i=z] - \lim_{z \to 0_{-}} \mathbb E[Y_i | Z_i=z] = \mathbb E \big[ Y_{i}^{(1)} - Y_{i}^{(0)} | Z_i=0 \big]
+$$</p>
+<p>Note that this is the average treatment effect for a very narrow set of individuals: those that are extremely close to the cutoff.</p>
+<h3 id="data-challenge">Data Challenge</h3>
+<p>Regression discontinuity design is a particularly <strong>data hungry</strong> procedure. In fact, we need to</p>
+<ol>
+<li>have a very good flexible approximation of the conditional expectation of the outcome $Y_i$ at the cutoff $Z_i=0$</li>
+<li>while also accounting for the effect of the forcing variable $Z$ on the outcome $Y$</li>
+</ol>
+<p>If we knew the functional form of $\mathbb E[Y_i | Z_i]$, it would be easy.</p>
+<h3 id="mccrary-test">McCrary Test</h3>
+<h3 id="regression-kink-design">Regression Kink Design</h3>
+<h2 id="academic-application">Academic Application</h2>
+<p>As an academic application, we are going to replicate <a href="https://academic.oup.com/qje/article/119/3/807/1938834" target="_blank" rel="noopener">Do voters affect or elect policies? Evidence from the US House</a> (2004) by Lee, Moretti, Butler. The authors study whether electoral strength has an effect on policies. To identify the effect, they the advantage that is given by incumbency status, and the quasi-exogeneity given by close elections.</p>
+<pre><code class="language-python">%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+</code></pre>
+<pre><code class="language-python">from src.utils import *
+</code></pre>
+<pre><code class="language-python">df = sm.datasets.get_rdataset('close_elections_lmb', package='causaldata').data
+</code></pre>
+<pre><code class="language-python">df = pd.read_csv('data/l08.csv')
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>district</th>
+      <th>id</th>
+      <th>score</th>
+      <th>year</th>
+      <th>demvoteshare</th>
+      <th>democrat</th>
+      <th>lagdemocrat</th>
+      <th>lagdemvoteshare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>64.339996</td>
+      <td>1948</td>
+      <td>0.553026</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.469256</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>4</td>
+      <td>60.279999</td>
+      <td>1948</td>
+      <td>0.553026</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.469256</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>5</td>
+      <td>57.060001</td>
+      <td>1950</td>
+      <td>0.582441</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.553026</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>6</td>
+      <td>73.830002</td>
+      <td>1950</td>
+      <td>0.582441</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.553026</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>7</td>
+      <td>42.959999</td>
+      <td>1954</td>
+      <td>0.569626</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.539680</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>The first thing we would like to inspect, is the distribution of democratic vote shares <code>demvoteshare</code>, against their lagged values <code>lagdemvoteshare</code>.</p>
+<pre><code class="language-python">sns.scatterplot(df['lagdemvoteshare'], df['demvoteshare'])\
+.set(title='Vote share and incumbency status', xlabel='Dem Vote Share (t-1)', ylabel='Dem Vote Share (t)');
+</code></pre>
+<p><img src="img/regression_discontinuity_19_0.png" alt="png"></p>
+<p>The plot is extremely messy. However we can already see some discontinuity at the threshold: it seems that incumbents do not get vote shares below 0.35.</p>
+<p>To have a more transparent representation of the data, we can use a binscatterplot. Binscatterplots are very similar to histograms with a main difference: instead of having a fixed width, they have a fixed number of observations per bin.</p>
+<pre><code class="language-python">from scipy.stats import binned_statistic
+
+def binscatter(x, y, bins=30, area=True, **kwargs):
+    y_bins, x_edges, _ = binned_statistic(x, y, statistic='mean', bins=bins)
+    x_bins = (x_edges[:-1] + x_edges[1:]) / 2
+    p = sns.scatterplot(x_bins, y_bins, **kwargs)
+    if area:
+        y_std, _, _ = binned_statistic(x, y, statistic='std', bins=bins)
+        plt.fill_between(x_bins, y_bins-y_std, y_bins+y_std, alpha=0.2, color='C0')
+    return p
+</code></pre>
+<p>We can now plot the average vote share by previous vote share. The shades represent one standard deviation, at the bin level.</p>
+<pre><code class="language-python">binscatter(df['lagdemvoteshare'], df['demvoteshare'], bins=100)\
+.set(title='Vote share and incumbency status', xlabel='Dem Vote Share (t-1)', ylabel='Dem Vote Share (t)');
+plt.axvline(x=0.5, ls=&quot;:&quot;, color='C2');
+plt.title('Vote share and incumbency status');
+</code></pre>
+<p><img src="img/regression_discontinuity_23_0.png" alt="png"></p>
+<p>Now it seems quite clear that there exist a discontinuity at $0.5$. We can get a first estimate of the local average treatment effect by assuming a linear model and running a linear regression.</p>
+<pre><code class="language-python">smf.ols('demvoteshare ~ lagdemvoteshare + (lagdemvoteshare&gt;0.5)', df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+                <td></td>                   <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>                     <td>    0.2173</td> <td>    0.005</td> <td>   46.829</td> <td> 0.000</td> <td>    0.208</td> <td>    0.226</td>
+</tr>
+<tr>
+  <th>lagdemvoteshare > 0.5[T.True]</th> <td>    0.0956</td> <td>    0.003</td> <td>   33.131</td> <td> 0.000</td> <td>    0.090</td> <td>    0.101</td>
+</tr>
+<tr>
+  <th>lagdemvoteshare</th>               <td>    0.4865</td> <td>    0.011</td> <td>   42.539</td> <td> 0.000</td> <td>    0.464</td> <td>    0.509</td>
+</tr>
+</table>
+<p>The effect is positive and statistically significant. We can also allow the slope of the line to differ on the two sides of the discontinuity.</p>
+<pre><code class="language-python">df = df.sort_values('lagdemvoteshare')
+model = smf.ols('demvoteshare ~ lagdemvoteshare * (lagdemvoteshare&gt;0.5)', df).fit()
+model.summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+                        <td></td>                           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>                                     <td>    0.2256</td> <td>    0.007</td> <td>   34.588</td> <td> 0.000</td> <td>    0.213</td> <td>    0.238</td>
+</tr>
+<tr>
+  <th>lagdemvoteshare > 0.5[T.True]</th>                 <td>    0.0747</td> <td>    0.012</td> <td>    6.334</td> <td> 0.000</td> <td>    0.052</td> <td>    0.098</td>
+</tr>
+<tr>
+  <th>lagdemvoteshare</th>                               <td>    0.4653</td> <td>    0.016</td> <td>   28.547</td> <td> 0.000</td> <td>    0.433</td> <td>    0.497</td>
+</tr>
+<tr>
+  <th>lagdemvoteshare:lagdemvoteshare > 0.5[T.True]</th> <td>    0.0418</td> <td>    0.023</td> <td>    1.827</td> <td> 0.068</td> <td>   -0.003</td> <td>    0.087</td>
+</tr>
+</table>
+<p>Let&rsquo;s plot the predicted vote share over the previous graph.</p>
+<pre><code class="language-python">binscatter(df['lagdemvoteshare'], df['demvoteshare'], bins=100, alpha=0.5)\
+.set(title='Vote share and incumbency status', xlabel='Dem Vote Share (t-1)', ylabel='Dem Vote Share (t)');
+plt.plot(df['lagdemvoteshare'], model.fittedvalues, color='C1')
+plt.axvline(x=0.5, ls=&quot;:&quot;, color='C2');
+</code></pre>
+<p><img src="img/regression_discontinuity_29_0.png" alt="png"></p>
+<p>Now that we have established a discontinuity at the cutoff, we need to check the RD <strong>assumptions</strong>.</p>
+<p>First, is there <strong>sorting</strong> across the cutoff? In this case, are democratic politicians more or less likely to lose close elections than republicans? We can plot the distribution of (lagged) vote shares and inspect its shape at the cutoff.</p>
+<pre><code class="language-python">sns.histplot(df['lagdemvoteshare'], bins=100)\
+.set(title='Distribution of lagged dem vote share', xlabel='')
+plt.axvline(x=0.5, ls=&quot;:&quot;, color='C2');
+</code></pre>
+<p><img src="img/regression_discontinuity_31_0.png" alt="png"></p>
+<p>If looks pretty smooth. If anything, there is a loss of density at the cutoff, plausibly indicating stronger competition when the competition is close. However, if does not seem particularly asymmetric.</p>
+<p>A <strong>placebo</strong> test that we can run is to check if the forcing variable has an effect on variables on which we do not expect to have an effect. In this setting, the most intuitive placebo outcome is previous elections: we do not expect that being on either side of the cutoff today is related to any past outcome.</p>
+<p>In our case, we can simply swap the two variables to run the test.</p>
+<pre><code class="language-python">binscatter(df['demvoteshare'], df['lagdemvoteshare'], bins=100)\
+.set(title='Vote share and incumbency status', xlabel='Dem Vote Share (t)', ylabel='Dem Vote Share (t-1)');
+plt.axvline(x=0.5, ls=&quot;:&quot;, color='C2');
+</code></pre>
+<p><img src="img/regression_discontinuity_33_0.png" alt="png"></p>
+<p>The distribution of vote shares in the past period does not seem to be discontinuous in the incumbency status today, as expected.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=72KFY8beH0w" target="_blank" rel="noopener">Regression discontinuity video lecture by Paul Goldsmith-Pinkham (Yale)</a></li>
+</ul>
+
+          </div>
+          
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://matteocourthoud.github.io/post/regression_discontinuity/&amp;text=Regression%20Discontinuity" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://matteocourthoud.github.io/post/regression_discontinuity/&amp;t=Regression%20Discontinuity" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Regression%20Discontinuity&amp;body=https://matteocourthoud.github.io/post/regression_discontinuity/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://matteocourthoud.github.io/post/regression_discontinuity/&amp;title=Regression%20Discontinuity" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Regression%20Discontinuity%20https://matteocourthoud.github.io/post/regression_discontinuity/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://t.me/share/url?url=https://matteocourthoud.github.io/post/regression_discontinuity/&amp;text=%7btext%7d" target="_blank" rel="noopener" class="share-btn-telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://matteocourthoud.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/avatar_hu365eedc833ccd5578a90de7c849ec45e_385094_270x270_fill_q75_lanczos_center.jpg" alt=""></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://matteocourthoud.github.io/"></a></h5>
+      
+      <p class="card-text">My research fields are empirical Industrial Organization and Competition Policy. My research interests include the relationship between competition and innovation, big data, artificial intelligence, platform markets, peer to peer services.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://medium.com/@matteo.courthoud" target="_blank" rel="noopener">
+        <i class="fab fa-medium"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/matteo-courthoud-7335198a/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/MatteoCourthoud/" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/matteocourthoud" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://open.spotify.com/user/1180947523" target="_blank" rel="noopener">
+        <i class="fab fa-spotify"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+        </div>
+        </article>
+    </main>
+  </div>
+</div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/julia.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.cf8ca859a9b74f8b1cd804621b13e5f1.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

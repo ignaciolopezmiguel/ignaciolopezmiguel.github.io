@@ -1,0 +1,1639 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="%matplotlib inline %config InlineBackend.figure_format = &#39;retina&#39;  from src.utils import * from src.dgp import dgp_compare  df = dgp_compare().generate_data(include_beta=True) df.head()   .dataframe tbody tr th:only-of-type { vertical-align: middle; } ." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://matteocourthoud.github.io/post/compare/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#003f5c" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.5c4def4f00a521426f4eb098155f3342.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144780600-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-144780600-1', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://matteocourthoud.github.io/post/compare/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Matteo Courthoud" />
+  <meta property="og:url" content="https://matteocourthoud.github.io/post/compare/" />
+  <meta property="og:title" content="Comparing ATE Estimators | Matteo Courthoud" />
+  <meta property="og:description" content="%matplotlib inline %config InlineBackend.figure_format = &#39;retina&#39;  from src.utils import * from src.dgp import dgp_compare  df = dgp_compare().generate_data(include_beta=True) df.head()   .dataframe tbody tr th:only-of-type { vertical-align: middle; } ." /><meta property="og:image" content="https://matteocourthoud.github.io/post/compare/featured.png" />
+    <meta property="twitter:image" content="https://matteocourthoud.github.io/post/compare/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-07-01T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-07-01T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matteocourthoud.github.io/post/compare/"
+  },
+  "headline": "Comparing ATE Estimators",
+  
+  "image": [
+    "https://matteocourthoud.github.io/post/compare/featured.png"
+  ],
+  
+  "datePublished": "2022-07-01T00:00:00Z",
+  "dateModified": "2022-07-01T00:00:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Matteo Courthoud",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://matteocourthoud.github.io/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "%matplotlib inline %config InlineBackend.figure_format = 'retina'  from src.utils import * from src.dgp import dgp_compare  df = dgp_compare().generate_data(include_beta=True) df.head()   .dataframe tbody tr th:only-of-type { vertical-align: middle; } ."
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#003f5c",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#003f5c"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>Comparing ATE Estimators | Matteo Courthoud</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="aeaec79edb73d88e38b0d4cf934a1ae6" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.6edaf3b475ce43de30d98828aea698be.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/course/ml-econ/"><span>Machine Learning for Economics</span></a>
+            
+              <a class="dropdown-item" href="/course/data-science/"><span>Data Science with Python</span></a>
+            
+              <a class="dropdown-item" href="/course/empirical-io/"><span>PhD Industrial Organization</span></a>
+            
+              <a class="dropdown-item" href="/course/metrics/"><span>PhD Econometrics</span></a>
+            
+              <a class="dropdown-item" href="https://pp4rs.github.io/"><span>Programming Practices for Research</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <div class="container-fluid docs">
+  <div class="row">
+
+    <div class="col-xl-2 col-lg-2 d-none d-xl-block d-lg-block empty">
+    </div>
+
+    <div class="col-2 col-xl-2 col-lg-2 d-none d-lg-block docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#simple-difference">Simple difference</a></li>
+        <li><a href="#regression-with-control">Regression with control</a></li>
+        <li><a href="#matching">Matching</a></li>
+        <li><a href="#ipw">IPW</a></li>
+        <li><a href="#r-learner">R Learner</a></li>
+        <li><a href="#s-learner">S Learner</a></li>
+        <li><a href="#t-learner">T Learner</a></li>
+        <li><a href="#x-learner">X Learner</a></li>
+        <li><a href="#dr-learner">DR Learner</a></li>
+      </ul>
+    </li>
+    <li><a href="#compare-all">Compare All</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <main class="col-xl-8 col-lg-8 docs-content" role="main">
+        <article class="article">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="article-container pt-3">
+  <h1>Comparing ATE Estimators</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 1, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 1477px; max-height: 712px;">
+  <div style="position: relative">
+    <img src="/post/compare/featured.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+        <div class="article-container">
+          <div class="article-style" align="justify">
+            <pre><code class="language-python">%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+</code></pre>
+<pre><code class="language-python">from src.utils import *
+from src.dgp import dgp_compare
+</code></pre>
+<pre><code class="language-python">df = dgp_compare().generate_data(include_beta=True)
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>outcome</th>
+      <th>treated</th>
+      <th>male</th>
+      <th>age</th>
+      <th>income</th>
+      <th>beta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>38.68</td>
+      <td>False</td>
+      <td>0</td>
+      <td>28.0</td>
+      <td>1514.0</td>
+      <td>2.726425</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>37.81</td>
+      <td>False</td>
+      <td>1</td>
+      <td>47.0</td>
+      <td>1524.0</td>
+      <td>2.777192</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>27.70</td>
+      <td>False</td>
+      <td>0</td>
+      <td>60.0</td>
+      <td>2683.0</td>
+      <td>0.247312</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>29.56</td>
+      <td>False</td>
+      <td>0</td>
+      <td>29.0</td>
+      <td>3021.0</td>
+      <td>2.632797</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>36.83</td>
+      <td>False</td>
+      <td>0</td>
+      <td>25.0</td>
+      <td>1859.0</td>
+      <td>1.724331</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">np.mean(df['beta'])
+</code></pre>
+<pre><code>2.0
+</code></pre>
+<h3 id="simple-difference">Simple difference</h3>
+<pre><code class="language-python">smf.ols('outcome ~ treated', data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+         <td></td>            <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>       <td>   30.8496</td> <td>    0.091</td> <td>  340.817</td> <td> 0.000</td> <td>   30.672</td> <td>   31.027</td>
+</tr>
+<tr>
+  <th>treated[T.True]</th> <td>   -0.0060</td> <td>    0.118</td> <td>   -0.051</td> <td> 0.959</td> <td>   -0.238</td> <td>    0.226</td>
+</tr>
+</table>
+<h3 id="regression-with-control">Regression with control</h3>
+<pre><code class="language-python">smf.ols('outcome ~ treated + male + age + income', data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+         <td></td>            <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>       <td>   29.5761</td> <td>    0.272</td> <td>  108.833</td> <td> 0.000</td> <td>   29.043</td> <td>   30.109</td>
+</tr>
+<tr>
+  <th>treated[T.True]</th> <td>    2.2682</td> <td>    0.129</td> <td>   17.623</td> <td> 0.000</td> <td>    2.016</td> <td>    2.520</td>
+</tr>
+<tr>
+  <th>male</th>            <td>    4.8568</td> <td>    0.104</td> <td>   46.688</td> <td> 0.000</td> <td>    4.653</td> <td>    5.061</td>
+</tr>
+<tr>
+  <th>age</th>             <td>   -0.1215</td> <td>    0.006</td> <td>  -21.752</td> <td> 0.000</td> <td>   -0.132</td> <td>   -0.111</td>
+</tr>
+<tr>
+  <th>income</th>          <td>    0.0014</td> <td>    9e-05</td> <td>   16.032</td> <td> 0.000</td> <td>    0.001</td> <td>    0.002</td>
+</tr>
+</table>
+<h3 id="matching">Matching</h3>
+<pre><code class="language-python">from causalml.match import NearestNeighborMatch, create_table_one
+
+X = ['male', 'age', 'income']
+psm = NearestNeighborMatch(replace=True, ratio=1, random_state=42)
+df_matched = psm.match(data=df, 
+                       treatment_col=&quot;treated&quot;,
+                       score_cols=X)
+smf.ols('outcome ~ treated', data=df_matched).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+         <td></td>            <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>       <td>   29.5347</td> <td>    0.078</td> <td>  380.105</td> <td> 0.000</td> <td>   29.382</td> <td>   29.687</td>
+</tr>
+<tr>
+  <th>treated[T.True]</th> <td>    1.6918</td> <td>    0.110</td> <td>   15.396</td> <td> 0.000</td> <td>    1.476</td> <td>    1.907</td>
+</tr>
+</table>
+<h3 id="ipw">IPW</h3>
+<pre><code class="language-python">df[&quot;pscore&quot;] = smf.logit(&quot;np.rint(treated) ~ male + age + income&quot;, data=df).fit(disp=False).predict()
+w = 1 / (df[&quot;pscore&quot;] * df[&quot;treated&quot;] + (1-df[&quot;pscore&quot;]) * (1-df[&quot;treated&quot;]))
+smf.wls(&quot;outcome ~ treated&quot;, weights=w, data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+         <td></td>            <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>       <td>   30.2572</td> <td>    0.083</td> <td>  362.783</td> <td> 0.000</td> <td>   30.094</td> <td>   30.421</td>
+</tr>
+<tr>
+  <th>treated[T.True]</th> <td>    1.6806</td> <td>    0.116</td> <td>   14.429</td> <td> 0.000</td> <td>    1.452</td> <td>    1.909</td>
+</tr>
+</table>
+<h3 id="r-learner">R Learner</h3>
+<pre><code class="language-python">from causalml.inference.meta import BaseRLearner
+from lightgbm import LGBMRegressor
+
+BaseRLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])
+</code></pre>
+<pre><code>(array([1.6529302]), array([1.65076231]), array([1.65509809]))
+</code></pre>
+<h3 id="s-learner">S Learner</h3>
+<pre><code class="language-python">from causalml.inference.meta import BaseSLearner
+
+BaseSLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])
+</code></pre>
+<pre><code>array([2.08090912])
+</code></pre>
+<h3 id="t-learner">T Learner</h3>
+<pre><code class="language-python">from causalml.inference.meta import BaseTLearner
+
+BaseTLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])
+</code></pre>
+<pre><code>(array([2.05252873]), array([1.86063479]), array([2.24442267]))
+</code></pre>
+<h3 id="x-learner">X Learner</h3>
+<pre><code class="language-python">from causalml.inference.meta import BaseXLearner
+
+BaseXLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])
+</code></pre>
+<pre><code>(array([2.0255193]), array([1.83456903]), array([2.21646956]))
+</code></pre>
+<h3 id="dr-learner">DR Learner</h3>
+<pre><code class="language-python">from causalml.inference.meta import BaseDRLearner
+
+BaseDRLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])
+</code></pre>
+<pre><code>(array([2.08923293]), array([1.8921804]), array([2.28628547]))
+</code></pre>
+<h2 id="compare-all">Compare All</h2>
+<pre><code class="language-python">def simulate(dgp, K=100):
+    
+    # Initialize coefficients
+    results = pd.DataFrame(columns=['k', 'Estimator', 'Estimate'])
+    names = ['1. Diff ', '2. Reg  ', '3. Match', '4. IPW  ', 
+             '5. R lrn', '6. S lrn', '7. T lrn', '8. X lrn', '9. DRlrn']
+    
+    # Compute coefficients
+    for k in range(K):
+        print(f&quot;Simulation {k}/{K}&quot;, end=&quot;\r&quot;)
+        temp = pd.DataFrame({'k': [k] * len(names), 
+                             'Estimator': names, 
+                             'Estimate': [0] * len(names)})
+        
+        # Draw data
+        df = dgp.generate_data(seed=k)
+
+        # Single diff
+        temp['Estimate'][0] = smf.ols('outcome ~ treated', data=df).fit().params[1]
+        
+        # Regression with controls
+        temp['Estimate'][1] = smf.ols(f'outcome ~ treated + male + age + income', data=df).fit().params[1]
+        
+        # Matching
+        psm = NearestNeighborMatch(replace=True, ratio=1)
+        df_matched = psm.match(data=df, treatment_col=&quot;treated&quot;, score_cols=X)
+        temp['Estimate'][2] = smf.ols('outcome ~ treated', data=df_matched).fit().params[1]
+        
+        # IPW
+        df[&quot;pscore&quot;] = smf.logit(&quot;np.rint(treated) ~ male + age + income&quot;, data=df).fit(disp=False).predict()
+        w = 1 / (df[&quot;pscore&quot;] * df[&quot;treated&quot;] + (1-df[&quot;pscore&quot;]) * (1-df[&quot;treated&quot;]))
+        temp['Estimate'][3] = smf.wls(&quot;outcome ~ treated&quot;, weights=w, data=df).fit().params[1]
+                
+        # R Learner
+        temp['Estimate'][4] = BaseRLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])[0][0]
+        
+        # S Learner
+        temp['Estimate'][5] = BaseSLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])[0]
+        
+        # T Learner
+        temp['Estimate'][6] = BaseTLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])[0][0]
+        
+        # X Learner
+        temp['Estimate'][7] = BaseXLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])[0][0]
+        
+        # DR Learner
+        temp['Estimate'][8] = BaseDRLearner(learner=LGBMRegressor()).estimate_ate(X=df[X], treatment=df['treated'], y=df['outcome'])[0][0]
+        
+        # Combine estimates
+        results = pd.concat((results, temp))
+    
+    return results.reset_index(drop=True)
+</code></pre>
+<pre><code class="language-python">results = simulate(dgp=dgp_compare())
+</code></pre>
+<pre><code>Simulation 99/100
+</code></pre>
+<p>Let&rsquo;s plot the distribution of the estimated parameters.</p>
+<pre><code class="language-python">p = sns.kdeplot(data=results, x=&quot;Estimate&quot;, hue=&quot;Estimator&quot;, legend=True);
+sns.move_legend(p, &quot;upper left&quot;, bbox_to_anchor=(1.05, 0.8))
+plt.axvline(x=2, c='k', ls='--');
+plt.title('Simulated Distributions');
+</code></pre>
+<p><img src="img/compare_27_0.png" alt="png"></p>
+<p>We can also tabulate the simulated mean and standard deviation of each estimator.</p>
+<pre><code class="language-python">results.groupby('Estimator').agg(mean=(&quot;Estimate&quot;, &quot;mean&quot;), std=(&quot;Estimate&quot;, &quot;std&quot;))
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+    </tr>
+    <tr>
+      <th>Estimator</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1. Diff</th>
+      <td>-0.054010</td>
+      <td>0.120718</td>
+    </tr>
+    <tr>
+      <th>2. Reg</th>
+      <td>2.190934</td>
+      <td>0.126232</td>
+    </tr>
+    <tr>
+      <th>3. Match</th>
+      <td>1.575239</td>
+      <td>0.211772</td>
+    </tr>
+    <tr>
+      <th>4. IPW</th>
+      <td>1.596031</td>
+      <td>0.119129</td>
+    </tr>
+    <tr>
+      <th>5. R lrn</th>
+      <td>1.649703</td>
+      <td>0.263321</td>
+    </tr>
+    <tr>
+      <th>6. S lrn</th>
+      <td>1.963797</td>
+      <td>0.129638</td>
+    </tr>
+    <tr>
+      <th>7. T lrn</th>
+      <td>1.891307</td>
+      <td>0.160480</td>
+    </tr>
+    <tr>
+      <th>8. X lrn</th>
+      <td>1.975699</td>
+      <td>0.161004</td>
+    </tr>
+    <tr>
+      <th>9. DRlrn</th>
+      <td>1.876465</td>
+      <td>0.173318</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>The only unbiased estimators seems to be the S-learner and the X-learner, followed by T-learner, DR-learner and linear regression.</p>
+<p>he S-learner however is more efficient.</p>
+
+          </div>
+          
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://matteocourthoud.github.io/post/compare/&amp;text=Comparing%20ATE%20Estimators" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://matteocourthoud.github.io/post/compare/&amp;t=Comparing%20ATE%20Estimators" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Comparing%20ATE%20Estimators&amp;body=https://matteocourthoud.github.io/post/compare/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://matteocourthoud.github.io/post/compare/&amp;title=Comparing%20ATE%20Estimators" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Comparing%20ATE%20Estimators%20https://matteocourthoud.github.io/post/compare/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://t.me/share/url?url=https://matteocourthoud.github.io/post/compare/&amp;text=%7btext%7d" target="_blank" rel="noopener" class="share-btn-telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://matteocourthoud.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/avatar_hu365eedc833ccd5578a90de7c849ec45e_385094_270x270_fill_q75_lanczos_center.jpg" alt=""></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://matteocourthoud.github.io/"></a></h5>
+      
+      <p class="card-text">My research fields are empirical Industrial Organization and Competition Policy. My research interests include the relationship between competition and innovation, big data, artificial intelligence, platform markets, peer to peer services.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://medium.com/@matteo.courthoud" target="_blank" rel="noopener">
+        <i class="fab fa-medium"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/matteo-courthoud-7335198a/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/MatteoCourthoud/" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/matteocourthoud" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://open.spotify.com/user/1180947523" target="_blank" rel="noopener">
+        <i class="fab fa-spotify"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+        </div>
+        </article>
+    </main>
+  </div>
+</div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/julia.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.cf8ca859a9b74f8b1cd804621b13e5f1.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

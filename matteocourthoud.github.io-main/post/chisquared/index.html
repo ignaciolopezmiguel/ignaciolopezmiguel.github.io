@@ -1,0 +1,1794 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="If you search the Wikipedia definition of Chi-Squared test, you get the following definition:
+ Pearson&rsquo;s chi-squared test $\chi^2$ is a statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://matteocourthoud.github.io/post/chisquared/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#003f5c" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.5c4def4f00a521426f4eb098155f3342.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144780600-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-144780600-1', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://matteocourthoud.github.io/post/chisquared/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Matteo Courthoud" />
+  <meta property="og:url" content="https://matteocourthoud.github.io/post/chisquared/" />
+  <meta property="og:title" content="Understanding The Chi-Squared Test | Matteo Courthoud" />
+  <meta property="og:description" content="If you search the Wikipedia definition of Chi-Squared test, you get the following definition:
+ Pearson&rsquo;s chi-squared test $\chi^2$ is a statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance." /><meta property="og:image" content="https://matteocourthoud.github.io/post/chisquared/featured.png" />
+    <meta property="twitter:image" content="https://matteocourthoud.github.io/post/chisquared/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-05-31T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-05-31T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matteocourthoud.github.io/post/chisquared/"
+  },
+  "headline": "Understanding The Chi-Squared Test",
+  
+  "image": [
+    "https://matteocourthoud.github.io/post/chisquared/featured.png"
+  ],
+  
+  "datePublished": "2022-05-31T00:00:00Z",
+  "dateModified": "2022-05-31T00:00:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Matteo Courthoud",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://matteocourthoud.github.io/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "If you search the Wikipedia definition of Chi-Squared test, you get the following definition:\n Pearson\u0026rsquo;s chi-squared test $\\chi^2$ is a statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance."
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#003f5c",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#003f5c"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>Understanding The Chi-Squared Test | Matteo Courthoud</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="6cc8886782d077be8d6a99ab075dcb4a" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.6edaf3b475ce43de30d98828aea698be.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/course/ml-econ/"><span>Machine Learning for Economics</span></a>
+            
+              <a class="dropdown-item" href="/course/data-science/"><span>Data Science with Python</span></a>
+            
+              <a class="dropdown-item" href="/course/empirical-io/"><span>PhD Industrial Organization</span></a>
+            
+              <a class="dropdown-item" href="/course/metrics/"><span>PhD Econometrics</span></a>
+            
+              <a class="dropdown-item" href="https://pp4rs.github.io/"><span>Programming Practices for Research</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <div class="container-fluid docs">
+  <div class="row">
+
+    <div class="col-xl-2 col-lg-2 d-none d-xl-block d-lg-block empty">
+    </div>
+
+    <div class="col-2 col-xl-2 col-lg-2 d-none d-lg-block docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#test-1-discrete-distribution">Test 1: Discrete Distribution</a></li>
+    <li><a href="#why-the-chi-squared-distribution">Why the Chi-squared Distribution?</a></li>
+    <li><a href="#some-statistics">Some Statistics</a></li>
+    <li><a href="#test-2-independence">Test 2: Independence</a></li>
+    <li><a href="#test-3-continuous-distributions">Test 3: Continuous Distributions</a></li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <main class="col-xl-8 col-lg-8 docs-content" role="main">
+        <article class="article">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="article-container pt-3">
+  <h1>Understanding The Chi-Squared Test</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    May 31, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    13 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 1144px; max-height: 735px;">
+  <div style="position: relative">
+    <img src="/post/chisquared/featured.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+        <div class="article-container">
+          <div class="article-style" align="justify">
+            <p>If you search the Wikipedia definition of Chi-Squared test, you get the following definition:</p>
+<blockquote>
+<p>Pearson&rsquo;s chi-squared test $\chi^2$ is a statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance.</p>
+</blockquote>
+<p>What does it mean? Let&rsquo;s see it together.</p>
+<h2 id="test-1-discrete-distribution">Test 1: Discrete Distribution</h2>
+<p>Suppose you want to <strong>test whether a dice is fair</strong>. You throw the dice 60 times and you count the number of times you get each outcome.</p>
+<p>Let&rsquo;s simulate some data (from a fair dice).</p>
+<pre><code class="language-python">%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+</code></pre>
+<pre><code class="language-python">from src.utils import *
+</code></pre>
+<pre><code class="language-python">def generate_data_dice(N=60, seed=1):
+    np.random.seed(seed) # Set seed for replicability
+    dice_numbers = [1,2,3,4,5,6]  # Dice numbers
+    dice_throws = np.random.choice(dice_numbers, size=N)  # Actual dice throws
+    data = pd.DataFrame({&quot;dice number&quot;: dice_numbers,
+                         &quot;observed&quot;: [sum(dice_throws==n) for n in dice_numbers],
+                         &quot;expected&quot;: int(N / 6)})
+    return data
+</code></pre>
+<pre><code class="language-python">data_dice = generate_data_dice()
+data_dice
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dice number</th>
+      <th>observed</th>
+      <th>expected</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>14</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>6</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>8</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>12</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>If we were throwing the dice <strong>a lot</strong> of times, we would expect the same number of observations for each outcome. However, there is inherent noise in the process. How can we tell whether the fact that we didn&rsquo;t get exactly 10 observations for each outcome is just due to randomness or it&rsquo;s because the dice is unfair?</p>
+<p>The <strong>idea</strong> is to compute some statistic whose distribution is known under the assumption that the dice is fair, and then check if its value is <strong>&ldquo;unusual&rdquo;</strong> or not. If the value is particularly &ldquo;unusual&rdquo;, we reject the null hypothesis that the dice is fair.</p>
+<p>In our case, the statistic we choose is the chi-squared $\chi^{2}$ test-statistic.</p>
+<p>The value of the <a href="https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test" target="_blank" rel="noopener"><strong>Pearson&rsquo;s chi-squared test-statistic</strong></a> is</p>
+<p>$$
+T_{\chi^2} = \sum _{i=1}^{n} \frac{(O_i - E_i)^{2}}{E_i} = N \sum _{i=1}^{n} \frac{\left(O_i/N - p_i \right)^2 }{p_i}
+$$</p>
+<p>where</p>
+<ul>
+<li>$O_{i}$ = the number of observations of type i.</li>
+<li>$N$ = total number of observations</li>
+<li>$E_{i}=N * p_{i}$ = the expected (theoretical) count of type $i$, asserted by the null hypothesis that the fraction of type $i$ in the population is $p_{i}$</li>
+<li>$n$ = the number of cells in the table.</li>
+</ul>
+<pre><code class="language-python">def compute_chi2_stat(data):
+    return sum( (data.observed - data.expected)**2 / data.expected )
+</code></pre>
+<pre><code class="language-python">chi2_stat = compute_chi2_stat(data_dice)
+chi2_stat
+</code></pre>
+<pre><code>4.0
+</code></pre>
+<p>What do we make of this number? Is it <strong>unusual</strong>?</p>
+<p>If the dice were fair, the test Pearson&rsquo;s chi-squared test-statistic $T_{\chi^2}$ would be distributed as a <strong>chi-squared distribution</strong> with $k-1$ degrees of freedom, $\chi^2_{k-1}$. For the moment, take this claim at face value, we will verify it later, both empirically and theoretically. We will also discuss the degrees of freedom in detail later on.</p>
+<p><strong>Important!</strong> Do not confuse the chi-squared test statistic (a number) with the chi-squared distribution (a distribution).</p>
+<p>What does a chi-squared distribution with $n-1$ degrees of freedom, $\chi^2_{k-1}$, look like?</p>
+<pre><code class="language-python">from scipy.stats import chi2
+
+x = np.arange(0, 30, 0.001) # x-axis ranges from 0 to 30 with .001 steps
+chi2_5_pdf = chi2.pdf(x, df=5) # Chi-square distribution with 5 degrees of freedom
+plt.plot(x, chi2_5_pdf); 
+</code></pre>
+<p><img src="img/chisquared_13_0.png" alt="png"></p>
+<p>How does the value of the statistic we have observed compares with its the distribution under the null hypothesis of a fair dice?</p>
+<pre><code class="language-python">plt.plot(x, chi2.pdf(x, df=5), label='chi2 distribution');
+plt.axvline(chi2_stat, color='k', label='chi2 statistic')
+plt.legend();
+</code></pre>
+<p><img src="img/chisquared_15_0.png" alt="png"></p>
+<p>The test statistic seems to fall well within the distribution, i.e. it does not seem to be an unusual event. Indeed, the question we want to answer is: &ldquo;<em>under the null hypothesis that the dice is fair, how unlikely is the statistic we have observed?</em>&rdquo;.</p>
+<p>The last component we need in order to build a hypothesis test is a level of <strong>confidence</strong>, i.e. a threshold of &ldquo;unlikeliness&rdquo; of an event, below which we declare that the event is too unlikely under the model, for the model to be true. Let&rsquo;s say we decide to set that threshold at 5%.</p>
+<p>If the likelihood of observing an even that (or more) extreme than the one we have actually observed is less than 5%, we reject the null hypothesis that the dice is fair.</p>
+<p>What is this value for a chi-squared distribution with 5 degrees of freedom? We can compute the percent point function (ppf) of 95% for the chi-squared distribution, which is essentially the inverse of the <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function" target="_blank" rel="noopener">cumulative distribution function</a>. This value is often called the <strong>critical value</strong>.</p>
+<pre><code class="language-python">z95 = chi2.ppf(0.95, df=5)
+z95
+</code></pre>
+<pre><code>11.070497693516351
+</code></pre>
+<p>Since our value is smaller than the critical value, we do not reject the null. The critical value is indeed critical because it splits the domain of the test statistic into two areas: the <strong>rejection area</strong>, where we reject the null hypothesis, and the non-rejection area, where we don&rsquo;t.</p>
+<p>We can plot the rejection and non-rejection areas in a plot.</p>
+<pre><code class="language-python">def plot_test(x, stat, df):
+    z95 = chi2.ppf(0.95, df=df)
+    chi2_pdf = chi2.pdf(x, df=df)
+    plt.plot(x, chi2_pdf);
+    plt.fill_between(x[x&gt;z95], chi2_pdf[x&gt;z95], color='r', alpha=0.4, label='rejection area')
+    plt.fill_between(x[x&lt;z95], chi2_pdf[x&lt;z95], color='g', alpha=0.4, label='non-rejection area')
+    plt.axvline(chi2_stat, color='k', label='chi2 statistic')
+    plt.ylim(0, plt.ylim()[1])
+    plt.legend();
+</code></pre>
+<pre><code class="language-python">plot_test(x, chi2_stat, df=5)
+</code></pre>
+<p><img src="img/chisquared_20_0.png" alt="png"></p>
+<p>From the plot, we can see that we do not reject the null hypothesis that the dice is fair for our value of the $\chi^2$ test statistic.</p>
+<h2 id="why-the-chi-squared-distribution">Why the Chi-squared Distribution?</h2>
+<p>How do we know that that particular statistic has that particular distribution?</p>
+<p>Before digging into the math, we can check this claim via <strong>simulation</strong>. Since we have access to the data generating process, we can repeat the procedure above many times, i.e.</p>
+<ul>
+<li>roll a (fair) dice 60 times</li>
+<li>compute the chi-square statistic</li>
+</ul>
+<p>and then plot the distribution of chi square statistics.</p>
+<pre><code class="language-python">def simulate_chi2stats(K, N, dgp):
+    chi2_stats = [compute_chi2_stat(dgp(seed=k)) for k in range(K)]
+    return np.array(chi2_stats)
+</code></pre>
+<pre><code class="language-python">chi2_stats = simulate_chi2stats(K=100, N=60, dgp=generate_data_dice)
+</code></pre>
+<pre><code class="language-python">plt.hist(chi2_stats, density=True, bins=30, alpha=0.3, color='C0');
+plt.plot(x, chi2_5_pdf);
+</code></pre>
+<p><img src="img/chisquared_26_0.png" alt="png"></p>
+<p>Since we only did it 100 times, the distribution looks pretty coarse but vaguely close to its theoretical counterpart. Let&rsquo;s try 1000 times.</p>
+<pre><code class="language-python">chi2_stats = simulate_chi2stats(K=1000, N=60, dgp=generate_data_dice)
+</code></pre>
+<pre><code class="language-python">plt.hist(chi2_stats, density=True, bins=30, alpha=0.3, color='C0');
+plt.plot(x, chi2_5_pdf);
+</code></pre>
+<p><img src="img/chisquared_29_0.png" alt="png"></p>
+<p>The empirical distribution of the test statistic is indeed very close to its theoretical counterpart.</p>
+<h2 id="some-statistics">Some Statistics</h2>
+<p>Why does the distribution of the test statistic look like that? Let&rsquo;s now dig deeper into the math.</p>
+<p>There are two things we need to know in order to understand the answer:</p>
+<ul>
+<li>the Central Limit Theorem</li>
+<li>the relationship between a chi-squared and a normal distribution</li>
+</ul>
+<p>The Wikipedia definition of the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank" rel="noopener">Central Limit Theorem</a> says that</p>
+<blockquote>
+<p>&ldquo;<em>In probability theory, the central limit theorem (CLT) establishes that, in many situations, when independent random variables are summed up, their properly normalized sum tends toward a normal distribution (informally a bell curve) even if the original variables themselves are not normally distributed.</em>&rdquo;</p>
+</blockquote>
+<p>Where does a normal distribution come up in our case? If we look at a single row in our data, i.e. the occurrences of a specific dice throw, it can be interpreted as the sum of realization from a <a href="https://en.wikipedia.org/wiki/Bernoulli_distribution" target="_blank" rel="noopener">Bernoulli distribution</a> with probability 1/6.</p>
+<blockquote>
+<p>&ldquo;<em>In probability theory and statistics, the Bernoulli distribution is the discrete probability distribution of a random variable which takes the value $1$ with probability $p$ and the value $0$ with probability $q=1-p$.</em>&rdquo;</p>
+</blockquote>
+<p>In our case, the probability of getting a particular number is exactly 1/6. What is the distribution of the sum of its realizations? The Central Limit Theorem also tells us that:</p>
+<blockquote>
+<p>&ldquo;<em>If $X_1, X_2, \dots , X_n, \dots$ are random samples drawn from a population with overall mean $\mu$ and finite variance $\sigma^2$, and if $\bar X_n$ is the sample mean of the first $n$ samples, then the limiting form of the distribution,</em></p>
+<p>$$
+Z = \lim_{n \to \infty} \sqrt{n} \left( \frac{\bar X_n - \mu }{\sigma} \right)
+$$</p>
+<p><em>is a standard normal distribution.</em>&rdquo;</p>
+</blockquote>
+<p>Therefore, in our case, the distribution of the sum of Bernoulli distributions with mean $p$ is distributed as a normal distribution with</p>
+<ul>
+<li>mean $p$</li>
+<li>variance $p * (1-p)$</li>
+</ul>
+<p>Therefore, we can obtain a random variable that is asymptotically standard normal distributed as</p>
+<p>$$
+\lim_{n \to \infty} \ \sqrt{n} \left( \frac {\bar X_n - p}{\sqrt{p * (1-p)}} \right) \sim N(0,1)
+$$</p>
+<p>Our last piece: what is a <a href="https://en.wikipedia.org/wiki/Chi-squared_distribution" target="_blank" rel="noopener">chi-squared distribution</a>? The Wikipedia definition says</p>
+<blockquote>
+<p>&ldquo;<em>If $Z_1, &hellip;, Z_k$ are independent, standard normal random variables, then the sum of their squares,</em></p>
+<p>$$
+Q = \sum_{i=1}^k Z_i^2
+$$
+<em>is distributed according to the chi-squared distribution with $k$ degrees of freedom.</em>&rdquo;</p>
+</blockquote>
+<p>I.e. the sum of standard normal distributions is a chi-squared distribution, where the <strong>degrees of freedom</strong> indicate the number of normal distributions we are summing over. Since the normalized sum of realizations of each dice number should converge to a standard normal distribution, their sum of squares should converge to a chi-squared distribution. I.e.</p>
+<p>$$
+\lim_{n \to \infty} \ \sum_k n \frac{(\bar X_n - p)^2}{p * (1-p)} \sim \chi^2_k
+$$</p>
+<p>There is just one issue: the last distribution is not really independent from the others. In fact, as soon as we know that we have thrown 60 dices and how many 1s, 2s, 3s, 4s, and 5s we got, we can compute the number of 6s. Therefore, we should exclude one distribution since only 5 (or, in general, $k-1$) are truly independent.</p>
+<p>In practice, however, we sum all distributions, but then we scale them down by multiplying them by $(1-p)$ so that we have</p>
+<p>$$
+\lim_{n \to \infty} \ \sum_k n \frac{(\bar X_n - p)^2}{p} \sim \chi^2_{k-1}
+$$</p>
+<p>which is exactly the formula we used to compute the test statistic:</p>
+<p>$$
+T_{\chi^2} = \sum _{i=1}^{n} \frac{(O_i - E_i)^{2}}{E_i} = N \sum _{i=1}^{n} \frac{\left(O_i/N - p_i \right)^2 }{p_i}
+$$</p>
+<h2 id="test-2-independence">Test 2: Independence</h2>
+<p>Chi-squared tests can also be used to <strong>test independence between two variables</strong>. The idea is fundamentally the same as the test in the previous section: checking systematic differences between observed and expected values, across different variables.</p>
+<p>Suppose you have <strong>data on grades in a classroom, by gender</strong>. Grades go from $1$ to $4$. Assuming males and females are equally prepared for the test, you want to test whether there has been discrimination in grading.</p>
+<p>The problem is again asserting whether the observed differences are random or systematic.</p>
+<p>Let&rsquo;s generate some data (under the no discrimination assumption).</p>
+<pre><code class="language-python">def generate_data_grades(N_male=60, N_female=40, seed=1):
+    np.random.seed(seed)
+    grade_scale = [1,2,3,4]
+    p = [0.1, 0.2, 0.5, 0.2]
+    grades_male = np.random.choice(grade_scale, size=N_male, p=p)
+    grades_female = np.random.choice(grade_scale, size=N_female, p=p)
+    data = pd.DataFrame({&quot;grade&quot;: grade_scale + grade_scale,
+                          &quot;gender&quot;: [&quot;male&quot; for i in grade_scale] + [&quot;female&quot; for i in grade_scale],
+                          &quot;observed&quot;: [sum(grades_male==n) for n in grade_scale] + [sum(grades_female==n) for n in grade_scale],
+                        })  
+    data['expected gender'] = data.groupby(&quot;gender&quot;)[&quot;observed&quot;].transform(&quot;mean&quot;) 
+    data['expected grade'] = data.groupby(&quot;grade&quot;)[&quot;observed&quot;].transform(&quot;mean&quot;) 
+    data['expected'] = data['expected gender'] * data['expected grade'] / data['observed'].mean()
+    return data
+</code></pre>
+<pre><code class="language-python">data_grades = generate_data_grades()
+data_grades
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>grade</th>
+      <th>gender</th>
+      <th>observed</th>
+      <th>expected gender</th>
+      <th>expected grade</th>
+      <th>expected</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>male</td>
+      <td>9</td>
+      <td>15.0</td>
+      <td>5.5</td>
+      <td>6.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>male</td>
+      <td>14</td>
+      <td>15.0</td>
+      <td>10.5</td>
+      <td>12.6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>male</td>
+      <td>27</td>
+      <td>15.0</td>
+      <td>24.5</td>
+      <td>29.4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>male</td>
+      <td>10</td>
+      <td>15.0</td>
+      <td>9.5</td>
+      <td>11.4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>female</td>
+      <td>2</td>
+      <td>10.0</td>
+      <td>5.5</td>
+      <td>4.4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2</td>
+      <td>female</td>
+      <td>7</td>
+      <td>10.0</td>
+      <td>10.5</td>
+      <td>8.4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3</td>
+      <td>female</td>
+      <td>22</td>
+      <td>10.0</td>
+      <td>24.5</td>
+      <td>19.6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>4</td>
+      <td>female</td>
+      <td>9</td>
+      <td>10.0</td>
+      <td>9.5</td>
+      <td>7.6</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>Has there been discrimination? We again compare observed and expected grades, where expected grades are computed under the independence assumption: as the product of the marginal distributions of <code>grade</code> and <code>gender</code>.</p>
+<p>The value of the test-statistic is</p>
+<p>$$
+T_{\chi^2} = \sum_{i=1}^r \sum_{j=1}^c \frac{(O_{i,j} - E_{i,j})^2 }{ E_{i,j} } = N \sum_{i,j} p_{i \cdot} p_{\cdot j} \left( \frac{O_{i,j}/N - p_{i \cdot} p_{\cdot j} }{ p_{i \cdot} p_{\cdot j}} \right)^2
+$$</p>
+<p>where</p>
+<ul>
+<li>
+<p>$N$ is the total sample size (the sum of all cells in the table)</p>
+</li>
+<li>
+<p>$p_{i \cdot} = \frac{O_{i\cdot }}{N} = \sum_{j=1}^{c} \frac{O_{i,j}}{N}$ is the fraction of observations of type i ignoring the column attribute (fraction of row totals), and</p>
+</li>
+<li>
+<p>$p_{\cdot j} = \frac{O_{\cdot j}}{N} = \sum_{i=1}^{r} \frac{O_{i,j}}{N}$ is the fraction of observations of type j ignoring the row attribute (fraction of column totals).</p>
+</li>
+</ul>
+<p>So the formula for the test statistic is the same</p>
+<pre><code class="language-python">chi2_stat = compute_chi2_stat(data_grades)
+chi2_stat
+</code></pre>
+<pre><code>3.490327550477927
+</code></pre>
+<p>As before, we can double-check whether the statistic is indeed distributed as a chi-squared with $k-1$ degrees of freedom by simulating the data generating process.</p>
+<pre><code class="language-python">chi2_stats = simulate_chi2stats(K=1000, N=60, dgp=generate_data_grades)
+plt.hist(chi2_stats, density=True, bins=30, alpha=0.3, color='C0');
+plt.plot(x, chi2_5_pdf);
+</code></pre>
+<p><img src="img/chisquared_41_0.png" alt="png"></p>
+<p>The two distributions do not look similar anymore.</p>
+<p><strong>What happened?</strong> We forgot to change the degrees of freedom! The general formula for the degrees of freedom when testing the independence of variables is $(N_i - 1) \times (N_j - 1)$. So in our case, it&rsquo;s $(4-1) \times (2-1) = 3$.</p>
+<pre><code class="language-python">chi2_3_pdf = chi2.pdf(x, df=3)
+chi2_stats = simulate_chi2stats(K=1000, N=60, dgp=generate_data_grades)
+plt.hist(chi2_stats, density=True, bins=30, alpha=0.3, color='C0');
+plt.plot(x, chi2_3_pdf);
+</code></pre>
+<p><img src="img/chisquared_43_0.png" alt="png"></p>
+<p>Now the empirical distribution is close to its theoretical counterpart.</p>
+<p>Do we <strong>reject</strong> the null hypothesis of independent distributions of gender and grades? We can visualize the value of the test statistic together with the rejection areas.</p>
+<pre><code class="language-python">plot_test(x, chi2_stat, df=3)
+</code></pre>
+<p><img src="img/chisquared_45_0.png" alt="png"></p>
+<p>We <strong>do not reject</strong> the null hypothesis of independend distributions of gender and grades.</p>
+<h2 id="test-3-continuous-distributions">Test 3: Continuous Distributions</h2>
+<p>As we have seen, the chi-square test can be used to compare observed means/frequencies against a null hypothesis. How can we use this statistic to <strong>test a distributional assumption</strong>?</p>
+<p>The answer is simple: we can construct conditional means. The easiest way to do it is to <strong>bin the data</strong> into intervals and then check if the observed frequencies match the expected probabilities, within each bin.</p>
+<p><strong>Note</strong>: a good practice is to have equally sized bins, in terms of expected probabilities, since it ensures that we have as many observations in each bin as possible.</p>
+<p>As an example, let&rsquo;s assume we have to analyze the customer service of a firm. We would like to understand if the number of complains follows an <a href="https://en.wikipedia.org/wiki/Exponential_distribution" target="_blank" rel="noopener">exponential distribution</a> with paramenter $\lambda=1$.</p>
+<pre><code class="language-python">from scipy.stats import expon
+</code></pre>
+<pre><code class="language-python">def generate_complaints_data(N=100, cuts=4, seed=2):
+    np.random.seed(seed)
+    complaints = np.random.exponential(size=N)
+    cat, bins = pd.qcut(complaints, cuts, retbins=True)
+    p = [expon.cdf(bins[n+1]) - expon.cdf(bins[n]) for n in range(len(bins)-1)]
+    data = pd.DataFrame({&quot;bin&quot;: cat.unique(),
+                         &quot;observed&quot;: [sum(cat==n) for n in cat.unique()],
+                         &quot;expected&quot;: np.dot(p, N)})
+    return data, complaints
+</code></pre>
+<pre><code class="language-python">data_complaints, complaints = generate_complaints_data()
+data_complaints
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bin</th>
+      <th>observed</th>
+      <th>expected</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>(0.297, 0.573]</td>
+      <td>25</td>
+      <td>24.360534</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>(0.0121, 0.297]</td>
+      <td>25</td>
+      <td>17.974853</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>(0.573, 1.025]</td>
+      <td>25</td>
+      <td>20.489741</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>(1.025, 5.092]</td>
+      <td>25</td>
+      <td>35.258339</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>We have split the data into equally sized bins of size 25 and we have computed the expected number of observations within each bin, if the data was indeed exponentially distributed with parameter $\lambda=1$.</p>
+<p>We can <strong>plot</strong> the observed and realized distribution of the data.</p>
+<pre><code class="language-python"># Plot data
+plt.hist(complaints, density=True, bins=30, alpha=0.3, color='C0');
+exp_pdf = expon.pdf(x)
+plt.plot(x, exp_pdf);
+</code></pre>
+<p><img src="img/chisquared_53_0.png" alt="png"></p>
+<p>The two distributions seem close but we need a test statistic in order to assess whether the differences are random or systematic.</p>
+<pre><code class="language-python">chi2_stat = compute_chi2_stat(data_complaints)
+chi2_stat
+</code></pre>
+<pre><code>6.739890904809741
+</code></pre>
+<p>Do we reject the null hypothesis that the data is drawn from an exponential distribution? We decide by comparing the value of the test statistic with the rejection areas.</p>
+<pre><code class="language-python">plot_test(x, chi2_stat, df=3)
+</code></pre>
+<p><img src="img/chisquared_57_0.png" alt="png"></p>
+<p>Since the test statistic falls outside of the rejection area, we <strong>do not reject</strong> the null hypothesis that the data is drawn from an exponential distribution.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this tutorial, we have seen how to perform 3 hypoteses tests</p>
+<ol>
+<li>testing if a set of means or sums is coming from the expected distribution</li>
+<li>testing if two distributions are independent or not</li>
+<li>testing a specific data generating process</li>
+</ol>
+<p>The underlying principle is the same: testing discrepancies between expected and observed count data.</p>
+<p>The key statistic is Pearson&rsquo;s chi-square statistic and the key distribution is the chi-squared distribution. We have seen how to compute the statistic, why it has a chi-squared distribution, and how to use this information to perform a statistical hypothesis test.</p>
+<h3 id="code">Code</h3>
+<p>You can find the original Jupyter Notebook here:</p>
+<p><a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/chisquared.ipynb" target="_blank" rel="noopener">https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/chisquared.ipynb</a></p>
+
+          </div>
+          
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://matteocourthoud.github.io/post/chisquared/&amp;text=Understanding%20The%20Chi-Squared%20Test" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://matteocourthoud.github.io/post/chisquared/&amp;t=Understanding%20The%20Chi-Squared%20Test" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Understanding%20The%20Chi-Squared%20Test&amp;body=https://matteocourthoud.github.io/post/chisquared/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://matteocourthoud.github.io/post/chisquared/&amp;title=Understanding%20The%20Chi-Squared%20Test" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Understanding%20The%20Chi-Squared%20Test%20https://matteocourthoud.github.io/post/chisquared/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://t.me/share/url?url=https://matteocourthoud.github.io/post/chisquared/&amp;text=%7btext%7d" target="_blank" rel="noopener" class="share-btn-telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://matteocourthoud.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/avatar_hu365eedc833ccd5578a90de7c849ec45e_385094_270x270_fill_q75_lanczos_center.jpg" alt=""></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://matteocourthoud.github.io/"></a></h5>
+      
+      <p class="card-text">My research fields are empirical Industrial Organization and Competition Policy. My research interests include the relationship between competition and innovation, big data, artificial intelligence, platform markets, peer to peer services.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://medium.com/@matteo.courthoud" target="_blank" rel="noopener">
+        <i class="fab fa-medium"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/matteo-courthoud-7335198a/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/MatteoCourthoud/" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/matteocourthoud" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://open.spotify.com/user/1180947523" target="_blank" rel="noopener">
+        <i class="fab fa-spotify"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+        </div>
+        </article>
+    </main>
+  </div>
+</div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/julia.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.cf8ca859a9b74f8b1cd804621b13e5f1.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

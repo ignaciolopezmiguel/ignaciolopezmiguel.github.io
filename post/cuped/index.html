@@ -1,0 +1,1907 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="An in depth guide to the state-of-the art variance reduction technique in A/B tests
+During my PhD, I spent a lot of time learning and applying causal inference methods to experimental and observational data." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://matteocourthoud.github.io/post/cuped/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#003f5c" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.5c4def4f00a521426f4eb098155f3342.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144780600-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-144780600-1', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://matteocourthoud.github.io/post/cuped/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Matteo Courthoud" />
+  <meta property="og:url" content="https://matteocourthoud.github.io/post/cuped/" />
+  <meta property="og:title" content="Understanding CUPED | Matteo Courthoud" />
+  <meta property="og:description" content="An in depth guide to the state-of-the art variance reduction technique in A/B tests
+During my PhD, I spent a lot of time learning and applying causal inference methods to experimental and observational data." /><meta property="og:image" content="https://matteocourthoud.github.io/post/cuped/featured.png" />
+    <meta property="twitter:image" content="https://matteocourthoud.github.io/post/cuped/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-07-12T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-07-12T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matteocourthoud.github.io/post/cuped/"
+  },
+  "headline": "Understanding CUPED",
+  
+  "image": [
+    "https://matteocourthoud.github.io/post/cuped/featured.png"
+  ],
+  
+  "datePublished": "2022-07-12T00:00:00Z",
+  "dateModified": "2022-07-12T00:00:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Matteo Courthoud",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://matteocourthoud.github.io/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "An in depth guide to the state-of-the art variance reduction technique in A/B tests\nDuring my PhD, I spent a lot of time learning and applying causal inference methods to experimental and observational data."
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#003f5c",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#003f5c"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>Understanding CUPED | Matteo Courthoud</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="88102c816a2f90fe53e405766df63eb5" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.6edaf3b475ce43de30d98828aea698be.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/course/ml-econ/"><span>Machine Learning for Economics</span></a>
+            
+              <a class="dropdown-item" href="/course/data-science/"><span>Data Science with Python</span></a>
+            
+              <a class="dropdown-item" href="/course/empirical-io/"><span>PhD Industrial Organization</span></a>
+            
+              <a class="dropdown-item" href="/course/metrics/"><span>PhD Econometrics</span></a>
+            
+              <a class="dropdown-item" href="https://pp4rs.github.io/"><span>Programming Practices for Research</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <div class="container-fluid docs">
+  <div class="row">
+
+    <div class="col-xl-2 col-lg-2 d-none d-xl-block d-lg-block empty">
+    </div>
+
+    <div class="col-2 col-xl-2 col-lg-2 d-none d-lg-block docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#example">Example</a>
+      <ul>
+        <li><a href="#difference-in-means">Difference in Means</a></li>
+      </ul>
+    </li>
+    <li><a href="#cuped">CUPED</a>
+      <ul>
+        <li><a href="#optimal-x">Optimal X</a></li>
+        <li><a href="#back-to-the-data">Back To The Data</a></li>
+        <li><a href="#equivalent-formulation">Equivalent Formulation</a></li>
+      </ul>
+    </li>
+    <li><a href="#cuped-vs-other">CUPED vs Other</a>
+      <ul>
+        <li><a href="#autoregression">Autoregression</a></li>
+        <li><a href="#diff-in-diffs">Diff-in-Diffs</a></li>
+        <li><a href="#comparison">Comparison</a></li>
+        <li><a href="#always-identical">Always Identical?</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#references">References</a></li>
+        <li><a href="#related-articles">Related Articles</a></li>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <main class="col-xl-8 col-lg-8 docs-content" role="main">
+        <article class="article">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="article-container pt-3">
+  <h1>Understanding CUPED</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 12, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    15 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 489px; max-height: 333px;">
+  <div style="position: relative">
+    <img src="/post/cuped/featured.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+        <div class="article-container">
+          <div class="article-style" align="justify">
+            <p><em>An in depth guide to the state-of-the art variance reduction technique in A/B tests</em></p>
+<p>During my PhD, I spent a lot of time learning and applying causal inference methods to experimental and observational data. However, I was completely clueless when I first heard of <strong>CUPED</strong> (Controlled-Experiment using Pre-Experiment Data), a technique to increase the power of randomized controlled trials in A/B tests.</p>
+<p>What really amazed me was the popularity of the algorithm in the industry. CUPED was first introduced by Microsoft researchers <a href="https://dl.acm.org/doi/abs/10.1145/2433396.2433413" target="_blank" rel="noopener">Deng, Xu, Kohavi, Walker (2013)</a> and has been widely used in companies such as <a href="https://www.kdd.org/kdd2016/papers/files/adp0945-xieA.pdf" target="_blank" rel="noopener">Netflix</a>, <a href="https://booking.ai/995d186fff1d" target="_blank" rel="noopener">Booking</a>, <a href="https://research.facebook.com/blog/2020/10/increasing-the-sensitivity-of-a-b-tests-by-utilizing-the-variance-estimates-of-experimental-units/" target="_blank" rel="noopener">Meta</a>, <a href="https://arxiv.org/abs/2112.13299" target="_blank" rel="noopener">Airbnb</a>, <a href="https://www.tripadvisor.com/engineering/reducing-a-b-test-measurement-variance-by-30/" target="_blank" rel="noopener">TripAdvisor</a>, <a href="https://doordash.engineering/2020/10/07/improving-experiment-capacity-by-4x/" target="_blank" rel="noopener">DoorDash</a>, <a href="https://craft.faire.com/how-to-speed-up-your-a-b-test-outlier-capping-and-cuped-8c9df21c76b" target="_blank" rel="noopener">Faire</a>, and many others. While digging deeper into it, I noticed a similarity with some causal inference methods I was familiar with, such as <a href="https://diff.healthpolicydatascience.org/" target="_blank" rel="noopener">Difference-in-Differences</a>. I was curious and decided to dig deeper.</p>
+<p>In this post, I will present CUPED and try to compare it against other causal inference methods.</p>
+<h2 id="example">Example</h2>
+<p>Let&rsquo;s assume we are a firm that is testing an <strong>ad campaign</strong> and we are interested in understanding whether it increases revenue or not. We randomly split a set of users into a treatment and control group and we show the ad campaign to the treatment group. Differently from the standard A/B test setting, assume we observe users also before the test.</p>
+<p>We can now generate the simulated data, using the data generating process <code>dgp_cuped()</code> from <a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/dgp.py" target="_blank" rel="noopener"><code>src.dgp</code></a>. I also import some plotting functions and libraries from <a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/src/utils.py" target="_blank" rel="noopener"><code>src.utils</code></a>.</p>
+<pre><code class="language-python">%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+</code></pre>
+<pre><code class="language-python">from src.utils import *
+from src.dgp import dgp_cuped
+</code></pre>
+<pre><code class="language-python">df = dgp_cuped().generate_data()
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>i</th>
+      <th>ad_campaign</th>
+      <th>revenue0</th>
+      <th>revenue1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>5.315635</td>
+      <td>8.359304</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2.977799</td>
+      <td>7.751485</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0</td>
+      <td>4.693796</td>
+      <td>9.025253</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0</td>
+      <td>5.827975</td>
+      <td>8.540667</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>5.230095</td>
+      <td>8.910165</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>We have informations on 1000 individuals indexed by <code>i</code> for whom we observe the revenue generated pre and post treatment, <code>revenue0</code> and <code>revenue1</code> respectively, and whether they have been exposed to the <code>ad_campaign</code>.</p>
+<h3 id="difference-in-means">Difference in Means</h3>
+<p>In randomized experiments or A/B tests, <strong>randomization</strong> allows us to estimate the average treatment effect using a simple difference in means. We can just compare the average outcome post-treatment $Y_1$ (<code>revenue</code>) across control and treated units and randomization guarantees that this difference is due to the treatment alone, in expectation.</p>
+<p>$$
+\widehat {ATE}^{simple} = \bar Y_{t=1, d=1} - \bar Y_{t=1, d=0}
+$$</p>
+<p>Where the bar indicates the average over individuals. In our case, we compute the average revenue post ad campaign in the treatment group, minus the average revenue post ad campaign in the control group.</p>
+<pre><code class="language-python">np.mean(df.loc[df.ad_campaign==True, 'revenue1']) - np.mean(df.loc[df.ad_campaign==False, 'revenue1'])
+</code></pre>
+<pre><code>1.7914301325347406
+</code></pre>
+<p>The estimated treatment effect is 1.79, very close to the <strong>true value</strong> of 2. We can obtain the same estimate by regressing the post-treatment outcome <code>revenue1</code> on the treatment indicator <code>ad_campaign</code>.</p>
+<p>$$
+Y_{i, t=1} = \alpha + \beta D_i + \varepsilon_i
+$$</p>
+<p>Where $\beta$ is the coefficient of interest.</p>
+<pre><code class="language-python">smf.ols('revenue1 ~ ad_campaign', data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+       <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>   <td>    8.2995</td> <td>    0.211</td> <td>   39.398</td> <td> 0.000</td> <td>    7.881</td> <td>    8.718</td>
+</tr>
+<tr>
+  <th>ad_campaign</th> <td>    1.7914</td> <td>    0.301</td> <td>    5.953</td> <td> 0.000</td> <td>    1.194</td> <td>    2.389</td>
+</tr>
+</table>
+<p>This estimator is <strong>unbiased</strong>, which means it delivers the correct estimate, on average. However, it can still be improved: we could <strong>decrease its variance</strong>. Decreasing the variance of an estimator is extremely important since it allows us to</p>
+<ul>
+<li><strong>detect smaller effects</strong></li>
+<li>detect the same effect, but with a <strong>smaller sample size</strong></li>
+</ul>
+<p>In general, an estimator with a smaller variance allows us to run tests with higher <a href="https://en.wikipedia.org/wiki/Power_of_a_test" target="_blank" rel="noopener"><strong>power</strong></a>, i.e. ability to detect smaller effects.</p>
+<p>Can we improve the power of our AB test? Yes, with CUPED (among other methods).</p>
+<h2 id="cuped">CUPED</h2>
+<p>The <strong>idea</strong> of CUPED is the following. Suppose you are running an AB test and $Y$ is the outcome of interest (<code>revenue</code> in our example) and the binary variable $D$ indicates whether a single individual has been treated or not (<code>ad_campaign</code> in our example).</p>
+<p>Suppose you have access to another random variable $X$ which is <strong>not affected</strong> by the treatment and has known expectation $\mathbb E[X]$. Then define</p>
+<p>$$
+\hat Y^{cuped}_{1} = \bar Y_1 - \theta \bar X + \theta \mathbb E [X]
+$$</p>
+<p>where $\theta$ is a scalar. This estimator is an <strong>unbiased</strong> estimator for $\mathbb E[Y]$ since in expectation the two last terms cancel out. However, the variance of $\hat Y^{cuped}_{1}$ is</p>
+<p>$$
+\begin{aligned}
+\text{Var} \left( \hat Y^{cuped}_{1} \right) &amp;= \text{Var} \left( \bar Y_1 - \theta \bar X + \theta \mathbb E [X] \right) = \newline
+&amp;= \text{Var} \left( Y_1 - \theta X \right) / n = \newline
+&amp;= \Big( \text{Var} (Y_1) + \theta^2 \text{Var} (X) - 2 \theta \text{Cov} (X,Y) \Big) / n
+\end{aligned}
+$$</p>
+<p>Note that the variance of $\hat Y^{cuped}_{1}$ is minimized for</p>
+<p>$$
+\theta^* = \frac{\text{Cov} (X,Y)}{\text{Var} (X)}
+$$</p>
+<p>Which is the <strong>OLS</strong> estimator of a linear regression of $Y$ on $X$. Substituting $\theta^*$ into the formula of the variance of $\hat Y^{cuped}_{1}$ we obtain</p>
+<p>$$
+\text{Var} \left( \hat Y^{cuped}_{1} \right) = \text{Var} (\bar Y) (1 - \rho^2)
+$$</p>
+<p>where $\rho$ is the <strong>correlation</strong> between $Y$ and $X$. Therefore, the higher the correlation between $Y$ and $X$, the higher the variance reduction of CUPED.</p>
+<p>We can then <strong>estimate the average treatment effect</strong>as the average difference in the transformed outcome between the control and treatment group.</p>
+<p>$$
+\begin{aligned}
+\widehat {ATE}^{cuped} &amp;= \hat Y^{cuped}<em>{1} (D=1) - \hat Y^{cuped}</em>{1}(D=0) = \newline
+&amp;= \big( \bar Y_1 - \theta \bar X + \theta \mathbb E [X] \ \big| \ D = 1 \big) - \big( \bar Y_1 - \theta \bar X + \theta \mathbb E [X] \ \big| \ D = 0 \big) = \newline
+&amp;= \big( \bar Y_1 - \theta \bar X \ \big| \ D = 1 \big) - \big( \bar Y_1 - \theta \bar X \ \big| \ D = 0 \big)
+\end{aligned}
+$$</p>
+<p>Note that $\mathbb E[X]$ cancels out when taking the difference. Therefore, it is sufficient to compute</p>
+<p>$$
+\hat Y_{cuped,1}' = \bar Y_1 - \theta \bar X
+$$</p>
+<p>This is not an unbiased estimator of $\mathbb E[Y]$ but still delivers an unbiased estimator of the average treatment effect.</p>
+<h3 id="optimal-x">Optimal X</h3>
+<p>What is the <strong>optimal choice</strong> for the control variable $X$?</p>
+<p>We know that $X$ should have the following <strong>properties</strong>:</p>
+<ul>
+<li>not affected by the treatment</li>
+<li>as correlated with $Y_1$ as possible</li>
+</ul>
+<p>The authors of the paper suggest using the <strong>pre-treatment outcome</strong> $Y_{0}$ since it gives the most reduction in variance in practice.</p>
+<p>Therefore, <strong>in practice</strong>, we can compute the CUPED estimate of the average treatment effect as follows:</p>
+<ol>
+<li>Regress $Y_1$ on $Y_0$ and estimate $\hat \theta$</li>
+<li>Compute $\hat Y^{cuped}_{1} = \bar Y_1 - \hat \theta \bar Y_0$</li>
+<li>Compute the difference of $\hat Y^{cuped}_{1}$ between treatment and control group</li>
+</ol>
+<p>Equivalently, we can compute $\hat Y^{cuped}_{1}$ at the individual level and then regress it on the treatment dummy variable $D$.</p>
+<h3 id="back-to-the-data">Back To The Data</h3>
+<p>Let&rsquo;s compute the CUPED estimate for the treatment effect, one step at the time. First, let&rsquo;s estimate $\theta$.</p>
+<pre><code class="language-python">theta = smf.ols('revenue1 ~ revenue0', data=df).fit().params[1]
+</code></pre>
+<p>Now we can compute the transformed outcome $\hat Y^{cuped}_{1}$.</p>
+<pre><code class="language-python">df['revenue1_cuped'] = df['revenue1'] - theta * (df['revenue0'] - np.mean(df['revenue0']))
+</code></pre>
+<p>Lastly, we estimate the treatment effect as a difference in means, with the transformed outcome $\hat Y^{cuped}_{1}$.</p>
+<pre><code class="language-python">smf.ols('revenue1_cuped ~ ad_campaign', data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+       <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>   <td>    8.2259</td> <td>    0.143</td> <td>   57.677</td> <td> 0.000</td> <td>    7.943</td> <td>    8.509</td>
+</tr>
+<tr>
+  <th>ad_campaign</th> <td>    1.9415</td> <td>    0.204</td> <td>    9.529</td> <td> 0.000</td> <td>    1.537</td> <td>    2.346</td>
+</tr>
+</table>
+<p>The standard error is 33% smaller!</p>
+<h3 id="equivalent-formulation">Equivalent Formulation</h3>
+<p>An alternative but algebraically <strong>equivalent</strong> way of obtaining the CUPED estimate is the folowing</p>
+<ol>
+<li>Regress $Y_1$ on $Y_0$ and compute the residuals $\tilde Y_1$</li>
+<li>Compute $\hat Y^{cuped}_{1} = \tilde Y_1 + \bar Y_1$</li>
+<li>Compute the difference of $\hat Y^{cuped}_{1}$ between treatment and control group</li>
+</ol>
+<p>Step (3) is the same as before but (1) and (2) are different. This procedure is called <strong>partialling out</strong> and the algebraic equivalence is guaranteed by the <a href="https://towardsdatascience.com/59f801eb3299" target="_blank" rel="noopener">Frisch-Waugh-Lowell Theorem</a>.</p>
+<p>Let&rsquo;s check if we indeed obtain the same result.</p>
+<pre><code class="language-python">df['revenue1_tilde'] = smf.ols('revenue1 ~ revenue0', data=df).fit().resid + np.mean(df['revenue1'])
+</code></pre>
+<pre><code class="language-python">smf.ols('revenue1_tilde ~ ad_campaign', data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+       <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>   <td>    8.2259</td> <td>    0.143</td> <td>   57.677</td> <td> 0.000</td> <td>    7.943</td> <td>    8.509</td>
+</tr>
+<tr>
+  <th>ad_campaign</th> <td>    1.9415</td> <td>    0.204</td> <td>    9.529</td> <td> 0.000</td> <td>    1.537</td> <td>    2.346</td>
+</tr>
+</table>
+<p>Yes! The regression table is exactly identical.</p>
+<h2 id="cuped-vs-other">CUPED vs Other</h2>
+<p>CUPED seems to be a very powerful procedure but it is remindful of at least a couple of other methods.</p>
+<ol>
+<li>Autoregression or regression with control variables</li>
+<li><a href="https://diff.healthpolicydatascience.org/" target="_blank" rel="noopener">Difference-in-Differences</a></li>
+</ol>
+<p>Are these methods the same or is there a difference? Let&rsquo;s check.</p>
+<h3 id="autoregression">Autoregression</h3>
+<p>The <strong>first question</strong> that came to my mind when I first saw CUPED was &ldquo;<em>is CUPED just the simple difference with an additional control variable?</em>&rdquo;. Or equivalently, is CUPED equivalent to running the following regression</p>
+<p>$$
+Y_{i, t=1} = \alpha + \beta D_i + \gamma Y_{i, t=0} + \varepsilon_i
+$$</p>
+<p>and estimating $\gamma$ via least squares?</p>
+<pre><code class="language-python">smf.ols('revenue1 ~ revenue0 + ad_campaign', data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+       <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>   <td>    1.9939</td> <td>    0.603</td> <td>    3.304</td> <td> 0.001</td> <td>    0.796</td> <td>    3.192</td>
+</tr>
+<tr>
+  <th>revenue0</th>    <td>    1.2249</td> <td>    0.114</td> <td>   10.755</td> <td> 0.000</td> <td>    0.999</td> <td>    1.451</td>
+</tr>
+<tr>
+  <th>ad_campaign</th> <td>    1.9519</td> <td>    0.205</td> <td>    9.529</td> <td> 0.000</td> <td>    1.545</td> <td>    2.358</td>
+</tr>
+</table>
+<p>The estimated coefficient is very similar to the one we obtained with CUPED and also the standard error is very close. However, they are not exactly the same.</p>
+<p>If you are familiar with the <a href="https://towardsdatascience.com/59f801eb3299" target="_blank" rel="noopener">Frisch-Waugh-Lowell Theorem</a>, you might wonder why the two procedures are <strong>not equivalent</strong>. The reason is that with CUPED we are partialling out only $Y$, while the FWL theorem holds when we are partialling out either X or both X and Y.</p>
+<h3 id="diff-in-diffs">Diff-in-Diffs</h3>
+<p>The <strong>second question</strong> that came to my mind was &ldquo;i<em>s CUPED just difference-in-differences?</em>&rdquo;. <a href="https://diff.healthpolicydatascience.org/" target="_blank" rel="noopener">Difference-in-Differences</a> (or diff-in-diffs, or DiD) is an estimator that computes the treatment effect as a <strong>double-difference</strong> instead of a single one: pre-post and treatment-control instead of just treatment-control.</p>
+<p>$$
+\widehat {ATE}^{DiD} = \big( \bar Y_{t=1, d=1} - \bar Y_{t=1, d=0} \big) - \big( \bar Y_{t=0, d=1} - \bar Y_{t=0, d=0} \big)
+$$</p>
+<p>This method was initially introduced in the 19th century to estimate the causes of a Cholera epidemic in London. The main advantage of diff-in-diff is that it allows to estimate the average treatment effect also when randomization is not perfect and the treatment and control group are not comparable. The <strong>key assumption</strong> that is needed is that these difference between the treatment and control group is constant over time. By taking a double difference, we difference it out.</p>
+<p>Let&rsquo;s check how diff-in-diff works empirically. The most common way to compute the diff-in-diff estiamtor is to first reshape the data in a <strong>long format</strong> or <strong>panel format</strong> (one observation is an individual $i$ at time period $t$) and then to regress the outcome $Y$ on the full interaction between the post-treatment dummy $T$ and the treatment dummy $D$.</p>
+<p>$$
+Y_{i,t} = \alpha + \beta D_i + \gamma \mathbb I (t=1) + \delta D_i * \mathbb I (t=1) + \varepsilon_{i,t}
+$$</p>
+<p>The estimator of the average treatment effect is the coefficient of the interaction coefficient, $\delta$.</p>
+<pre><code class="language-python">df_long = pd.wide_to_long(df, stubnames='revenue', i='i', j='t').reset_index()
+df_long.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>i</th>
+      <th>t</th>
+      <th>revenue1_tilde</th>
+      <th>ad_campaign</th>
+      <th>revenue1_cuped</th>
+      <th>revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>8.093744</td>
+      <td>0</td>
+      <td>8.093744</td>
+      <td>5.315635</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0</td>
+      <td>10.164644</td>
+      <td>1</td>
+      <td>10.164644</td>
+      <td>2.977799</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0</td>
+      <td>9.472203</td>
+      <td>0</td>
+      <td>9.472203</td>
+      <td>4.693796</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0</td>
+      <td>7.688063</td>
+      <td>0</td>
+      <td>7.688063</td>
+      <td>5.827975</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>8.742618</td>
+      <td>0</td>
+      <td>8.742618</td>
+      <td>5.230095</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>The long dataset is now indexed by individuals $i$ and time $t$. We can now run the diff-in-diffs regression.</p>
+<pre><code class="language-python">smf.ols('revenue ~ t * ad_campaign', data=df_long).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>     <td>    5.1481</td> <td>    0.174</td> <td>   29.608</td> <td> 0.000</td> <td>    4.805</td> <td>    5.491</td>
+</tr>
+<tr>
+  <th>t</th>             <td>    3.1514</td> <td>    0.246</td> <td>   12.816</td> <td> 0.000</td> <td>    2.666</td> <td>    3.636</td>
+</tr>
+<tr>
+  <th>ad_campaign</th>   <td>   -0.1310</td> <td>    0.248</td> <td>   -0.527</td> <td> 0.599</td> <td>   -0.621</td> <td>    0.359</td>
+</tr>
+<tr>
+  <th>t:ad_campaign</th> <td>    1.9224</td> <td>    0.351</td> <td>    5.473</td> <td> 0.000</td> <td>    1.230</td> <td>    2.615</td>
+</tr>
+</table>
+<p>The estimated coefficient is close to the true value, 2, but the standard errors are bigger than the ones obtained with all other methods (0.35 &raquo; 0.2). What did we miss? We didn&rsquo;t <strong>cluster the standard errors</strong>!</p>
+<p>I won&rsquo;t go in detail here on what standard error clustering means, but the intuition is the following. The <code>statsmodels</code> package by default computes the standard errors assuming that outcomes are <strong>independent</strong> across observations. This assumption is unlikely to be true in this setting where we observe individuals over time and we are trying to exploit this information. Clustering allows for <strong>correlation</strong> of the outcome variable within clusters. In our case, it makes sense (even without knowing the data generating process) to cluster the standard errors at the individual levels, allowing the outcome to be correlated over time for an individual $i$.</p>
+<pre><code class="language-python">smf.ols('revenue ~ t * ad_campaign', data=df_long)\
+    .fit(cov_type='cluster', cov_kwds={'groups': df_long['i']})\
+    .summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+        <td></td>           <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>     <td>    5.1481</td> <td>    0.139</td> <td>   37.056</td> <td> 0.000</td> <td>    4.876</td> <td>    5.420</td>
+</tr>
+<tr>
+  <th>t</th>             <td>    3.1514</td> <td>    0.128</td> <td>   24.707</td> <td> 0.000</td> <td>    2.901</td> <td>    3.401</td>
+</tr>
+<tr>
+  <th>ad_campaign</th>   <td>   -0.1310</td> <td>    0.181</td> <td>   -0.724</td> <td> 0.469</td> <td>   -0.486</td> <td>    0.224</td>
+</tr>
+<tr>
+  <th>t:ad_campaign</th> <td>    1.9224</td> <td>    0.209</td> <td>    9.208</td> <td> 0.000</td> <td>    1.513</td> <td>    2.332</td>
+</tr>
+</table>
+<p>Clustering standard errors at the individual level we obtain standard errors that are comparable to the previous estimates ($\sim 0.2$).</p>
+<p>Note that diff-in-diffs is <strong>equivalent to CUPED</strong> when we assume the CUPED coefficient $\theta=1$.</p>
+<pre><code class="language-python">df['revenue1_cuped2'] = df['revenue1'] - 1 * (df['revenue0'] - np.mean(df['revenue0']))
+smf.ols('revenue1_cuped2 ~ ad_campaign', data=df).fit().summary().tables[1]
+</code></pre>
+<table class="simpletable">
+<tr>
+       <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>   <td>    8.2353</td> <td>    0.145</td> <td>   56.756</td> <td> 0.000</td> <td>    7.947</td> <td>    8.523</td>
+</tr>
+<tr>
+  <th>ad_campaign</th> <td>    1.9224</td> <td>    0.207</td> <td>    9.274</td> <td> 0.000</td> <td>    1.511</td> <td>    2.334</td>
+</tr>
+</table>
+<p>Indeed, we obtain the same exact coefficient and almost identical standard errors!</p>
+<h3 id="comparison">Comparison</h3>
+<p>Which method is better? From what we have seen so far, all methods seem to deliver an accurate estimate, but the simple difference has a larger standard deviation.</p>
+<p>Let&rsquo;s now compare all the methods we have seen so far via <strong>simulation</strong>. We simulate the data generating process <code>dgp_cuped()</code> 1000 times and we save the estimated coefficient of the following methods:</p>
+<ol>
+<li>Simple difference</li>
+<li>Autoregression</li>
+<li>Diff-in-diffs</li>
+<li>CUPED</li>
+</ol>
+<pre><code class="language-python">def simulate(dgp, K=300, x='revenue0'):
+    
+    # Initialize coefficients
+    results = pd.DataFrame(columns=['k', 'Estimator', 'Estimate'])
+    
+    # Compute coefficients
+    for k in range(K):
+        temp = pd.DataFrame({'k': [k] * 4, 
+                             'Estimator': ['1. Diff ', '2. Areg ', '3. DiD  ', '4. CUPED'], 
+                             'Estimate': [0] * 4})
+        
+        # Draw data
+        df = dgp.generate_data(seed=k)
+
+        # Single diff
+        temp['Estimate'][0] = smf.ols('revenue1 ~ ad_campaign', data=df).fit().params[1]
+        
+        # Autoregression
+        temp['Estimate'][1] = smf.ols(f'revenue1 ~ ad_campaign + {x}', data=df).fit().params[1]
+        
+        # Double diff
+        df_long = pd.wide_to_long(df.dropna(), stubnames='revenue', i='i', j='t').reset_index()
+        temp['Estimate'][2] = smf.ols('revenue ~ ad_campaign * t', data=df_long)\
+            .fit(cov_type='cluster', cov_kwds={'groups': df_long['i']}).params[3]
+        
+        # Cuped
+        df['revenue1_tilde'] = smf.ols(f'revenue1 ~ {x}', data=df).fit().resid + np.mean(df['revenue1'])
+        temp['Estimate'][3] = smf.ols('revenue1_tilde ~ ad_campaign', data=df).fit().params[1]
+                
+        # Combine estimates
+        results = pd.concat((results, temp))
+    
+    return results.reset_index(drop=True)
+</code></pre>
+<pre><code class="language-python">results = simulate(dgp=dgp_cuped())
+</code></pre>
+<p>Let&rsquo;s plot the distribution of the estimated parameters.</p>
+<pre><code class="language-python">sns.kdeplot(data=results, x=&quot;Estimate&quot;, hue=&quot;Estimator&quot;);
+plt.axvline(x=2, c='k', ls='--');
+plt.title('Simulated Distributions');
+</code></pre>
+<p><img src="img/cuped_53_0.png" alt="png"></p>
+<p>We can also tabulate the simulated mean and standard deviation of each estimator.</p>
+<pre><code class="language-python">results.groupby('Estimator').agg(mean=(&quot;Estimate&quot;, &quot;mean&quot;), std=(&quot;Estimate&quot;, &quot;std&quot;))
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+    </tr>
+    <tr>
+      <th>Estimator</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1. Diff</th>
+      <td>1.999626</td>
+      <td>0.291497</td>
+    </tr>
+    <tr>
+      <th>2. Areg</th>
+      <td>2.034145</td>
+      <td>1.063968</td>
+    </tr>
+    <tr>
+      <th>3. DiD</th>
+      <td>1.993494</td>
+      <td>0.197638</td>
+    </tr>
+    <tr>
+      <th>4. CUPED</th>
+      <td>1.971853</td>
+      <td>0.198145</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>All estimators seem <strong>unbiased</strong>: the average values are all close to the true value of 2. Moreover, all estimators have a very similar standard deviation, apart from the single-difference estimator!</p>
+<h3 id="always-identical">Always Identical?</h3>
+<p>Are the estimators always identical, or is there some difference among them?</p>
+<p>We could check many different departures from the original data generating process. For simplicity, I will consider only one here: <strong>imperfect randomization</strong>. Other tweaks of the data generating process that I considered are:</p>
+<ul>
+<li>pre-treatment missing values</li>
+<li>additional covariates / control variables</li>
+<li>multiple pre-treatment periods</li>
+<li>heterogeneous treatment effects</li>
+</ul>
+<p>and combinations of them. However, I found imperfect randomization to be the most informative example.</p>
+<p>Suppose now that <strong>randomization was not perfect</strong> and two groups are not identical. In particular, if the data generating process is</p>
+<p>$$
+Y_{i,t} = \alpha + \beta D_i + \gamma \mathbb I (t=1) + \delta D_i * \mathbb I (t=1) + u_i + \varepsilon_{i,t}
+$$</p>
+<p>assume that $\beta \neq 0$.</p>
+<pre><code class="language-python">results_beta1 = simulate(dgp=dgp_cuped(beta=1))
+</code></pre>
+<p>Let&rsquo;s plot the distribution of the estimated parameters.</p>
+<pre><code class="language-python">sns.kdeplot(data=results_beta1, x=&quot;Estimate&quot;, hue=&quot;Estimator&quot;);
+plt.axvline(x=2, c='k', ls='--');
+plt.title('Simulated Distributions');
+</code></pre>
+<p><img src="img/cuped_61_0.png" alt="png"></p>
+<pre><code class="language-python">results_beta1.groupby('Estimator').agg(mean=(&quot;Estimate&quot;, &quot;mean&quot;), std=(&quot;Estimate&quot;, &quot;std&quot;))
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+    </tr>
+    <tr>
+      <th>Estimator</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1. Diff</th>
+      <td>2.999626</td>
+      <td>0.291497</td>
+    </tr>
+    <tr>
+      <th>2. Areg</th>
+      <td>1.991508</td>
+      <td>0.227065</td>
+    </tr>
+    <tr>
+      <th>3. DiD</th>
+      <td>1.993494</td>
+      <td>0.197638</td>
+    </tr>
+    <tr>
+      <th>4. CUPED</th>
+      <td>1.577712</td>
+      <td>0.221448</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>With imperfect treatment assignment, both difference-in-differences and autoregression are unbiased for the true treatment effect, however diff-in-diffs is more efficient. Both CUPED and simple difference are <strong>biased</strong> instead. Why?</p>
+<p>Diff-in-diffs explicily controls for <strong>systematic differences</strong> between treatment and control group that are <strong>constant over time</strong>. This is exactly what this estimator was built for. Autoregression performs some sort of matching on the additional covariate, $Y_{t=0}$, effectively controlling for these systematic differences as well, but less efficiently (if you want to know more, I wrote related posts on control variables <a href="https://towardsdatascience.com/b63dc69e3d8c" target="_blank" rel="noopener">here</a> and <a href="https://towardsdatascience.com/58b63d25d2ef" target="_blank" rel="noopener">here</a>). CUPED controls for persistent heterogeneity at the individual level, but not at the treatment assignment level. Lastly, the simple difference estimator does not control for anything.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this post, I have analyzed an estimator of average treatment effects in AB testing, very popular in the industry: CUPED. The key idea is that, by exploiting pre-treatment data, CUPED can <strong>achieve a lower variance</strong> by controlling for individual-level variation that is persistent over time. We have also seen that CUPED is closely related but not equivalent to autoregression and difference-in-differences. The differences among the methods clearly emerge when we have imperfect randomization.</p>
+<p>An interesting avenue of future research is what happens when we have <strong>a lot of pre-treatment information</strong>, either in terms of time periods or observable characteristics. Scientists from Meta, <a href="https://proceedings.neurips.cc/paper/2021/hash/488b084119a1c7a4950f00706ec7ea16-Abstract.html" target="_blank" rel="noopener">Guo, Coey, Konutgan, Li, Schoener, Goldman (2021)</a>, have analyzed this problem in a very recent paper that exploits machine learning techniques to efficiently use this extra information. This approach is closely related to the <a href="https://academic.oup.com/ectj/article/21/1/C1/5056401" target="_blank" rel="noopener">Double/Debiased Machine Learning</a> literature. If you are interested, I wrote two articles on the topic (<a href="https://towardsdatascience.com/eb767a59975b" target="_blank" rel="noopener">part 1</a> and <a href="https://towardsdatascience.com/bf990720a0b2" target="_blank" rel="noopener">part 2</a>) and I might write more in the future.</p>
+<h3 id="references">References</h3>
+<p>[1] A. Deng, Y. Xu, R. Kohavi, T. Walker, <a href="https://dl.acm.org/doi/abs/10.1145/2433396.2433413" target="_blank" rel="noopener">Improving the Sensitivity of Online Controlled Experiments by Utilizing Pre-Experiment Data</a> (2013), <em>WSDM</em>.</p>
+<p>[2] H. Xir, J. Aurisset, <a href="https://dl.acm.org/doi/abs/10.1145/2939672.2939733" target="_blank" rel="noopener">Improving the sensitivity of online controlled experiments: Case studies at Netflix</a> (2013), <em>ACM SIGKDD</em>.</p>
+<p>[3] Y. Guo, D. Coey, M. Konutgan, W. Li, C. Schoener, M. Goldman, <a href="https://proceedings.neurips.cc/paper/2021/hash/488b084119a1c7a4950f00706ec7ea16-Abstract.html" target="_blank" rel="noopener">Machine Learning for Variance Reduction in Online Experiments</a> (2021), <em>NeurIPS</em>.</p>
+<p>[4] V. Chernozhukov, D. Chetverikov, M. Demirer, E. Duflo, C. Hansen, W. Newey, J. Robins, <a href="https://academic.oup.com/ectj/article/21/1/C1/5056401" target="_blank" rel="noopener">Double/debiased machine learning for treatment and structural parameters</a> (2018), <em>The Econometrics Journal</em>.</p>
+<p>[5] M. Bertrand, E. Duflo, S. Mullainathan, <a href="https://academic.oup.com/qje/article/119/1/249/1876068" target="_blank" rel="noopener">How Much Should We Trust Differences-In-Differences Estimates?</a> (2012), <em>The Quarterly Journal of Economics</em>.</p>
+<h3 id="related-articles">Related Articles</h3>
+<ul>
+<li><a href="https://towardsdatascience.com/eb767a59975b" target="_blank" rel="noopener">Double Debiased Machine Learning (part 1)</a></li>
+<li><a href="https://towardsdatascience.com/bf990720a0b2" target="_blank" rel="noopener">Double Debiased Machine Learning (part 2)</a></li>
+<li><a href="https://towardsdatascience.com/59f801eb3299" target="_blank" rel="noopener">Understanding The Frisch-Waugh-Lovell Theorem</a></li>
+<li><a href="https://towardsdatascience.com/58b63d25d2ef" target="_blank" rel="noopener">Understanding Contamination Bias</a></li>
+<li><a href="https://towardsdatascience.com/b63dc69e3d8c" target="_blank" rel="noopener">DAGs and Control Variables</a></li>
+</ul>
+<h3 id="code">Code</h3>
+<p>You can find the original Jupyter Notebook here:</p>
+<p><a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb" target="_blank" rel="noopener">https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb</a></p>
+
+          </div>
+          
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://matteocourthoud.github.io/post/cuped/&amp;text=Understanding%20CUPED" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://matteocourthoud.github.io/post/cuped/&amp;t=Understanding%20CUPED" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Understanding%20CUPED&amp;body=https://matteocourthoud.github.io/post/cuped/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://matteocourthoud.github.io/post/cuped/&amp;title=Understanding%20CUPED" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Understanding%20CUPED%20https://matteocourthoud.github.io/post/cuped/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://t.me/share/url?url=https://matteocourthoud.github.io/post/cuped/&amp;text=%7btext%7d" target="_blank" rel="noopener" class="share-btn-telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://matteocourthoud.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/avatar_hu365eedc833ccd5578a90de7c849ec45e_385094_270x270_fill_q75_lanczos_center.jpg" alt=""></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://matteocourthoud.github.io/"></a></h5>
+      
+      <p class="card-text">My research fields are empirical Industrial Organization and Competition Policy. My research interests include the relationship between competition and innovation, big data, artificial intelligence, platform markets, peer to peer services.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://medium.com/@matteo.courthoud" target="_blank" rel="noopener">
+        <i class="fab fa-medium"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/matteo-courthoud-7335198a/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/MatteoCourthoud/" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/matteocourthoud" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://open.spotify.com/user/1180947523" target="_blank" rel="noopener">
+        <i class="fab fa-spotify"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+        </div>
+        </article>
+    </main>
+  </div>
+</div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/julia.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.cf8ca859a9b74f8b1cd804621b13e5f1.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

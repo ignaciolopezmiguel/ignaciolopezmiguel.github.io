@@ -1,0 +1,1754 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In the decade preceding the Second World War, there was a massive increase in industrial production of war materials, so there was a need to ensure that products, especially munitions, were reliable." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://matteocourthoud.github.io/post/optimal_stopping/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#003f5c" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Sans+Pro:wght@200;300;400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.5c4def4f00a521426f4eb098155f3342.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144780600-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-144780600-1', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://matteocourthoud.github.io/post/optimal_stopping/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Matteo Courthoud" />
+  <meta property="og:url" content="https://matteocourthoud.github.io/post/optimal_stopping/" />
+  <meta property="og:title" content="Experiments, Peeking, and Optimal Stopping | Matteo Courthoud" />
+  <meta property="og:description" content="In the decade preceding the Second World War, there was a massive increase in industrial production of war materials, so there was a need to ensure that products, especially munitions, were reliable." /><meta property="og:image" content="https://matteocourthoud.github.io/post/optimal_stopping/featured.png" />
+    <meta property="twitter:image" content="https://matteocourthoud.github.io/post/optimal_stopping/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-07-18T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-07-18T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matteocourthoud.github.io/post/optimal_stopping/"
+  },
+  "headline": "Experiments, Peeking, and Optimal Stopping",
+  
+  "image": [
+    "https://matteocourthoud.github.io/post/optimal_stopping/featured.png"
+  ],
+  
+  "datePublished": "2022-07-18T00:00:00Z",
+  "dateModified": "2022-07-18T00:00:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Matteo Courthoud",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://matteocourthoud.github.io/media/icon_hu03e9b3967b83fd39296ec9da5ff1ea05_201175_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "In the decade preceding the Second World War, there was a massive increase in industrial production of war materials, so there was a need to ensure that products, especially munitions, were reliable."
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#003f5c",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "#003f5c"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/privacy/"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>Experiments, Peeking, and Optimal Stopping | Matteo Courthoud</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="0b40b79a667a0362644e1579efb424d3" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.6edaf3b475ce43de30d98828aea698be.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Matteo Courthoud</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Research</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Courses</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/course/ml-econ/"><span>Machine Learning for Economics</span></a>
+            
+              <a class="dropdown-item" href="/course/data-science/"><span>Data Science with Python</span></a>
+            
+              <a class="dropdown-item" href="/course/empirical-io/"><span>PhD Industrial Organization</span></a>
+            
+              <a class="dropdown-item" href="/course/metrics/"><span>PhD Econometrics</span></a>
+            
+              <a class="dropdown-item" href="https://pp4rs.github.io/"><span>Programming Practices for Research</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <div class="container-fluid docs">
+  <div class="row">
+
+    <div class="col-xl-2 col-lg-2 d-none d-xl-block d-lg-block empty">
+    </div>
+
+    <div class="col-2 col-xl-2 col-lg-2 d-none d-lg-block docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hypothesis-testing">Hypothesis Testing</a></li>
+    <li><a href="#peeking">Peeking</a></li>
+    <li><a href="#likelihood-ratio-test">Likelihood Ratio Test</a>
+      <ul>
+        <li><a href="#special-case-testing-mean-of-normal-distribution">Special Case: testing mean of normal distribution</a></li>
+      </ul>
+    </li>
+    <li><a href="#sequential-probability-ratio-test">Sequential Probability Ratio Test</a>
+      <ul>
+        <li><a href="#special-case-testing-null-effect">Special Case: testing null effect</a></li>
+        <li><a href="#simulation">Simulation</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ul>
+        <li><a href="#references">References</a></li>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <main class="col-xl-8 col-lg-8 docs-content" role="main">
+        <article class="article">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="article-container pt-3">
+  <h1>Experiments, Peeking, and Optimal Stopping</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 18, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    17 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 1138px; max-height: 623px;">
+  <div style="position: relative">
+    <img src="/post/optimal_stopping/featured.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+        <div class="article-container">
+          <div class="article-style" align="justify">
+            <p>In the decade preceding the Second World War, there was a massive increase in industrial production of war materials, so there was a need to ensure that products, especially munitions, were reliable. The <strong>testing</strong> of war materials is not only <strong>expensive</strong> but also <strong>destructive</strong> since, for example, bullets need to be fired in order to be tested.</p>
+<p>Therefore, the U.S. government was presented with the following <strong>dilemma</strong>: how many bullets should one fire out of a batch before declaring the batch reliable? Clearly, if we were to fire all the bullets, we would know the exact amount of functioning bullets in a crate. However, there would be no bullets left to use.</p>
+<p>Because of the growing relevance of these statistical problems, in 1939, a group of prominent statisticians and economists joined forces at Columbia University&rsquo;s <a href="https://en.wikipedia.org/wiki/The_Statistical_Research_Group_of_World_War_II" target="_blank" rel="noopener"><strong>Statistical Research Group (SGR)</strong></a>. The group included, among others, <a href="https://en.wikipedia.org/wiki/W._Allen_Wallis" target="_blank" rel="noopener">W. Allen Wallis</a>, <a href="https://en.wikipedia.org/wiki/Jacob_Wolfowitz" target="_blank" rel="noopener">Jacob Wolfowitz</a> and <a href="https://en.wikipedia.org/wiki/Abraham_Wald" target="_blank" rel="noopener">Abraham Wald</a>. According to Wallis himself the SGR group was &ldquo;<em>composed of what surely must be the most extraordinary group of statisticians ever organized, taking into account both number and quality</em>&quot;[<a href="#References">2</a>].</p>
+<p>Their work was of first order importance and <strong>classified</strong>, to the point that Wallis reports:</p>
+<blockquote>
+<p><em>It is said that as Wald worked on sequential analysis his pages were snatched away and given a security classification. Being still an &ldquo;enemy alien&rdquo;, he did not have a security clearance so, the story has it, he was not allowed to know of his results.</em> [<a href="https://www.jstor.org/stable/2287451" target="_blank" rel="noopener">Wallis (1980)</a>]</p>
+</blockquote>
+<p>Indeed, the group worked under the pressure from the U.S. Army to deliver <strong>fast practical solutions</strong> that could be readily deployed on the field. For example, Wallis reports that</p>
+<blockquote>
+<p><em>during the <a href="https://en.wikipedia.org/wiki/Battle_of_the_Bulge" target="_blank" rel="noopener">Battle of the Bulge</a> in December 1944, several high-ranking Army officers flew to Washington from the battle, spent a day discussing the best settings on proximity fuzes for air bursts of artillery shells against ground troops, and flew back to the battle to put into effect advice from, among others, <a href="https://en.wikipedia.org/wiki/Milton_Friedman" target="_blank" rel="noopener">Milton Friedman</a>, whose earlier studies of the fuzes had given him extensive and accurate knowledge of the way the fuzes actually performed.</em>  [<a href="https://www.jstor.org/stable/2287451" target="_blank" rel="noopener">Wallis (1980)</a>]</p>
+</blockquote>
+<p>The most prominent <strong>result</strong> that came out of the SGR experience was undoubtedly the <a href="https://en.wikipedia.org/wiki/Sequential_probability_ratio_test" target="_blank" rel="noopener">Sequential Probability Ratio Test</a>. The idea first came to Wallis and Friedman that realized that</p>
+<blockquote>
+<p><em>it might pay to use a test which would not be as efficient as the classical tests if a sample of exactly N were to be taken, but which would more than offset this disadvantage by providing a good chance of terminating early when used sequentially.</em> [<a href="https://www.jstor.org/stable/2287451" target="_blank" rel="noopener">Wallis (1980)</a>]</p>
+</blockquote>
+<p>The two economists exposed the idea to the statistician Jacob Wolfowitz who initially</p>
+<blockquote>
+<p><em>seemed to be something distasteful about the idea of people so ignorant of mathematics as Milton and I venturing to meddle with such sacred ideas as those of most powerful statistics, etc. No doubt this antipathy was strengthened by our calling the new tests &ldquo;supercolossal&rdquo; on the grounds that they are more powerful than &ldquo;most powerful&rdquo; tests.</em> [<a href="https://www.jstor.org/stable/2287451" target="_blank" rel="noopener">Wallis (1980)</a>]</p>
+</blockquote>
+<p>Ultimately, the two economists managed to draw the attention of both Wolfowitz and Wald that started to formally work on the idea. The results remained top secret until the end of the war when Wald published his <a href="https://www.jstor.org/stable/2235829" target="_blank" rel="noopener">Sequential Tests of Statistical Hypotheses</a> article.</p>
+<p>In this post, after a quick introduction to hypothesis testing, we are going to explore the Sequential Probability Ratio Test and implement it in Python.</p>
+<h2 id="hypothesis-testing">Hypothesis Testing</h2>
+<p>When we design an A/B test or, more generally, an experiment, the standard steps are the following</p>
+<ol>
+<li>
+<p>Define a <strong>null hypothesis</strong> $H_0$, usually a zero effect of the experiment on a metric of interest</p>
+<ul>
+<li>for example, no effect of a drug on mortality</li>
+</ul>
+</li>
+<li>
+<p>Define a <strong>significance level</strong> $\alpha$, usually equal to 0.05, it represents the maximum probability of rejecting the null hypothesis when it is true</p>
+<ul>
+<li>for example, the probability of claiming that the drug is effective in reducing mortality, when it&rsquo;s not effective</li>
+</ul>
+</li>
+<li>
+<p>Define an <strong>alternative hypothesis</strong> $H_1$, usually the minimum effect size that we would like to detect</p>
+<ul>
+<li>for example, a decrease in mortality by 1%</li>
+</ul>
+</li>
+<li>
+<p>Define a <strong>power level</strong> $1-\beta$, usually equal to 0.8 ($\beta=0.2$), it represents the minimum probability of rejecting the null hypothesis $H_0$, when the alternative $H_1$ is true</p>
+<ul>
+<li>for example, the probability of claiming that the drug is ineffective, when it&rsquo;s effective</li>
+</ul>
+</li>
+<li>
+<p>Pick a <strong>test statistic</strong> whose distribution is known under both hypotheses, usually the sample average of the metric of interest</p>
+<ul>
+<li>for example, the average mortality rate of patients</li>
+</ul>
+</li>
+<li>
+<p>Compute the minimum <strong>sample size</strong>, in order to achieve the desired power level $1-\beta$, given all the test parameters</p>
+</li>
+</ol>
+<p>Then, we <strong>run the test</strong> and, depending on the realized value of the test statistic, we decide whether to <strong>reject</strong> the null hypothesis or not. In particular, we reject the null hypothesis if the <strong>p-value</strong>, i.e. the probability of observing under the null hypothesis a statistic as or more extreme than the sample statistic, is lower than the significance level $\alpha$.</p>
+<p>Remember that rejecting the null hypothesis does not imply accepting the alternative hypothesis.</p>
+<h2 id="peeking">Peeking</h2>
+<p>Suppose that halfway through the experiment we were to <strong>peek at the data</strong> and notice that, for that intermediate value of the test statistic, we would reject the null hypothesis. Should we stop the experiment? If we do, what happens?</p>
+<p>The answer is that we <strong>should not stop</strong> the experiment. If we do, the test would not achieve the desired significance level or, in other terms, our confidence intervals would have the <strong>wrong coverage</strong>.</p>
+<p>Let&rsquo;s see what I mean with an <strong>example</strong>. Suppose our <strong>data generating process</strong> is a <a href="https://en.wikipedia.org/wiki/Normal_distribution" target="_blank" rel="noopener">standard normal distribution</a> with unknown mean $\mu$ and known variance $\sigma=1$: $X \sim N(\mu,1)$.</p>
+<p>The <strong>hypothesis</strong> that we wish to test is</p>
+<p>$$
+\begin{align}
+H_0: \quad &amp; \mu = 0
+\newline
+H_1: \quad &amp; \mu = 0.1
+\end{align}
+$$</p>
+<p>After each observation $n$, we compute the <a href="https://en.wikipedia.org/wiki/Z-test" target="_blank" rel="noopener"><strong>z test statistic</strong></a></p>
+<p>$$
+z = \frac{\bar X_n - \mu_0}{\frac{\sigma}{\sqrt{n}}} = \frac{\bar X_n - 0}{\frac{1}{\sqrt{n}}} = \bar X_n * \sqrt{n}
+$$</p>
+<p>where $\bar X_n$ is the <a href="https://en.wikipedia.org/wiki/Sample_mean_and_covariance" target="_blank" rel="noopener">sample mean</a> from a sample $X_1, X_2, &hellip;, X_n$, of size $n$, $\sigma$ is the standard deviation of the population, and $\mu_0$ is the population mean, under the null hypothesis. The term in the denominator, $\frac{\sigma}{\sqrt{n}}$, is the variance of the sample mean. Under the null hypothesis of zero mean, the test statistic is distributed as a standard normal distribution with zero mean and unit variance, $N(0,1)$.</p>
+<p>Let&rsquo;s code the test in Python. I import some code from <a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/src/utils.py" target="_blank" rel="noopener"><code>utils</code></a> to make the plots prettier.</p>
+<pre><code class="language-python">%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+</code></pre>
+<pre><code class="language-python">from src.utils import *
+
+zstat = lambda x: np.mean(x) * np.sqrt(len(x))
+zstat.__name__ = 'z-statistic'
+</code></pre>
+<p>Suppose we want a test with significance level $\alpha=0.05$ and power $1-\beta=0.8$. What sample size $n$ do we need?</p>
+<p>We need a sample size such that</p>
+<ol>
+<li>The probability of rejecting the null hypothesis $H_0$, when $H_0$ is <em>true</em>, is at most $\alpha=0.05$</li>
+<li>The probability of <em>not</em> rejecting the null hypothesis $H_0$, when $H_0$ is <em>false</em> (i.e. $H_1$ is true), is at most $\beta=0.2$</li>
+</ol>
+<p>I.e. we need to find a <strong>critical value</strong> $c$ such that</p>
+<ol>
+<li>$c = \mu_0 + z_{0.95} * \frac{\sigma}{\sqrt{n}}$</li>
+<li>$c = \mu_1 - z_{0.8} * \frac{\sigma}{\sqrt{n}}$</li>
+</ol>
+<p>where $z_{p}$ is the CDF inverse (or <a href="https://en.wikipedia.org/wiki/Quantile_function" target="_blank" rel="noopener">percent point function</a>) at $p$, and $\mu_i$ are the values of the mean under the different hypotheses.</p>
+<p>If we do not know the <strong>sign</strong> of the unknown mean $\mu$, we have to run a <strong>two-sided test</strong>. This means that the maximum probability of type 1 error on each side of the distribution has to be $\alpha/2 = 0.025$, implying $z_{0.975} = 1.96$.</p>
+<p>Combining the two expressions together we can solve for the <strong>required minimum sample size</strong>.</p>
+<p>$$
+n : \mu_0 + z_{0.975} * \frac{\sigma}{\sqrt{n}} = \mu_1 - z_{0.8} * \frac{\sigma}{\sqrt{n}}
+$$</p>
+<p>so that</p>
+<p>$$
+n = \left( \sigma * \frac{z_{0.975} + z_{0.8}}{\mu_0 + \mu_1} \right)^2 = \left( 1 * \frac{1.96 + 0.84}{0 + 0.1} \right)^2 = 784.89
+$$</p>
+<pre><code class="language-python">from scipy.stats import norm
+
+n = ( (norm.ppf(0.975) + norm.ppf(0.8)) / 0.1 )**2
+print(f&quot;Minimum sample size: {n}&quot;)
+</code></pre>
+<pre><code>Minimum sample size: 784.8879734349086
+</code></pre>
+<p>We need at least 785 observations.</p>
+<p>We can get a better <strong>intuition</strong> by graphically plotting the two distributions with the critical value. I wrote a function <a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/src/figures.py" target="_blank" rel="noopener"><code>plot_test</code></a> to draw a standard hypothesis testing setting.</p>
+<pre><code class="language-python">from src.figures import plot_test
+
+plot_test(mu0=0, mu1=0.1, alpha=0.05, n=n)
+</code></pre>
+<p><img src="img/optimal_stopping_11_0.png" alt="png"></p>
+<p>The critical value is such that, given the distributions under the two hypothesis, the <strong>rejection area</strong> in red is equal to $\alpha$. The sample size $n$ is such that it shrinks the variance of the two distributions so that the area in green is equal to $\beta$.</p>
+<p>Let&rsquo;s now <strong>simulate an experiment</strong> in which we draw an ordered sequence of observations and, after each observation, we compute the value of the test statistic.</p>
+<pre><code class="language-python">def experiment(f_stat, mu=0, n=785, seed=1):
+    np.random.seed(seed) # Set seed
+    I = np.arange(1, n+1) # Observation index
+    x = np.random.normal(mu, 1, n) # Observation value
+    stat = [f_stat(x[:i]) for i in I] # Value of the test statistic so far
+    df = pd.DataFrame({'i': I, 'x': x, f_stat.__name__: stat}) # Generate dataframe
+    return df
+</code></pre>
+<p>Let&rsquo;s have a look at what a sample looks like.</p>
+<pre><code class="language-python">df = experiment(zstat)
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>i</th>
+      <th>x</th>
+      <th>z-statistic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1.624345</td>
+      <td>1.624345</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>-0.611756</td>
+      <td>0.716009</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>-0.528172</td>
+      <td>0.279678</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>-1.072969</td>
+      <td>-0.294276</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0.865408</td>
+      <td>0.123814</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>We can now plot the time trend of the test statistic as we accumulate observations during the sampling process. I also mark with horizontal lines the values for rejection of the null hypothesis of a test with $\alpha = 0.05$: $z_{0.025} = -1.96$ and $z_{0.975} = 1.96$.</p>
+<pre><code class="language-python">def plot_experiment(df, ybounds, **kwargs):
+    sns.lineplot(data=df, x='i', y=df.columns[2], **kwargs)
+    for ybound in ybounds:
+        sns.lineplot(x=df['i'], y=ybound, lw=1.5, color='black')
+    plt.title(f'{df.columns[2]} with sequential sampling')
+    plt.yticks([0, ybounds[0], ybounds[1]])
+</code></pre>
+<pre><code class="language-python">plot_experiment(df, ybounds=[-1.96, 1.96])
+</code></pre>
+<p><img src="img/optimal_stopping_18_0.png" alt="png"></p>
+<p>In this case, the test never crosses the critical values. Therefore, peeking does not have an effect. We would not have stopped the experiment prematurely.</p>
+<p>What would happen if we were <strong>repeating</strong> the experiment many times? Since the data is generated under the null hypothesis, $H_0: \mu = 0$, we expect to reject it only $\alpha=5%$ of the times.</p>
+<p>Let&rsquo;s simulate the data-generating process $K=100$ times.</p>
+<pre><code class="language-python">def simulate_experiments(f_stat, ybounds, xmin=0, early_stop=False, mu=0, K=100, n=785, **kwargs):
+    # Count experiment durations
+    stops = np.zeros(K) * n
+    
+    # Perform K simulations
+    for k in range(K):
+        # Draw data
+        df = experiment(f_stat, mu=mu, seed=k, n=n)
+        vals = df[f_stat.__name__].values
+        
+        # If early stop, check early violations (during sampling)
+        if early_stop:
+            violations = (vals[xmin:] &gt; max(ybounds)) + (vals[xmin:] &lt; min(ybounds))
+        if early_stop and any(violations):
+            end = 1 + xmin + np.where(violations)[0][0]
+            plot_experiment(df.iloc[:end, :], ybounds, **kwargs)
+            stops[k] = end * np.sign(df[f_stat.__name__].values[end])
+        
+        # Otherwise, only check violations of last value
+        elif (vals[-1] &gt; max(ybounds)) or (vals[-1] &lt; min(ybounds)):
+            plot_experiment(df, ybounds, **kwargs)
+            stops[k] = len(df) * np.sign(vals[-1])
+        
+        # Plot all other observations in grey
+        else: 
+            plot_experiment(df, ybounds, color='grey', alpha=0.1, lw=1)
+    
+    # Print diagnostics
+    pct_up = sum(stops&gt;0)/sum(stops!=0)*100
+    print(f'Bounds crossed: {sum(stops!=0)} ({pct_up:.0f}% upper, {100-pct_up:.0f}% lower)')
+    print(f'Average experiment duration: {(sum(np.abs(stops)) + n*sum(stops==0))/ len(stops) :.0f}')
+</code></pre>
+<p>We plot the distribution of the z-statistic over samples .</p>
+<pre><code class="language-python">simulate_experiments(zstat, ybounds=[-1.96, 1.96], early_stop=False);
+</code></pre>
+<pre><code>Bounds crossed: 3 (67% upper, 33% lower)
+Average experiment duration: 785
+</code></pre>
+<p><img src="img/optimal_stopping_22_1.png" alt="png"></p>
+<p>In the figure above, I have highlighted the experiments for which we reject the null hypothesis <strong>without peeking</strong>, i.e. given the value of the z test statistic <strong>at the end of the sampling</strong> process. Only in 3 experiments the final value lies outside the critical values, so that we reject the null hypothesis. This means a <strong>rejection rate</strong> of 3% which is very close to the expected rejection rate of $\alpha=0.05$ (under the null).</p>
+<p>What if instead we were <strong>impatient</strong> and, after collecting the first 100 observations, we were stopping <strong>as soon as</strong> we saw the z-statistic crossing the boundaries?</p>
+<pre><code class="language-python">stops_zstat_h0 = simulate_experiments(zstat, xmin=99, ybounds=[-1.96, 1.96], early_stop=True, lw=2);
+plt.vlines(100, ymin=plt.ylim()[0], ymax=plt.ylim()[1], color='k', lw=1, ls='--');
+</code></pre>
+<pre><code>Bounds crossed: 29 (45% upper, 55% lower)
+Average experiment duration: 644
+</code></pre>
+<p><img src="img/optimal_stopping_24_1.png" alt="png"></p>
+<p>In the figure above, I have highlighted the experiments in which the values of the z-statistic crosses one of the boundaries, from the 100th observation onwards. This happens in 29 simulations out of 100, which implies a <strong>rejection rate</strong> of 25%, which is very far from the expected rejection rate of $\alpha=0.05$ (under the null hypothesis). Peaking <strong>distorts</strong> the significance level of the test.</p>
+<p>Potential solutions are:</p>
+<ol>
+<li><strong>sequential probability ratio tests</strong></li>
+<li><strong>sequential triangular testing</strong></li>
+<li><strong>group sequential testing</strong></li>
+</ol>
+<p>Before analyzing these sequential testing procedures, we first need to introduce the <strong>likelihood ratio test</strong>.</p>
+<h2 id="likelihood-ratio-test">Likelihood Ratio Test</h2>
+<p>The likelihood ratio test is a test that tries to assess the likelihood that the observed data was generated by either one of two competing statistical models. </p>
+<p>In order to perform the likelihood ratio test for hypothesis testing, we need the data generating process to be fully specified under both hypotheses. For example, this would be the case with the following hypotheses:</p>
+<p>$$
+\begin{align}
+H_0: \quad &amp; \mu=0
+\newline
+H_1: \quad &amp; \mu=0.1
+\end{align}
+$$</p>
+<p>In this case, we say that the statistical test is fully specified. If the alternative hypothesis was $H_1: \mu \neq 0$, then the data generating process would not be specified under the alternative hypothesis. </p>
+<p>When a statistical test is fully specified, we can compute the likelihood ratio as the the ratio of the <a href="https://en.wikipedia.org/wiki/Likelihood_function" target="_blank" rel="noopener">likelihood function</a> under the two hypotheses.</p>
+<p>$$
+\Lambda (X) = \frac{\mathcal L (\theta_1 \ | \ X)}{\mathcal L (\theta_0 \ | \ X)}
+$$</p>
+<p>The likelihood-ratio test provides a decision rule as follows:</p>
+<ul>
+<li>If $\Lambda&gt;c$, reject $H_{0}$;</li>
+<li>If $\Lambda&lt;c$, do not reject $H_{0}$;</li>
+<li>If $\Lambda =c$, reject with probability $q$</li>
+</ul>
+<p>The values $c$ and $q$ are usually chosen to obtain a specified significance level $\alpha$.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Neyman%E2%80%93Pearson_lemma" target="_blank" rel="noopener"><strong>Neyman–Pearson lemma</strong></a> states that this likelihood-ratio test is the most powerful among all level $\alpha$ tests for this case.</p>
+<h3 id="special-case-testing-mean-of-normal-distribution">Special Case: testing mean of normal distribution</h3>
+<p>Let&rsquo;s go back to our example where data is coming from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2$ and we want to perform the following test</p>
+<p>$$
+\begin{align}
+H_0: \quad &amp; \mu = 0 ,
+\newline
+H_1: \quad &amp; \mu = 0.1
+\end{align}
+$$</p>
+<p>The likelihood of the normal distribution with unknown mean $\mu$ and known variance $\sigma^2$ is</p>
+<p>$$
+\mathcal L(\mu) = \left( \frac{1}{\sqrt{2 \pi} \sigma } \right)^n e^{- \sum_{i=1}^{n} \frac{(X_i - \mu)^2}{2 \sigma^2}}
+$$</p>
+<p>So that the likelihood ratio under the two hypotheses is</p>
+<p>$$
+\Lambda(X) = \frac{\mathcal L (0.1, \sigma^2)}{\mathcal L (0, \sigma^2)} = \frac{e^{- \sum_{i=1}^{n} \frac{(X_i - 0.1)^2}{2 \sigma^2}}}{e^{- \sum_{i=1}^{n} \frac{(X_i)^2}{2 \sigma^2}}}
+$$</p>
+<p>We now have all the ingredients to move on to the final purpose of this blog post: the Sequential Probability Ratio Test.</p>
+<h2 id="sequential-probability-ratio-test">Sequential Probability Ratio Test</h2>
+<p>Given a pair of fully specified hypotheses, say $H_{0}$ and $H_{1}$, the <strong>first step</strong> of the sequential probability ratio test is to calculate the log-likelihood ratio test $\log (\Lambda_{i})$, as new data arrive: with $S_{0}=0$, then, for $i=1,2,&hellip;,$</p>
+<p>$$
+S_{i} = S_{i-1} + \log(\Lambda_{i})
+$$</p>
+<p>The stopping rule is a simple thresholding scheme:</p>
+<ul>
+<li>$S_{i}\geq b$: Accept $H_{1}$</li>
+<li>$S_{i}\leq a$: Accept $H_{0}$</li>
+<li>$a&lt;S_{i}&lt;b$: continue monitoring (critical inequality)</li>
+</ul>
+<p>where $a$ and $b$ ($-\infty&lt;a&lt;0&lt;b&lt;\infty$) depend on the desired type I and type II errors, $\alpha$  and $\beta$.</p>
+<p><a href="https://www.jstor.org/stable/2235829" target="_blank" rel="noopener">Wald (1945)</a> shows that the choice of the following boundaries delivers a test with expected probability of type 1 and 2 error not greater than $\alpha$ and $\beta$, respectively.</p>
+<p>$$
+a \approx \log {\frac  {\beta }{1-\alpha }} \quad \text{and} \quad  b \approx \log {\frac  {1-\beta }{\alpha }}
+$$</p>
+<p>The equations are approximations because of the discrete nature of the data generating process.</p>
+<p><a href="https://www.jstor.org/stable/2235638" target="_blank" rel="noopener">Wald and Wolfowitz (1948)</a> have proven that a test with these boundaries is the most powerful sequential probability ratio test, i.e. all SPR tests with the same power and significance require at least the same amount of observations.</p>
+<h3 id="special-case-testing-null-effect">Special Case: testing null effect</h3>
+<p>Let&rsquo;s go back to our example where data is coming from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2$ and hypotheses $H_0: \ \mu = 0$ and $H_1: \ \mu = 0.1$.</p>
+<p>We have seen that the likelihood ratio with a sample of size $n$ is</p>
+<p>$$
+\Lambda(X) = \frac{\mathcal L (0.1, \sigma^2)}{\mathcal L (0, \sigma^2)} = \frac{e^{- \sum_{i=1}^{n} \frac{(X_i - 0.1)^2}{2 \sigma^2}}}{e^{- \sum_{i=1}^{n} \frac{(X_i)^2}{2 \sigma^2}}}
+$$</p>
+<p>Therefore, the log-likelihood (easier to compute) is</p>
+<p>$$
+\log (\Lambda(X)) = \left( \sum_{i=1}^{n} \frac{(X_i)^2}{2 \sigma^2} \right) - \left( \sum_{i=1}^{n} \frac{(X_i - 0.1)^2}{2 \sigma^2} \right)
+$$</p>
+<h3 id="simulation">Simulation</h3>
+<p>We are now ready to perform some simulations. First, let&rsquo;s code the <strong>log likelihood ratio test statistic</strong> that we have just computed.</p>
+<pre><code class="language-python">log_lr = lambda x: (np.sum((x)**2) - np.sum((x-0.1)**2) ) / 2
+log_lr.__name__ = 'log likelihood-ratio'
+</code></pre>
+<p>We now repeat the same experiment we did at the beginning, with one difference: we will compute the log likelihood ratio as a statistic. The data generating process has $\mu=0$, as under the null hypothesis.</p>
+<pre><code class="language-python">df = experiment(log_lr, )
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>i</th>
+      <th>x</th>
+      <th>log likelihood-ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1.624345</td>
+      <td>0.157435</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>-0.611756</td>
+      <td>0.091259</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>-0.528172</td>
+      <td>0.033442</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>-1.072969</td>
+      <td>-0.078855</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0.865408</td>
+      <td>0.002686</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>Let&rsquo;s now compute the optimal bounds, given significance level $\alpha=0.05$ and power $1-\beta=0.8$.</p>
+<pre><code class="language-python">alpha = 0.05
+beta = 0.2
+
+a = np.log( beta / (1-alpha) )
+b = np.log( (1-beta) / alpha )
+print(f'Optimal bounds : [{a:.3f}, {b:.3f}]')
+</code></pre>
+<pre><code>Optimal bounds : [-1.558, 2.773]
+</code></pre>
+<p>Since significance and (one minus) power are different, the bound for the null hypothesis is much <strong>closer</strong> than the bound for the alternative hypothesis. This means that, in case of an intermediate effect of $\mu=0.05$, we will be more likely to accept the null hypothesis $H_0: \mu = 0$ than the alternative $H_1: \mu = 0.1$.</p>
+<p>We can plot the distribution of the likelihood ratio over samples drawn under the null hypothesis $H_0: \mu = 0$.</p>
+<pre><code class="language-python">plot_experiment(df, ybounds=[a,b])
+</code></pre>
+<p><img src="img/optimal_stopping_43_0.png" alt="png"></p>
+<p>In this particular case, the test is inconclusive within our sampling framework. We need to <strong>collect more data</strong> in order to come to a decision.</p>
+<pre><code class="language-python">plot_experiment(experiment(log_lr, n=789), ybounds=[a,b]);
+</code></pre>
+<p><img src="img/optimal_stopping_45_0.png" alt="png"></p>
+<p>It takes 789 observations to reach to a conclusion, while before the sample size was 785. This test procedure can require a <strong>larger sample size</strong> than the previous one. Is it true on average?</p>
+<p>What would happen if we were to repeat the experiment $K=100$ times?</p>
+<pre><code class="language-python">simulate_experiments(log_lr, ybounds=[a, b], early_stop=True, lw=1.5);
+</code></pre>
+<pre><code>Bounds crossed: 96 (4% upper, 96% lower)
+Average experiment duration: 264
+</code></pre>
+<p><img src="img/optimal_stopping_47_1.png" alt="png"></p>
+<p>We get a decision for 96 simulations out of 100 and for 96% of them, it&rsquo;s the correct decision. Therefore, our rejection rate is very close to the expected $\alpha=0.05$ (under the null hypothesis).</p>
+<p>However, for 4 experiments, the test is inconclusive. What would happen if we were to sample until we reach a conclusion in each experiment?</p>
+<pre><code class="language-python">simulate_experiments(log_lr, ybounds=[a,b], early_stop=True, lw=1.5, n=1900);
+</code></pre>
+<pre><code>Bounds crossed: 100 (4% upper, 96% lower)
+Average experiment duration: 275
+</code></pre>
+<p><img src="img/optimal_stopping_49_1.png" alt="png"></p>
+<p>As we can see from the plot, in one particularly unlucky experiment, we need to collect 1900 observations before coming to a conclusion. However, despite this outlier, the <strong>average experiment duration</strong> is an astounding 275 samples, almost a third of the original sample size of 785.</p>
+<p>What would happen if instead the alternative hypothesis $H_1: \mu = 0.1$ was true?</p>
+<pre><code class="language-python">simulate_experiments(log_lr, ybounds=[a,b], early_stop=True, mu=0.1, lw=1, n=2100);
+</code></pre>
+<pre><code>Bounds crossed: 100 (84% upper, 16% lower)
+Average experiment duration: 443
+</code></pre>
+<p><img src="img/optimal_stopping_51_1.png" alt="png"></p>
+<p>In this case, we make the correct decision in only 84% of the simulations, which is very close to the expected value of 80% (under the alternative hypothesis), i.e. the power of the experiment, 1-β.</p>
+<p>Moreover, also under the alternative hypothesis we need a significantly lower sample size: just 443 observation, on average.h a conclusion in 78/100 experiments we need just 1/3 of the samples!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this post, we have seen the dangers of <strong>peeking</strong> during a randomized experiment. Prematurely stopping a test can be dangerous since it distorts inference, biasing the expected rejection rates.</p>
+<p>Does it mean that we always need to perform tests with a pre-specified sample size? No! There exist procedures that allow for optimal stopping. These procedures were born for a specific purpose: reducing the sample size as much as possible, without sacrificing accuracy. The first and most known is the Sequential Probability Ratio Test, defined by Wallis as &ldquo;<em>the most powerful and
+seminal statistical ideas of the past third of a century</em>&rdquo; (in 1980).</p>
+<p>The SPRT was not only a powerful tool during war time but keeps being used today for very practical purposes (see for example <a href="https://netflixtechblog.com/improving-experimentation-efficiency-at-netflix-with-meta-analysis-and-optimal-stopping-d8ec290ae5be" target="_blank" rel="noopener">Netflix</a>, <a href="https://eng.uber.com/xp/" target="_blank" rel="noopener">Uber</a>).</p>
+<h3 id="references">References</h3>
+<p>[1] A. Wald, <a href="https://www.jstor.org/stable/2235829" target="_blank" rel="noopener">Sequential tests of statistical hypotheses</a> (1945), <em>The Annal of Mathematical Statistics</em>.</p>
+<p>[2] A. Wald and J Wolfowitz, <a href="https://www.jstor.org/stable/2235638" target="_blank" rel="noopener">Optimum character of the sequential probability ratio test</a> (1948), <em>The Annals of Mathematical Statistics</em>.</p>
+<p>[3] W. A. Wallis, <a href="https://www.tandfonline.com/doi/abs/10.1080/01621459.1980.10477469" target="_blank" rel="noopener">The Statistical Research Group, 1942–1945</a> (1980), <em>Journal of the American Statistical Association</em>.</p>
+<h3 id="code">Code</h3>
+<p>You can find the original Jupyter Notebook here:</p>
+<p><a href="https://github.com/matteocourthoud/Blog-Posts/blob/main/optimal_stopping.ipynb" target="_blank" rel="noopener">https://github.com/matteocourthoud/Blog-Posts/blob/main/optimal_stopping.ipynb</a></p>
+
+          </div>
+          
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://matteocourthoud.github.io/post/optimal_stopping/&amp;text=Experiments,%20Peeking,%20and%20Optimal%20Stopping" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://matteocourthoud.github.io/post/optimal_stopping/&amp;t=Experiments,%20Peeking,%20and%20Optimal%20Stopping" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Experiments,%20Peeking,%20and%20Optimal%20Stopping&amp;body=https://matteocourthoud.github.io/post/optimal_stopping/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://matteocourthoud.github.io/post/optimal_stopping/&amp;title=Experiments,%20Peeking,%20and%20Optimal%20Stopping" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Experiments,%20Peeking,%20and%20Optimal%20Stopping%20https://matteocourthoud.github.io/post/optimal_stopping/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://t.me/share/url?url=https://matteocourthoud.github.io/post/optimal_stopping/&amp;text=%7btext%7d" target="_blank" rel="noopener" class="share-btn-telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://matteocourthoud.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/avatar_hu365eedc833ccd5578a90de7c849ec45e_385094_270x270_fill_q75_lanczos_center.jpg" alt=""></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://matteocourthoud.github.io/"></a></h5>
+      
+      <p class="card-text">My research fields are empirical Industrial Organization and Competition Policy. My research interests include the relationship between competition and innovation, big data, artificial intelligence, platform markets, peer to peer services.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://medium.com/@matteo.courthoud" target="_blank" rel="noopener">
+        <i class="fab fa-medium"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/matteo-courthoud-7335198a/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/MatteoCourthoud/" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/matteocourthoud" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://open.spotify.com/user/1180947523" target="_blank" rel="noopener">
+        <i class="fab fa-spotify"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+        </div>
+        </article>
+    </main>
+  </div>
+</div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js" integrity="sha512-as1BF4+iHZ3BVO6LLDQ7zrbvTXM+c/1iZ1qII/c3c4L8Rn5tHLpFUtpaEtBNS92f+xGsCzsD7b62XP3XYap6oA==" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/julia.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.cf8ca859a9b74f8b1cd804621b13e5f1.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
