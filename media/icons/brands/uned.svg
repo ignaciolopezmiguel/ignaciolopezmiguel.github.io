@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="1056"
+   height="816"
+   viewBox="0 0 1056 816"
+   sodipodi:docname="uned-seeklogo.com.ai"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath18">
+      <path
+         d="M 0,612 H 792 V 0 H 0 Z"
+         id="path16" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     id="g8"
+     inkscape:groupmode="layer"
+     inkscape:label="uned-seeklogo.com"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,816)">
+    <path
+       d="m 166.409,56.928 h 498.15 v 498.144 h -498.15 z"
+       style="fill:#0a5640;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path10" />
+    <g
+       id="g12">
+      <g
+         id="g14"
+         clip-path="url(#clipPath18)">
+        <g
+           id="g20"
+           transform="translate(261.4824,267.7871)">
+          <path
+             d="m 0,0 -17.219,0.012 0.117,101.461 H -41.056 V -23.959 H 5.496 c 17.213,0 34.003,12.074 34.047,29.299 v 96.133 H 15.579 L 15.567,20.137 C 15.567,9.352 12.443,-0.012 0,0 m 107.784,77.508 h 17.029 V -23.959 h 23.959 v 125.432 h -46.356 c -17.336,0 -34.26,-12.214 -34.304,-29.55 v -95.882 h 23.959 v 81.056 c 0,10.87 3.186,20.423 15.713,20.411 M 310.837,0.012 c 16.098,-0.024 14.233,17.279 14.233,17.279 l 0.018,39.042 c 0.005,4.057 1.891,21.181 -14.101,21.175 H 292.362 V 0.012 Z m 38.216,3.861 c -0.162,-29.027 -26.214,-27.832 -33.557,-27.832 h -47.099 v 125.432 h 47.272 c 6.539,0 33.333,0.391 33.384,-28.942 z M 177.564,70.199 c -0.016,11.327 6.685,18.385 10.551,22.425 3.348,3.481 10.747,8.849 18.894,8.849 h 31.827 V 77.525 l -24.145,-0.028 c 0,0 -5.763,-0.552 -9.39,-4.944 -3.627,-4.39 -3.783,-8.42 -3.783,-8.42 V 50.854 l 30.99,-0.017 0.045,-23.976 -31.03,0.012 -0.005,-16.533 c 0,0 -0.363,-4.447 2.16,-7.305 1.768,-1.998 3.487,-3.053 6.171,-3.053 l 28.987,-0.009 v -23.932 h -34.562 c -7.476,0.01 -13.447,2.422 -18.764,7.693 -5.524,5.481 -7.946,10.028 -7.946,18.793 v 67.672"
+             style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path22" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
